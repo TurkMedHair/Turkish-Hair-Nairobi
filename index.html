@@ -299,7 +299,9 @@
     </div>
 </section>
 
-<!-- START OF NEW BLUE FOOTER BLOCK -->
+<!-- START OF BLUE FOOTER WITH OFFICIAL ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
     .tm-footer { background: #1a237e; color: #fff; padding: 60px 10% 20px; font-family: 'Poppins', sans-serif; margin-top: 50px; }
     .tm-footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
@@ -307,11 +309,25 @@
     .tm-footer-col ul { list-style: none; padding: 0; margin: 0; }
     .tm-footer-col ul li { margin-bottom: 12px; font-size: 15px; color: #f9f9f9; display: flex; align-items: flex-start; gap: 10px; }
     .tm-footer-col ul li a { color: #fff; text-decoration: none; }
-    .tm-social-icons { display: flex; gap: 15px; margin-top: 20px; }
-    /* Social circles now have the Navy Blue text to match the background */
-    .tm-social-circle { background: #fff; color: #1a237e; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold; }
-    .tm-footer-bottom { border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; text-align: center; font-size: 14px; margin-top: 20px; }
     
+    /* Official Social Icons Styling */
+    .tm-social-icons { display: flex; gap: 15px; margin-top: 25px; }
+    .tm-social-circle { 
+        background: #fff; 
+        color: #1a237e; 
+        width: 40px; 
+        height: 40px; 
+        border-radius: 50%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        text-decoration: none; 
+        font-size: 18px; 
+        transition: 0.3s;
+    }
+    .tm-social-circle:hover { transform: translateY(-3px); background: #f0f0f0; }
+    
+    .tm-footer-bottom { border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; text-align: center; font-size: 14px; margin-top: 20px; }
     .tm-wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 2000; }
 </style>
 
@@ -320,11 +336,11 @@
         <div class="tm-footer-col">
             <h3>Reach Out</h3>
             <ul>
-                <li>✉ info@turkmedkenya.com</li>
-                <li>📞 +254 726 618 187</li>
-                <li>📞 +254 143 074 887</li>
-                <li>📍 Valley View Office Park, Parklands, Nairobi</li>
-                <li>📍 2nd Floor, Limuru Road, City Park Drive</li>
+                <li><i class="fas fa-envelope"></i> info@turkmedkenya.com</li>
+                <li><i class="fas fa-phone"></i> +254 726 618 187</li>
+                <li><i class="fas fa-phone"></i> +254 143 074 887</li>
+                <li><i class="fas fa-map-marker-alt"></i> Valley View Office Park, Parklands, Nairobi</li>
+                <li><i class="fas fa-location-dot"></i> 2nd Floor, Limuru Road, City Park Drive</li>
             </ul>
         </div>
 
@@ -347,11 +363,13 @@
                 <li>• <a href="#contact">Contact us</a></li>
                 <li>• <a href="#">Blogs</a></li>
             </ul>
+            
+            <!-- UPDATED SOCIAL ICONS -->
             <div class="tm-social-icons">
-                <a href="#" class="tm-social-circle">f</a>
-                <a href="#" class="tm-social-circle">𝕏</a>
-                <a href="#" class="tm-social-circle">▶</a>
-                <a href="#" class="tm-social-circle">ig</a>
+                <a href="https://facebook.com/yourprofile" class="tm-social-circle" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/yourprofile" class="tm-social-circle" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com/@yourprofile" class="tm-social-circle" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/254726618187" class="tm-social-circle" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
             </div>
         </div>
     </div>
@@ -362,9 +380,6 @@
 </footer>
 
 <a href="https://wa.me/254726618187" class="tm-wa-float">
-    <span>💬</span> Chat on WhatsApp
+    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
 </a>
-<!-- END OF NEW BLUE FOOTER BLOCK -->
-
-</body>
-</html>
+<!-- END OF FOOTER BLOCK -->
