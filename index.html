@@ -319,23 +319,76 @@
     </div>
 </section>
 
-<footer>
-    <div class="footer-grid">
-        <div>
-            <h3>TurkMed</h3>
-            <p>Bringing Turkish Excellence to Africa.</p>
+<!-- START OF NEW FOOTER BLOCK -->
+<style>
+    /* These styles only affect the footer to keep your original design safe */
+    .tm-footer { background: #b71c1c; color: #fff; padding: 60px 10% 20px; font-family: 'Poppins', sans-serif; margin-top: 50px; }
+    .tm-footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .tm-footer-col h3 { font-size: 22px; margin-bottom: 25px; border-bottom: 2px solid rgba(255,255,255,0.3); display: inline-block; padding-bottom: 5px; color: #ffffff; }
+    .tm-footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .tm-footer-col ul li { margin-bottom: 12px; font-size: 15px; color: #f9f9f9; display: flex; align-items: flex-start; gap: 10px; }
+    .tm-footer-col ul li a { color: #fff; text-decoration: none; }
+    .tm-social-icons { display: flex; gap: 15px; margin-top: 20px; }
+    .tm-social-circle { background: #fff; color: #b71c1c; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold; }
+    .tm-footer-bottom { border-top: 1px solid rgba(255,255,255,0.2); padding-top: 20px; text-align: center; font-size: 14px; margin-top: 20px; }
+    
+    /* The floating WhatsApp button from your reference image */
+    .tm-wa-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 2000; }
+</style>
+
+<footer class="tm-footer">
+    <div class="tm-footer-grid">
+        <!-- REACH OUT SECTION: This helps Google find your location -->
+        <div class="tm-footer-col">
+            <h3>Reach Out</h3>
+            <ul>
+                <li>✉ info@turkmedkenya.com</li>
+                <li>📞 +254 726 618 187</li>
+                <li>📞 +254 143 074 887</li>
+                <li>📍 Valley View Office Park, Parklands, Nairobi</li>
+                <li>📍 2nd Floor, Limuru Road, City Park Drive</li>
+            </ul>
         </div>
-        <div>
-            <h3>Quick Links</h3>
-            <p>Home<br>About Us<br>Services</p>
+
+        <!-- SERVICES SECTION: Keywords for Google Search -->
+        <div class="tm-footer-col">
+            <h3>Services</h3>
+            <ul>
+                <li>• Hair Transplantation</li>
+                <li>• PRP Therapy</li>
+                <li>• Beard Transplantation</li>
+                <li>• Eyebrow Transplantation</li>
+                <li>• African Hair Specialists</li>
+            </ul>
         </div>
-        <div>
-            <h3>Connect</h3>
-            <p>WhatsApp<br>Instagram<br>Facebook</p>
+
+        <!-- QUICK LINKS SECTION -->
+        <div class="tm-footer-col">
+            <h3>Quick links</h3>
+            <ul>
+                <li>• <a href="#about">About us</a></li>
+                <li>• <a href="https://wa.me/254143074887">Book Consultation</a></li>
+                <li>• <a href="#contact">Contact us</a></li>
+                <li>• <a href="#">Blogs</a></li>
+            </ul>
+            <div class="tm-social-icons">
+                <a href="#" class="tm-social-circle">f</a>
+                <a href="#" class="tm-social-circle">𝕏</a>
+                <a href="#" class="tm-social-circle">▶</a>
+                <a href="#" class="tm-social-circle">ig</a>
+            </div>
         </div>
     </div>
-    <p style="margin-top: 50px; color: #777;">© 2026 TurkMed Kenya. All Rights Reserved.</p>
+
+    <div class="tm-footer-bottom">
+        <p>All Rights Reserved © 2026 TurkMed Kenya</p>
+    </div>
 </footer>
+
+<a href="https://wa.me/254726618187" class="tm-wa-float">
+    <span>💬</span> Chat on WhatsApp
+</a>
+<!-- END OF NEW FOOTER BLOCK -->
 
 </body>
 </html>
