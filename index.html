@@ -108,27 +108,68 @@
     <span>🌍 Turkish Medical Team</span>
 </div>
 
-    <!-- AUTOMATIC PHOTO SLIDER SECTION -->
-<section style="padding: 60px 0; background-color: #f9f9f9; overflow: hidden;">
-    <div style="text-align: center; margin-bottom: 40px;">
-        <h4 style="color: #b71c1c; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; margin-bottom: 10px;">Results Gallery</h4>
-        <h2 style="color: #1a237e; font-size: 32px; font-weight: 800;">Premier Expertise & Innovation</h2>
+  <!-- RESULTS GALLERY SECTION -->
+<section id="results" style="padding: 80px 0; background-color: #f9f9f9; overflow: hidden;">
+    <div style="text-align: center; margin-bottom: 40px; padding: 0 10px;">
+        <h4 style="color: #b71c1c; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; margin-bottom: 10px;">Transformation Gallery</h4>
+        <h2 style="color: #1a237e; font-size: 32px; font-weight: 800;">Real Results, Real Confidence</h2>
+        <p style="color: #666; max-width: 600px; margin: 10px auto;">See the life-changing impact of our Turkish-expert precision right here in Nairobi.</p>
     </div>
 
-    <!-- The Slider Container -->
-    <div class="slider-track" style="display: flex; width: 200%; animation: slide-loop 20s linear infinite;">
-        <!-- Group 1 -->
-        <div style="display: flex; width: 100%; justify-content: space-around;">
-            <img src="after procedure 2.jpeg" style="width: 45%; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); object-fit: cover; height: 400px;">
-            <img src="eye brow transplant.jpg" style="width: 45%; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); object-fit: cover; height: 400px;">
-        </div>
-        <!-- Group 2 (Duplicate for loop) -->
-        <div style="display: flex; width: 100%; justify-content: space-around;">
-            <img src="beard transplant.jpg" style="width: 45%; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); object-fit: cover; height: 400px;">
-            <img src="after procedure 2.jpeg" style="width: 45%; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); object-fit: cover; height: 400px;">
+    <div class="slider-container" style="width: 100%; overflow: hidden; position: relative;">
+        <div class="slider-track" style="display: flex; width: max-content; animation: scroll 40s linear infinite;">
+            <!-- Using your GitHub files: after procedure 2.jpeg, after procedure 20.jpeg, beard1.jpeg, result3.jpeg, etc. -->
+            <div class="result-card"><img src="after procedure 2.jpeg" alt="Result 1"></div>
+            <div class="result-card"><img src="after procedure 20.jpeg" alt="Result 2"></div>
+            <div class="result-card"><img src="beard1.jpeg" alt="Beard Result"></div>
+            <div class="result-card"><img src="result3.jpeg" alt="Result 3"></div>
+            <div class="result-card"><img src="after procedure 3.jpeg" alt="Result 4"></div>
+            <div class="result-card"><img src="result4.jpeg" alt="Result 5"></div>
+            <div class="result-card"><img src="after procedure 21.jpeg" alt="Result 6"></div>
+            <div class="result-card"><img src="result5.jpeg" alt="Result 7"></div>
+            
+            <!-- Duplicate set for seamless looping -->
+            <div class="result-card"><img src="after procedure 2.jpeg" alt="Result 1"></div>
+            <div class="result-card"><img src="after procedure 20.jpeg" alt="Result 2"></div>
+            <div class="result-card"><img src="beard1.jpeg" alt="Beard Result"></div>
+            <div class="result-card"><img src="result3.jpeg" alt="Result 3"></div>
+            <div class="result-card"><img src="after procedure 3.jpeg" alt="Result 4"></div>
+            <div class="result-card"><img src="result4.jpeg" alt="Result 5"></div>
+            <div class="result-card"><img src="after procedure 21.jpeg" alt="Result 6"></div>
+            <div class="result-card"><img src="result5.jpeg" alt="Result 7"></div>
         </div>
     </div>
 </section>
+
+<style>
+    .result-card {
+        width: 280px;
+        height: 380px;
+        margin: 0 15px;
+        flex-shrink: 0;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        border: 5px solid #fff;
+        background: #fff;
+    }
+    .result-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    .result-card:hover img {
+        transform: scale(1.08);
+    }
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+    .slider-track:hover {
+        animation-play-state: paused;
+    }
+</style>
 
 <style>
 @keyframes slide-loop {
