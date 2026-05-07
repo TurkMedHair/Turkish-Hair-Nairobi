@@ -48,6 +48,40 @@
 
         footer { background: #222; color: #fff; padding: 50px 10%; text-align: center; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: left; }
+/* MOBILE COMPATIBILITY ADD-ON - DO NOT DELETE ABOVE CODE */
+@media (max-width: 768px) {
+    /* Fix Navigation */
+    nav { 
+        flex-direction: column !important; 
+        padding: 10px !important; 
+    }
+    nav ul { 
+        gap: 10px !important; 
+        padding-top: 10px !important; 
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+    }
+    nav ul li a { font-size: 12px !important; }
+
+    /* Fix Hero Section (Text and Photo) */
+    #home > div { 
+        flex-direction: column !important; 
+        text-align: center !important; 
+    }
+    #home h1 { font-size: 32px !important; }
+    #home p { font-size: 18px !important; }
+    
+    /* Fix Trust Bar */
+    .trust-bar { 
+        flex-direction: column !important; 
+        gap: 10px !important; 
+        font-size: 14px !important;
+    }
+
+    /* Fix Photos and Cards */
+    .result-card { width: 240px !important; height: 320px !important; }
+    #services > div > div { flex-direction: column !important; align-items: center !important; }
+}
     </style>
 </head>
 <body>
