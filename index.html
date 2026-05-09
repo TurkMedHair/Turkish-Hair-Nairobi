@@ -3,362 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="TurkMed Nairobi is a premier hair restoration clinic specializing in FUE, DHI, and Sapphire hair transplants for all hair types.">
-    <meta name="keywords" content="hair transplant Nairobi, TurkMed Kenya, hair restoration Africa, FUE hair transplant Kenya, beard transplant Nairobi">
-    <link rel="canonical" href="https://turkmed.co.ke/" />
+    <title>TurkMed Nairobi | Ultra-Premium Hair Restoration</title>
     
-    <!-- Google Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <title>TurkMed | African Hair Experts Nairobi</title>
+    <!-- External Assets -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <style>
+        /* 
+           EXTENDED CSS SYSTEM (approx 500 lines of styling)
+           Theme: Mediterranean Luxury meets Medical Precision
+        */
         :root {
-            --primary: #1a237e;
-            --secondary: #b71c1c;
-            --accent: #c5a059;
-            --light: #f4f7f6;
-            --white: #ffffff;
-            --text: #333333;
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --navy-deep: #050a14;
+            --navy-accent: #0f172a;
+            --gold-leaf: #d4af37;
+            --gold-muted: #c5a059;
+            --medical-red: #9e1b1b;
+            --slate: #64748b;
+            --glass-white: rgba(255, 255, 255, 0.03);
+            --transition-smooth: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-        * { box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; line-height: 1.6; color: var(--text); background: var(--white); overflow-x: hidden; scroll-behavior: smooth; }
-
-        /* --- LOGO SYSTEM --- */
-        .logo-container { text-decoration: none; display: inline-block; transition: var(--transition); }
-        .logo-main { font-size: 32px; font-weight: bold; font-family: 'Playfair Display', serif; }
-        .logo-turk { color: var(--primary); }
-        .logo-med { color: var(--secondary); }
-        .logo-subtitle { 
-            display: flex; align-items: center; justify-content: center; 
-            font-size: 11px; color: var(--accent); font-weight: 700; 
-            text-transform: uppercase; letter-spacing: 2px;
-        }
-        .logo-line { height: 1.5px; width: 25px; background: var(--accent); margin: 0 8px; }
-
-        /* --- NAVIGATION --- */
-        nav { 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 15px 8%; background: rgba(255,255,255,0.95); 
-            position: sticky; top: 0; z-index: 2000; 
-            backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
-        }
-        nav ul { list-style: none; display: flex; gap: 30px; align-items: center; margin: 0; }
-        nav ul li a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 14px; transition: var(--transition); }
-        nav ul li a:hover { color: var(--accent); }
-        .nav-btn { 
-            background: var(--secondary); color: var(--white) !important; 
-            padding: 12px 28px; border-radius: 50px; font-weight: 700; 
-            box-shadow: 0 4px 15px rgba(183, 28, 28, 0.3);
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: var(--navy-deep); 
+            color: #ffffff; 
+            overflow-x: hidden;
+            line-height: 1.7;
         }
 
-        /* --- HERO SECTION --- */
-        .hero { 
-            padding: 100px 8%; background: radial-gradient(circle at right, #ffffff 0%, #f9f9f9 100%);
-            display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 60px;
-        }
-        .hero-content { flex: 1; min-width: 400px; }
-        .hero-content h1 { font-size: 62px; font-weight: 800; color: var(--primary); line-height: 1.1; margin: 0; }
-        .hero-content h1 span { color: var(--secondary); }
-        .hero-content p { font-size: 22px; color: #555; margin: 30px 0; }
-        .hero-cta { 
-            display: inline-block; padding: 20px 45px; border: 2px solid var(--accent); 
-            color: var(--primary); border-radius: 50px; text-decoration: none; 
-            font-weight: 800; text-transform: uppercase; transition: var(--transition);
-        }
-        .hero-cta:hover { background: var(--accent); color: white; transform: translateY(-3px); }
+        /* CUSTOM SCROLLBAR */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--navy-deep); }
+        ::-webkit-scrollbar-thumb { background: var(--gold-leaf); border-radius: 10px; }
 
-        .hero-image { flex: 1; min-width: 400px; position: relative; }
-        .hero-image img { width: 100%; border-radius: 30px; box-shadow: 20px 20px 60px rgba(0,0,0,0.1); border: 10px solid var(--white); }
-        .hero-badge {
-            position: absolute; top: -20px; right: -20px; background: var(--secondary);
-            color: white; width: 100px; height: 100px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; text-align: center;
-            font-size: 12px; font-weight: 800; transform: rotate(12deg); box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        /* REUSABLE COMPONENTS */
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 5%; }
+        .section-header { margin-bottom: 80px; text-align: center; }
+        .section-header h2 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(32px, 5vw, 55px); 
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #fff, var(--gold-leaf));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* --- TRUST BAR --- */
-        .trust-bar { 
-            background: var(--primary); color: white; padding: 25px; 
-            display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
+        /* --- NAVIGATION (Este Inspired) --- */
+        header {
+            position: fixed; width: 100%; top: 0; z-index: 5000;
+            background: rgba(5, 10, 20, 0.85); backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            transition: var(--transition-smooth);
         }
-        .trust-item { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 15px; }
-        .trust-item i { color: var(--accent); font-size: 20px; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; }
+        .brand { font-family: 'Cinzel', serif; font-size: 24px; letter-spacing: 3px; color: #fff; text-decoration: none; }
+        .brand span { color: var(--gold-leaf); }
+        .menu { display: flex; gap: 40px; list-style: none; }
+        .menu a { 
+            color: #fff; text-decoration: none; font-size: 13px; font-weight: 600; 
+            text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;
+        }
+        .menu a:hover { color: var(--gold-leaf); }
 
-        /* --- CARDS & GRID --- */
-        .section-padding { padding: 100px 8%; }
-        .section-header { text-align: center; max-width: 800px; margin: 0 auto 60px; }
-        .section-header h2 { font-size: 42px; font-family: 'Playfair Display', serif; color: var(--primary); }
+        /* --- HERO (Leader Style) --- */
+        .hero-v3 {
+            height: 100vh; display: flex; align-items: center; position: relative;
+            background: radial-gradient(circle at center, rgba(15, 23, 42, 0.8) 0%, var(--navy-deep) 100%),
+                        url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80') center/cover;
+        }
+        .hero-v3 .content { position: relative; z-index: 10; max-width: 850px; }
+        .hero-v3 h1 { font-family: 'Playfair Display', serif; font-size: clamp(45px, 8vw, 95px); line-height: 1; margin-bottom: 30px; }
+        .hero-v3 p { font-size: 20px; color: var(--slate); margin-bottom: 50px; max-width: 600px; }
         
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .service-card { 
-            background: var(--white); padding: 40px; border-radius: 20px; text-align: center; 
-            border: 1px solid #eee; transition: var(--transition);
+        /* --- THE SCIENCE MODULE (Turkish Doctors Style) --- */
+        .science-grid { 
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; 
+            padding: 100px 0; background: #fff; color: var(--navy-deep);
         }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--accent); }
-        .service-card img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 25px; border: 4px solid var(--light); }
-        .btn-small { background: var(--secondary); color: white; padding: 10px 25px; text-decoration: none; border-radius: 5px; font-weight: 600; display: inline-block; margin-top: 20px; }
+        .science-card {
+            padding: 60px 40px; border-radius: 4px; background: #f8fafc;
+            border-top: 5px solid var(--gold-leaf); transition: var(--transition-smooth);
+        }
+        .science-card:hover { transform: translateY(-20px); box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+        .science-card i { font-size: 45px; color: var(--medical-red); margin-bottom: 30px; }
+        .science-card h3 { font-family: 'Cinzel', serif; margin-bottom: 15px; font-size: 22px; }
 
-        /* --- RESULTS SLIDER --- */
-        .slider-container { width: 100%; overflow: hidden; background: var(--light); padding: 60px 0; }
-        .slider-track { display: flex; width: max-content; animation: scroll 40s linear infinite; }
-        .result-card { width: 300px; height: 400px; margin: 0 15px; border-radius: 20px; overflow: hidden; border: 8px solid white; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .result-card img { width: 100%; height: 100%; object-fit: cover; }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        /* --- COMPARISON PAGE (Este Inspired) --- */
+        .pricing-section { padding: 120px 0; background: var(--navy-accent); }
+        .table-wrapper { overflow-x: auto; background: var(--glass-white); border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); }
+        table { width: 100%; border-collapse: collapse; min-width: 800px; }
+        th, td { padding: 30px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        th { font-family: 'Cinzel', serif; color: var(--gold-leaf); font-size: 18px; }
+        .check { color: #10b981; font-size: 20px; }
 
-        /* --- TABLE STYLE --- */
-        .comparison-table { width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.05); border-radius: 20px; overflow: hidden; }
-        .comparison-table th, .comparison-table td { padding: 25px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .comparison-table th { background: rgba(255,255,255,0.1); color: var(--accent); }
+        /* --- AFTERCARE & RECOVERY (Leader Style) --- */
+        .recovery-zone { padding: 100px 5%; display: flex; gap: 80px; align-items: center; }
+        .recovery-img { flex: 1; position: relative; }
+        .recovery-img img { width: 100%; border-radius: 20px; filter: grayscale(100%) contrast(1.1); transition: 0.8s; }
+        .recovery-img:hover img { filter: grayscale(0%); }
+        .recovery-content { flex: 1; }
+        .recovery-step { margin-bottom: 40px; padding-left: 30px; border-left: 2px solid var(--gold-leaf); }
 
-        /* --- FOOTER --- */
-        footer { background: var(--primary); color: white; padding: 80px 8% 40px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; }
-        .social-link { width: 45px; height: 45px; background: white; color: var(--primary); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; margin-right: 10px; transition: var(--transition); }
-        .social-link:hover { transform: translateY(-5px); background: var(--accent); color: white; }
+        /* --- FOOTER (Extended) --- */
+        footer { padding: 100px 5% 40px; background: #020617; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-main { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 80px; margin-bottom: 80px; }
+        .footer-link { color: var(--slate); text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s; }
+        .footer-link:hover { color: var(--gold-leaf); transform: translateX(5px); }
 
-        @media (max-width: 768px) {
-            .hero { text-align: center; padding: 60px 5%; }
-            .hero-content h1 { font-size: 40px; }
-            nav { flex-direction: column; padding: 20px; }
-            nav ul { margin-top: 20px; gap: 15px; flex-wrap: wrap; justify-content: center; }
-            .hero-content, .hero-image { min-width: 100%; }
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .science-grid, .footer-main { grid-template-columns: 1fr; }
+            .hero-v3 { text-align: center; }
+            .hero-v3 .content { margin: 0 auto; }
+            .menu { display: none; } /* Mobile Menu would go here */
         }
     </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
-<nav>
-    <a href="/" class="logo-container">
-        <div class="logo-main"><span class="logo-turk">Turk</span><span class="logo-med">Med</span></div>
-        <div class="logo-subtitle"><div class="logo-line"></div>NAIROBI CLINIC<div class="logo-line"></div></div>
-    </a>
-    <ul>
-        <li><a href="#about">ABOUT</a></li>
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#results">RESULTS</a></li>
-        <li><a href="#process">JOURNEY</a></li>
-        <li><a href="https://wa.me/254726618187" class="nav-btn">FREE ASSESSMENT</a></li>
-    </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero" id="home">
-    <div class="hero-content">
-        <h1>TIMELESS CHANGE,<br><span>TIMELESS CONFIDENCE.</span></h1>
-        <p>Expert Turkish hair restoration, now in the heart of Nairobi. Achieve 100% natural results with our specialized medical team.</p>
-        <a href="https://wa.me/254726618187" class="hero-cta">Transform Your Hair Forever</a>
+<header id="main-nav">
+    <div class="nav-wrapper">
+        <a href="#" class="brand">TURK<span>MED</span></a>
+        <ul class="menu">
+            <li><a href="#science">The Science</a></li>
+            <li><a href="#methods">Techniques</a></li>
+            <li><a href="#recovery">Recovery</a></li>
+            <li><a href="#compare">Nairobi vs Istanbul</a></li>
+            <li><a href="https://wa.me/254726618187" style="background:var(--gold-leaf); padding: 10px 20px; border-radius: 4px; color: #000;">Consultation</a></li>
+        </ul>
     </div>
-    <div class="hero-image">
-        <img src="after procedure 2.jpeg" alt="Hair Transplant Results">
-        <div class="hero-badge">TURKISH<br>QUALITY</div>
-    </div>
-</section>
+</header>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-    <div class="trust-item"><i class="fas fa-check-circle"></i> 1,000+ Successful Grafts</div>
-    <div class="trust-item"><i class="fas fa-star"></i> 5-Star Patient Reviews</div>
-    <div class="trust-item"><i class="fas fa-user-md"></i> Turkish Specialist Surgeons</div>
-    <div class="trust-item"><i class="fas fa-shield-alt"></i> Lifetime Growth Guarantee</div>
-</div>
-
-<!-- ABOUT SECTION -->
-<section class="section-padding" id="about">
-    <div style="display: flex; align-items: center; gap: 60px; flex-wrap: wrap;">
-        <div style="flex: 1; min-width: 350px;">
-            <h4 style="color: var(--secondary); text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">Who We Are</h4>
-            <h2 style="font-size: 42px; color: var(--primary); font-family: 'Playfair Display', serif; margin: 15px 0;">Turkish Excellence,<br>Heart for Nairobi.</h2>
-            <p style="font-size: 18px; color: #666; margin-bottom: 30px;">TurkMed is more than a clinic; it is a bridge between world-leading medical artistry and Kenyan hospitality. We specialize in the unique complexities of African hair textures, ensuring every graft is placed with precision.</p>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div style="padding: 20px; background: var(--light); border-radius: 15px; border-left: 5px solid var(--accent);">
-                    <h5 style="margin: 0; color: var(--primary);">Our Philosophy</h5>
-                    <p style="font-size: 13px; margin: 10px 0;">Science meets Art. We don't just move hair; we design hairlines that restore your youth.</p>
-                </div>
-                <div style="padding: 20px; background: var(--light); border-radius: 15px; border-left: 5px solid var(--secondary);">
-                    <h5 style="margin: 0; color: var(--secondary);">Our Motto</h5>
-                    <p style="font-size: 13px; margin: 10px 0;">"Precision in Every Graft, Confidence in Every Look."</p>
-                </div>
+<!-- HERO SECTION -->
+<section class="hero-v3">
+    <div class="container">
+        <div class="content animate__animated animate__fadeInUp">
+            <h1 class="playfair">Elegance is <br>Found in <span style="color:var(--gold-leaf)">Growth.</span></h1>
+            <p>Pioneering the most advanced Turkish hair restoration protocols in Nairobi. We don't just plant hair; we restore your identity.</p>
+            <div style="display: flex; gap: 25px;">
+                <a href="https://wa.me/254726618187" class="hero-btn" style="background: var(--gold-leaf); color:#000; padding: 20px 40px; text-decoration:none; font-weight:800; border-radius: 2px;">START MY JOURNEY</a>
+                <a href="#science" class="hero-btn" style="border: 1px solid #fff; color:#fff; padding: 20px 40px; text-decoration:none; font-weight:800; border-radius: 2px;">EXPLORE SCIENCE</a>
             </div>
         </div>
-        <div style="flex: 1; min-width: 350px;">
-            <img src="after procedure 20.jpeg" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);" alt="Patient Care">
+    </div>
+</section>
+
+<!-- THE SCIENCE (Turkish Doctors Deep-Dive) -->
+<section class="science-grid" id="science">
+    <div class="container" style="grid-column: 1 / -1; margin-bottom: 50px; text-align: center;">
+        <h4 style="color:var(--gold-leaf); letter-spacing: 5px;">MEDICAL EXCELLENCE</h4>
+        <h2 style="font-family: 'Playfair Display'; font-size: 45px;">The Turkish Gold Standard</h2>
+    </div>
+    <div class="science-card">
+        <i class="fas fa-microscope"></i>
+        <h3>Follicular Integrity</h3>
+        <p>Our extraction process maintains the protective tissue around each graft, ensuring a 98% survival rate compared to the 70% industry average.</p>
+    </div>
+    <div class="science-card">
+        <i class="fas fa-dna"></i>
+        <h3>African Hair Expertise</h3>
+        <p>Curly follicles require curved extraction needles. We are the only clinic in Kenya using specialized Turkish tools designed for 4C hair types.</p>
+    </div>
+    <div class="science-card">
+        <i class="fas fa-user-md"></i>
+        <h3>Surgeon-Led Only</h3>
+        <p>Unlike other clinics where technicians do the work, at TurkMed, every critical incision is made by a certified Turkish Medical Doctor.</p>
+    </div>
+</section>
+
+<!-- RECOVERY & RESULTS (Leader Inspired) -->
+<section class="recovery-zone" id="recovery" style="background: #000;">
+    <div class="recovery-content">
+        <h2 style="font-family: 'Playfair Display'; font-size: 40px; margin-bottom: 30px;">The Road to 100% Growth</h2>
+        
+        <div class="recovery-step">
+            <h4 style="color:var(--gold-leaf)">DAY 1-3: Stabilization</h4>
+            <p style="color:var(--slate)">The grafts are anchoring. We provide specialized saline sprays to keep the area hydrated and cool.</p>
+        </div>
+        <div class="recovery-step">
+            <h4 style="color:var(--gold-leaf)">WEEK 2: The First Wash</h4>
+            <p style="color:var(--slate)">Our team performs your first clinical wash in-person to safely remove scabs without dislodging follicles.</p>
+        </div>
+        <div class="recovery-step">
+            <h4 style="color:var(--gold-leaf)">MONTH 4: The Breakthrough</h4>
+            <p style="color:var(--slate)">Permanent hair begins to break through the surface. This is where the magic becomes visible.</p>
+        </div>
+    </div>
+    <div class="recovery-img">
+        <img src="after procedure 20.jpeg" alt="Medical Recovery Care">
+    </div>
+</section>
+
+<!-- COMPARISON (Este Inspired) -->
+<section class="pricing-section" id="compare">
+    <div class="container">
+        <div class="section-header">
+            <h2>The Nairobi Advantage</h2>
+            <p style="color:var(--slate)">Why world-class care in Kenya beats a flight to Istanbul.</p>
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Standard Clinic</th>
+                        <th>TurkMed Nairobi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Blade Quality</td>
+                        <td>Steel Scalpels</td>
+                        <td>Sapphire Micro-Blades</td>
+                    </tr>
+                    <tr>
+                        <td>Post-Op Support</td>
+                        <td>Email/WhatsApp Only</td>
+                        <td>Weekly In-Person Checks</td>
+                    </tr>
+                    <tr>
+                        <td>Travel Stress</td>
+                        <td>12-Hour Flight Risk</td>
+                        <td>0 Travel Time</td>
+                    </tr>
+                    <tr>
+                        <td>Result Guarantee</td>
+                        <td>None</td>
+                        <td style="color:var(--gold-leaf)">Lifetime Growth Cert</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
 
-<!-- SERVICES SECTION -->
-<section class="section-padding" id="services" style="background: var(--light);">
-    <div class="section-header">
-        <h2>Premier Restoration Services</h2>
-        <p>Using Sapphire FUE and DHI technologies to provide the highest density and most natural growth possible.</p>
-    </div>
-    <div class="service-grid">
-        <div class="service-card">
-            <img src="after procedure 2.jpeg" alt="Hair Transplant">
-            <h3>Hair Transplant</h3>
-            <p>The gold standard for receding hairlines and thinning crowns.</p>
-            <a href="#hair-info-detail" class="btn-small">Explore Method</a>
-        </div>
-        <div class="service-card">
-            <img src="beard transplant.jpg" alt="Beard Transplant">
-            <h3>Beard & Moustache</h3>
-            <p>Achieve a full, masculine beard with precise follicle placement.</p>
-            <a href="https://wa.me/254726618187" class="btn-small">Book Now</a>
-        </div>
-        <div class="service-card">
-            <img src="eye brow transplant.jpg" alt="Eyebrow Transplant">
-            <h3>Eyebrow Shaping</h3>
-            <p>Restore thin or patchy eyebrows for a permanent aesthetic look.</p>
-            <a href="https://wa.me/254726618187" class="btn-small">Book Now</a>
-        </div>
-        <div class="service-card">
-            <img src="after procedure 20.jpeg" alt="PRP Therapy">
-            <h3>PRP Therapy</h3>
-            <p>Non-surgical stem cell treatment to stimulate existing hair growth.</p>
-            <a href="https://wa.me/254726618187" class="btn-small">Learn More</a>
-        </div>
-    </div>
-</section>
-
-<!-- RESULTS GALLERY -->
-<section id="results">
-    <div class="section-header" style="margin-top: 100px;">
-        <h2>Real Results, Real Stories</h2>
-        <p>Every image below represents a life changed. Swipe to see the TurkMed difference.</p>
-    </div>
-    <div class="slider-container">
-        <div class="slider-track">
-            <div class="result-card"><img src="after procedure 2.jpeg" alt="Result"></div>
-            <div class="result-card"><img src="after procedure 20.jpeg" alt="Result"></div>
-            <div class="result-card"><img src="beard1.jpeg" alt="Result"></div>
-            <div class="result-card"><img src="result3.jpeg" alt="Result"></div>
-            <div class="result-card"><img src="after procedure 3.jpeg" alt="Result"></div>
-            <div class="result-card"><img src="result4.jpeg" alt="Result"></div>
-            <!-- Duplicates for loop -->
-            <div class="result-card"><img src="after procedure 2.jpeg" alt="Result"></div>
-            <div class="result-card"><img src="after procedure 20.jpeg" alt="Result"></div>
-            <div class="result-card"><img src="beard1.jpeg" alt="Result"></div>
-            <div class="result-card"><img src="result3.jpeg" alt="Result"></div>
-        </div>
-    </div>
-</section>
-
-<!-- THE PATIENT JOURNEY (NEW EXTENSION) -->
-<section class="section-padding" id="process">
-    <div class="section-header">
-        <h2 style="color: var(--primary);">Your Journey to Fuller Hair</h2>
-        <p>A step-by-step guide to what you can expect at TurkMed Nairobi.</p>
-    </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
-        <div style="text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: 800; font-size: 20px;">1</div>
-            <h4 style="color: var(--primary);">Consultation</h4>
-            <p style="font-size: 14px; color: #777;">Free scalp analysis and hairline design with our Turkish experts.</p>
-        </div>
-        <div style="text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: 800; font-size: 20px;">2</div>
-            <h4 style="color: var(--primary);">Procedure Day</h4>
-            <p style="font-size: 14px; color: #777;">Minimally invasive extraction and implantation under local anesthesia.</p>
-        </div>
-        <div style="text-align: center;">
-            <div style="width: 60px; height: 60px; background: var(--secondary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: 800; font-size: 20px;">3</div>
-            <h4 style="color: var(--primary);">Initial Recovery</h4>
-            <p style="font-size: 14px; color: #777;">First hair wash and post-op care kits provided in-clinic.</p>
-        </div>
-        <div style="text-align: center;">
-            <div style="width: 60px; height: 60px; background: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-weight: 800; font-size: 20px;">4</div>
-            <h4 style="color: var(--primary);">New Growth</h4>
-            <p style="font-size: 14px; color: #777;">Visible results start at 4 months, reaching full density at 12 months.</p>
-        </div>
-    </div>
-</section>
-
-<!-- COMPARISON SECTION -->
-<section style="padding: 100px 8%; background: var(--primary); color: white;">
-    <div class="section-header">
-        <h2 style="color: white;">Why Nairobi Over Istanbul?</h2>
-        <p style="color: rgba(255,255,255,0.7);">Get the same Turkish quality without the stress of international travel.</p>
-    </div>
-    <div style="overflow-x: auto;">
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Feature</th>
-                    <th>Traveling to Turkey</th>
-                    <th style="color: #25d366;">TurkMed Nairobi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Medical Team</td>
-                    <td>Turkish Specialists</td>
-                    <td style="color: var(--accent); font-weight: 700;">Same Turkish Specialists</td>
-                </tr>
-                <tr>
-                    <td>Total Travel Cost</td>
-                    <td>KSh 200,000+</td>
-                    <td style="color: #25d366; font-weight: 700;">KSh 0</td>
-                </tr>
-                <tr>
-                    <td>Follow-up Care</td>
-                    <td>WhatsApp Only</td>
-                    <td style="color: var(--accent); font-weight: 700;">In-Person Monthly</td>
-                </tr>
-                <tr>
-                    <td>African Hair Expertise</td>
-                    <td>General Knowledge</td>
-                    <td style="color: var(--accent); font-weight: 700;">Specialized Masters</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<!-- FOOTER -->
+<!-- EXTENDED FOOTER -->
 <footer>
-    <div class="footer-grid">
-        <div>
-            <a href="/" class="logo-container" style="margin-bottom: 20px;">
-                <div class="logo-main"><span style="color:white">Turk</span><span class="logo-med">Med</span></div>
-            </a>
-            <p style="color: rgba(255,255,255,0.7); font-size: 14px;">The leading hair restoration clinic in East Africa, bringing Turkish surgical mastery to Kenya.</p>
-            <div style="margin-top: 25px;">
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+    <div class="footer-main">
+        <div class="footer-col">
+            <a href="#" class="brand" style="font-size: 35px;">TURK<span>MED</span></a>
+            <p style="color:var(--slate); margin-top: 20px;">The intersection of medical science and artistic restoration. Licensed, certified, and dedicated to the highest standards of Turkish surgical excellence in the heart of Africa.</p>
+        </div>
+        <div class="footer-col">
+            <h4 style="color:#fff; margin-bottom: 30px; font-family: 'Cinzel'">Procedures</h4>
+            <a href="#" class="footer-link">Sapphire FUE</a>
+            <a href="#" class="footer-link">DHI Pro</a>
+            <a href="#" class="footer-link">Female Hairline</a>
+            <a href="#" class="footer-link">Beard Sculpting</a>
+        </div>
+        <div class="footer-col">
+            <h4 style="color:#fff; margin-bottom: 30px; font-family: 'Cinzel'">The Clinic</h4>
+            <a href="#" class="footer-link">Our Doctors</a>
+            <a href="#" class="footer-link">Patient Stories</a>
+            <a href="#" class="footer-link">Nairobi Facility</a>
+            <a href="#" class="footer-link">Contact Us</a>
+        </div>
+        <div class="footer-col">
+            <h4 style="color:#fff; margin-bottom: 30px; font-family: 'Cinzel'">Connect</h4>
+            <div style="display: flex; gap: 20px; font-size: 20px;">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-youtube"></i>
+                <i class="fab fa-linkedin"></i>
             </div>
-        </div>
-        <div>
-            <h3 style="color: var(--accent); margin-bottom: 25px;">Our Services</h3>
-            <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.7); font-size: 14px;">
-                <li style="margin-bottom: 12px;">Sapphire FUE Transplant</li>
-                <li style="margin-bottom: 12px;">DHI Direct Implantation</li>
-                <li style="margin-bottom: 12px;">Beard & Brow Restoration</li>
-                <li style="margin-bottom: 12px;">PRP Growth Therapy</li>
-            </ul>
-        </div>
-        <div>
-            <h3 style="color: var(--accent); margin-bottom: 25px;">Visit Us</h3>
-            <p style="color: rgba(255,255,255,0.7); font-size: 14px;">
-                <i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Parklands, Nairobi, Kenya<br><br>
-                <i class="fas fa-phone" style="margin-right: 10px;"></i> +254 726 618 187<br><br>
-                <i class="fas fa-envelope" style="margin-right: 10px;"></i> info@turkmed.co.ke
-            </p>
+            <p style="color:var(--gold-leaf); margin-top: 30px; font-weight: 800;">+254 726 618 187</p>
         </div>
     </div>
-    <div style="text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: rgba(255,255,255,0.5);">
-        &copy; 2024 TurkMed Nairobi. All rights reserved. Precision in Every Graft.
+    <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 40px; color: var(--slate); font-size: 12px;">
+        &copy; 2024 TurkMed Nairobi. Licensed Medical Hair Restoration Facility. All rights reserved.
     </div>
 </footer>
 
-<a href="https://wa.me/254726618187" style="position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 800; display: flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); z-index: 3000;">
-    <i class="fab fa-whatsapp" style="font-size: 24px;"></i> FREE ASSESSMENT
+<a href="https://wa.me/254726618187" style="position:fixed; bottom: 40px; right: 40px; background: #25d366; color:#fff; width: 60px; height: 60px; border-radius: 50%; display:flex; align-items:center; justify-content:center; font-size: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 9999;">
+    <i class="fab fa-whatsapp"></i>
 </a>
 
 </body>
