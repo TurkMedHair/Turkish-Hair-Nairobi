@@ -93,70 +93,12 @@
             flex-shrink: 0; font-weight: bold; 
         }
 
-        <!-- PREMIUM COMPARISON GRID -->
-<section style="padding: 100px 10%; background: radial-gradient(circle at top, #1a237e 0%, #0d1240 100%); color: white; font-family: 'Poppins', sans-serif;">
-    <div style="text-align: center; margin-bottom: 70px;">
-        <h4 style="color: #c5a059; text-transform: uppercase; letter-spacing: 3px; font-weight: 700; margin-bottom: 15px;">Why Choose TurkMed?</h4>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 48px; line-height: 1.2; margin: 0;">World-Class Expertise,<br><span style="color: #c5a059;">Without the Travel.</span></h2>
-    </div>
-
-    <!-- Main Comparison Container -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1100px; margin: 0 auto;">
-        
-        <!-- Traveling Abroad Card -->
-        <div style="background: rgba(255, 255, 255, 0.05); padding: 50px 40px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);">
-            <h3 style="font-size: 24px; margin-bottom: 40px; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 15px; text-align: center;">Traveling Abroad</h3>
-            
-            <div style="display: flex; flex-direction: column; gap: 30px;">
-                <div style="display: flex; gap: 20px; align-items: center; opacity: 0.7;">
-                    <i class="fas fa-plane-departure" style="font-size: 20px; color: #ff4d4d; width: 30px;"></i>
-                    <p style="margin: 0; font-size: 16px;">KSh 200,000+ Flight & Hotel Costs</p>
-                </div>
-                <div style="display: flex; gap: 20px; align-items: center; opacity: 0.7;">
-                    <i class="fas fa-user-clock" style="font-size: 20px; color: #ff4d4d; width: 30px;"></i>
-                    <p style="margin: 0; font-size: 16px;">Post-Op Care managed alone at home</p>
-                </div>
-                <div style="display: flex; gap: 20px; align-items: center; opacity: 0.7;">
-                    <i class="fas fa-video" style="font-size: 20px; color: #ff4d4d; width: 30px;"></i>
-                    <p style="margin: 0; font-size: 16px;">Follow-ups via WhatsApp video only</p>
-                </div>
-                <div style="display: flex; gap: 20px; align-items: center; opacity: 0.7;">
-                    <i class="fas fa-exclamation-triangle" style="font-size: 20px; color: #ff4d4d; width: 30px;"></i>
-                    <p style="margin: 0; font-size: 16px;">General approach to hair textures</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- TurkMed Nairobi Card (The Hero) -->
-        <div style="background: #ffffff; padding: 50px 40px; border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.4); border: 2px solid #c5a059; position: relative; transform: scale(1.05);">
-            <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #c5a059; color: #1a237e; padding: 8px 25px; border-radius: 50px; font-weight: 800; font-size: 14px; text-transform: uppercase;">The Smarter Choice</div>
-            
-            <h3 style="font-size: 24px; margin-bottom: 40px; border-bottom: 2px solid #eee; padding-bottom: 15px; color: #1a237e; text-align: center;">TurkMed Nairobi</h3>
-            
-            <div style="display: flex; flex-direction: column; gap: 30px;">
-                <div style="display: flex; gap: 20px; align-items: center;">
-                    <div style="background: #e8f5e9; padding: 10px; border-radius: 50%;"><i class="fas fa-wallet" style="font-size: 20px; color: #2e7d32; width: 25px; text-align: center;"></i></div>
-                    <p style="margin: 0; font-size: 16px; color: #333; font-weight: 600;">Zero Travel Costs - Save KSh 200k+</p>
-                </div>
-                <div style="display: flex; gap: 20px; align-items: center;">
-                    <div style="background: #e8f5e9; padding: 10px; border-radius: 50%;"><i class="fas fa-hospital-user" style="font-size: 20px; color: #2e7d32; width: 25px; text-align: center;"></i></div>
-                    <p style="margin: 0; font-size: 16px; color: #333; font-weight: 600;">In-Clinic Professional Hair Washes</p>
-                </div>
-                <div style="display: flex; gap: 20px; align-items: center;">
-                    <div style="background: #e8f5e9; padding: 10px; border-radius: 50%;"><i class="fas fa-handshake" style="font-size: 20px; color: #2e7d32; width: 25px; text-align: center;"></i></div>
-                    <p style="margin: 0; font-size: 16px; color: #333; font-weight: 600;">In-Person Monthly Checkups</p>
-                </div>
-                <div style="display: flex; gap: 20px; align-items: center;">
-                    <div style="background: #e8f5e9; padding: 10px; border-radius: 50%;"><i class="fas fa-microscope" style="font-size: 20px; color: #2e7d32; width: 25px; text-align: center;"></i></div>
-                    <p style="margin: 0; font-size: 16px; color: #333; font-weight: 600;">Experts in African Hair Textures</p>
-                </div>
-            </div>
-
-            <a href="https://wa.me/254726618187" style="display: block; text-align: center; margin-top: 40px; background: #1a237e; color: white; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: 700; transition: 0.3s;">GET TURKISH QUALITY IN NAIROBI</a>
-        </div>
-
-    </div>
-</section>
+        /* COMPARISON TABLE */
+        .comparison-container { overflow-x: auto; margin-top: 40px; }
+        table { width: 100%; border-collapse: collapse; background: white; border-radius: 15px; overflow: hidden; }
+        th, td { padding: 20px; text-align: left; border-bottom: 1px solid #eee; }
+        th { background: var(--primary-blue); color: white; }
+        .highlight-col { background: rgba(197, 160, 89, 0.1); font-weight: 600; }
 
         /* FLOATING WHATSAPP */
         .whatsapp-float {
