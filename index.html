@@ -93,12 +93,51 @@
             flex-shrink: 0; font-weight: bold; 
         }
 
-        /* COMPARISON TABLE */
-        .comparison-container { overflow-x: auto; margin-top: 40px; }
-        table { width: 100%; border-collapse: collapse; background: white; border-radius: 15px; overflow: hidden; }
-        th, td { padding: 20px; text-align: left; border-bottom: 1px solid #eee; }
-        th { background: var(--primary-blue); color: white; }
-        .highlight-col { background: rgba(197, 160, 89, 0.1); font-weight: 600; }
+        <!-- COMPARISON SECTION - FIXED VISIBILITY -->
+<section style="padding: 100px 8%; background: #1a237e; color: white; font-family: 'Poppins', sans-serif;">
+    <div style="text-align: center; margin-bottom: 50px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; color: #c5a059;">The TurkMed Advantage</h2>
+        <p style="opacity: 0.9; font-size: 18px;">Why patients choose Nairobi over traveling to Turkey.</p>
+    </div>
+    
+    <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.03); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 15px; overflow: hidden;">
+            <thead>
+                <tr style="background: rgba(197, 160, 89, 0.2);">
+                    <th style="padding: 25px; text-align: left; color: #fff; font-size: 18px; border-bottom: 2px solid #c5a059;">Feature</th>
+                    <th style="padding: 25px; text-align: center; color: #fff; font-size: 18px; border-bottom: 2px solid #c5a059;">Traveling to Istanbul</th>
+                    <th style="padding: 25px; text-align: center; color: #c5a059; font-size: 18px; border-bottom: 2px solid #c5a059;">TurkMed Nairobi</th>
+                </tr>
+            </thead>
+            <tbody style="color: #ffffff;">
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <td style="padding: 20px; font-weight: 600;">Medical Expertise</td>
+                    <td style="padding: 20px; text-align: center; opacity: 0.8;">Turkish Specialists</td>
+                    <td style="padding: 20px; text-align: center; color: #c5a059; font-weight: 700; background: rgba(255,255,255,0.05);">Same Turkish Specialists</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <td style="padding: 20px; font-weight: 600;">Travel & Visa Costs</td>
+                    <td style="padding: 20px; text-align: center; opacity: 0.8;">KSh 150,000+</td>
+                    <td style="padding: 20px; text-align: center; color: #25d366; font-weight: 700; background: rgba(255,255,255,0.05);">KSh 0</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <td style="padding: 20px; font-weight: 600;">Post-Op Care</td>
+                    <td style="padding: 20px; text-align: center; opacity: 0.8;">Self-Managed</td>
+                    <td style="padding: 20px; text-align: center; color: #c5a059; font-weight: 700; background: rgba(255,255,255,0.05);">In-Clinic by Specialists</td>
+                </tr>
+                <tr>
+                    <td style="padding: 20px; font-weight: 600;">Follow-up Visits</td>
+                    <td style="padding: 20px; text-align: center; opacity: 0.8;">Virtual/WhatsApp</td>
+                    <td style="padding: 20px; text-align: center; color: #c5a059; font-weight: 700; background: rgba(255,255,255,0.05);">In-Person Monthly</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px;">
+        <p style="font-style: italic; color: #c5a059;">Turkish Excellence, Heart for Nairobi.</p>
+    </div>
+</section>
 
         /* FLOATING WHATSAPP */
         .whatsapp-float {
