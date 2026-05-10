@@ -13,17 +13,25 @@
         
         .section { padding: 80px 10%; }
         
-        /* The Recovery Suit Container */
         .kit-box { border: 1px solid var(--accent); padding: 50px; background: #070d17; position: relative; margin-bottom: 60px; }
         .kit-box::before { content: 'TURKMED RECOVERY SYSTEM'; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; padding: 5px 20px; font-family: 'Cinzel'; font-weight: 700; font-size: 12px; }
         
-        /* Mossi Kit Cards */
+        /* Fixed Grid and Image logic */
         .mossi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px; }
         .mossi-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(197,160,89,0.2); padding: 30px; border-radius: 12px; text-align: center; transition: 0.3s; }
         .mossi-card:hover { border-color: var(--accent); transform: translateY(-5px); }
         
-        /* Product Image Fix */
-        .product-img { width: 100%; height: 300px; object-fit: contain; background: white; border-radius: 8px; margin-bottom: 20px; padding: 15px; box-sizing: border-box; }
+        /* THE FIX: Prevents stretching and ensures image visibility */
+        .product-img { 
+            width: 100%; 
+            height: 300px; 
+            object-fit: contain; 
+            background: #fff; 
+            border-radius: 8px; 
+            margin-bottom: 20px; 
+            padding: 15px; 
+            display: block;
+        }
         
         .nav-back { position: fixed; top: 30px; left: 5%; color: var(--accent); text-decoration: none; font-weight: 700; z-index: 1000; background: rgba(0,0,0,0.8); padding: 10px 20px; border: 1px solid var(--accent); }
         
@@ -52,16 +60,15 @@
                 <div>
                     <span class="gold-label">Immediate Care</span>
                     <h2>The TurkMed Recovery Suite</h2>
-                    <p>Every patient leaves our Valley View clinic with a professional aftercare suitcase imported from Turkey. This system is critical for the first 10 days post-op.</p>
+                    <p>Your recovery suitcase includes essential clinical items imported from Turkey to secure your grafts during the first 10 days.</p>
                     <ul style="list-style: none; padding: 0;">
                         <li style="margin-bottom: 12px;">✔ <b>Specialized Foam:</b> Softens scabs without friction.</li>
                         <li style="margin-bottom: 12px;">✔ <b>Medical Shampoo:</b> pH-balanced for healing.</li>
-                        <li style="margin-bottom: 12px;">✔ <b>Neck Pillow:</b> For the 45° sleeping angle.</li>
-                        <li style="margin-bottom: 12px;">✔ <b>Headband:</b> Prevents forehead swelling.</li>
+                        <li style="margin-bottom: 12px;">✔ <b>Neck Pillow:</b> For the mandatory 45° sleeping angle.</li>
                     </ul>
                 </div>
                 <div>
-                    <img src="https://images.unsplash.com/photo-1583947581924-860bda6a26df?auto=format&fit=crop&q=80&w=1000" class="product-img" alt="Recovery Kit">
+                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&q=80&w=1000" class="product-img" alt="Recovery Kit">
                 </div>
             </div>
         </div>
@@ -69,18 +76,18 @@
         <div style="text-align: center; margin-top: 100px;">
             <span class="gold-label">Long-Term Growth</span>
             <h2>Mossi London Clinical Protocols</h2>
-            <p style="max-width: 700px; margin: 0 auto;">For the best density results, we recommend the following clinical sets imported directly from London and Istanbul.</p>
+            <p>We recommend these professional sets for maximum density results.</p>
         </div>
 
         <div class="mossi-grid">
             <div class="mossi-card">
-                <img src="https://mossilondon.com/wp-content/uploads/2021/04/mossi-2-month-set.jpg" class="product-img" alt="Mossi 2 Month Kit">
+                <img src="https://images.unsplash.com/photo-1612115539594-793df81418ee?auto=format&fit=crop&q=80&w=1000" class="product-img" alt="Mossi 2 Month Kit">
                 <h3>2-Month Intensive Kit</h3>
                 <p>Designed to secure follicles and trigger blood flow in the initial growth phase.</p>
             </div>
 
             <div class="mossi-card">
-                <img src="https://mossilondon.com/wp-content/uploads/2021/04/mossi-6-month-set.jpg" class="product-img" alt="Mossi 6 Month Kit">
+                <img src="https://images.unsplash.com/photo-1583947581924-860bda6a26df?auto=format&fit=crop&q=80&w=1000" class="product-img" alt="Mossi 6 Month Kit">
                 <h3>6-Month Full Recovery</h3>
                 <p>The gold standard. A complete protocol for maximum density and hair thickness.</p>
             </div>
