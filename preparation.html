@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surgical Preparation | TurkMed Nairobi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #04080f; --accent: #c5a059; --bg-light: #0d1b2a; }
+        body { font-family: 'Inter', sans-serif; background: var(--primary); color: #e2e8f0; margin: 0; line-height: 1.8; }
+        .hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1505751172177-51ad18610432?auto=format&fit=crop&q=80&w=2000'); background-size: cover; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 2px solid var(--accent); }
+        .section { padding: 100px 10%; }
+        .prep-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .prep-card { background: var(--bg-light); padding: 40px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); }
+        .prep-card h3 { color: var(--accent); font-family: 'Playfair Display'; font-size: 24px; }
+        .nav-back { position: fixed; top: 30px; left: 5%; color: var(--accent); text-decoration: none; font-weight: 700; z-index: 1000; background: rgba(0,0,0,0.8); padding: 10px 20px; border: 1px solid var(--accent); }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-back">← BACK</a>
+    <header class="hero">
+        <div>
+            <span style="color:var(--accent); font-family:'Cinzel'; letter-spacing:5px;">Protocol for Success</span>
+            <h1 style="font-family:'Playfair Display'; font-size:60px;">Your Preparation</h1>
+        </div>
+    </header>
+
+    <section class="section">
+        <h2 style="font-family:'Playfair Display'; text-align: center; margin-bottom: 60px;">The 7-Day Countdown</h2>
+        <div class="prep-grid">
+            <div class="prep-card">
+                <h3>1. Medical History</h3>
+                <p>Inform our clinic of any blood thinners or chronic medications. We require a blood test (done on-site) to ensure optimal healing conditions.</p>
+            </div>
+            <div class="prep-card">
+                <h3>2. Lifestyle Adjustments</h3>
+                <p>Stop smoking and alcohol 7 days before. Nicotine constricts blood flow, which can starve the new grafts of oxygen.</p>
+            </div>
+            <div class="prep-card">
+                <h3>3. The Night Before</h3>
+                <p>Wash your hair with a neutral shampoo. Do not apply any gels or oils. Get at least 8 hours of sleep for a relaxed procedure day.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #000;">
+        <div style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap;">
+            <div style="flex:1; min-width: 300px;">
+                <img src="https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&q=80&w=1000" style="width:100%;" alt="Health Prep">
+            </div>
+            <div style="flex:1; min-width: 300px;">
+                <h2 style="font-family:'Playfair Display';">The Day of Surgery</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 20px;"><b style="color:var(--accent)">Dress Code:</b> Wear a button-down shirt. You must not pull anything over your head after the surgery.</li>
+                    <li style="margin-bottom: 20px;"><b style="color:var(--accent)">Breakfast:</b> Eat a light, healthy meal. Avoid excessive caffeine as it can increase blood pressure.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
