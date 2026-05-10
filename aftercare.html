@@ -16,30 +16,29 @@
         .kit-box { border: 1px solid var(--accent); padding: 50px; background: #070d17; position: relative; margin-bottom: 60px; }
         .kit-box::before { content: 'TURKMED RECOVERY SYSTEM'; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; padding: 5px 20px; font-family: 'Cinzel'; font-weight: 700; font-size: 12px; }
         
-        /* Grid Layout - 3 columns for the kits */
-        .mossi-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 25px; margin-top: 50px; }
-        .mossi-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(197,160,89,0.2); padding: 25px; border-radius: 12px; text-align: center; transition: 0.3s; }
-        .mossi-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .mossi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 50px; }
+        .mossi-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(197,160,89,0.2); padding: 30px; border-radius: 12px; text-align: center; transition: 0.3s ease; }
+        .mossi-card:hover { border-color: var(--accent); transform: translateY(-10px); }
         
-        /* THE IMAGE FIX: White background and contained sizing */
+        /* SURGICAL IMAGE FIX: White background, contained, no stretching */
         .product-img { 
             width: 100%; 
-            height: 250px; 
+            height: 320px; 
             object-fit: contain; 
             background: #ffffff; 
             border-radius: 8px; 
             margin-bottom: 20px; 
             display: block;
-            padding: 10px;
+            padding: 20px;
+            box-sizing: border-box;
         }
         
         .nav-back { position: fixed; top: 30px; left: 5%; color: var(--accent); text-decoration: none; font-weight: 700; z-index: 1000; background: rgba(0,0,0,0.8); padding: 10px 20px; border: 1px solid var(--accent); }
         
-        h2, h3 { font-family: 'Playfair Display'; color: #fff; margin-top: 5px; }
+        h2, h3 { font-family: 'Playfair Display'; color: #fff; margin: 10px 0; }
         .gold-label { color: var(--accent); font-family: 'Cinzel'; font-size: 14px; letter-spacing: 2px; display: block; margin-bottom: 10px; }
 
-        @media (max-width: 1100px) { .mossi-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 768px) { .mossi-grid, .recovery-split { grid-template-columns: 1fr !important; } }
+        @media (max-width: 900px) { .mossi-grid, .recovery-split { grid-template-columns: 1fr !important; } }
     </style>
 </head>
 <body>
@@ -49,7 +48,7 @@
     <header class="hero">
         <div>
             <span class="gold-label">Healing & Results</span>
-            <h1 style="font-family:'Playfair Display'; font-size:45px; margin:0;">Clinical Aftercare</h1>
+            <h1 style="font-family:'Playfair Display'; font-size:45px; margin:0;">Clinical Protocols</h1>
         </div>
     </header>
 
@@ -59,39 +58,33 @@
                 <div>
                     <span class="gold-label">Phase 1: Day 1-10</span>
                     <h2>The Recovery Suite</h2>
-                    <p>Designed for the "Golden Window" of healing. These products ensure the Sapphire incisions remain sterile and the grafts are hydrated.</p>
+                    <p>Immediate post-op care. This suite contains the essential Mossi London Repair Foam and Shampoo needed to protect your new grafts during the critical first week.</p>
                     <ul style="list-style: none; padding: 0;">
-                        <li>✔ <b>ProSkin Foam:</b> Softens scabs without touching the skin.</li>
-                        <li>✔ <b>Repair Shampoo:</b> Neutralizes pH levels.</li>
-                        <li>✔ <b>Travel Case:</b> Hospital-grade transport.</li>
+                        <li>✔ <b>Repair Foam:</b> Cleanses without physical contact.</li>
+                        <li>✔ <b>Clinical Shampoo:</b> Balances scalp micro-flora.</li>
+                        <li>✔ <b>Surgical Bag:</b> Keeps all medical supplies sterile.</li>
                     </ul>
                 </div>
-                <img src="https://www.themossi.eu/cdn/shop/files/themossi-london-after-hair-transplant-repair-set-proskin-foam-shampoo.jpg" class="product-img" alt="Recovery Set">
+                <img src="https://www.themossi.eu/cdn/shop/files/themossi-london-after-hair-transplant-repair-set-proskin-foam-shampoo.jpg" class="product-img" alt="Mossi Repair Set">
             </div>
         </div>
 
         <div style="text-align: center; margin-top: 80px;">
-            <span class="gold-label">Phase 2: Growth Protocols</span>
-            <h2>Long-Term Success Kits</h2>
+            <span class="gold-label">Phase 2: Follicle Anchoring</span>
+            <h2>Long-Term Growth Kits</h2>
         </div>
 
         <div class="mossi-grid">
             <div class="mossi-card">
-                <img src="https://www.themossi.eu/cdn/shop/files/the-mossi-london-2-months-set.jpg" class="product-img" alt="Mossi 2 Month Kit">
-                <h3>2-Month Set</h3>
-                <p>Nutritional and topical support to anchor follicles and trigger blood flow.</p>
+                <img src="https://venzo.care/wp-content/uploads/2023/10/the-mossi-london-2-months-flacon-plus-hair-set.jpg" class="product-img" alt="Mossi 2 Month Kit">
+                <h3>2-Month Intensive Set</h3>
+                <p>The "Flacon Plus" system designed to anchor follicles and stop shock loss in the first 60 days.</p>
             </div>
 
             <div class="mossi-card">
                 <img src="https://www.themossi.eu/cdn/shop/files/the-mossi-london-6-months-kit.jpg" class="product-img" alt="Mossi 6 Month Kit">
                 <h3>6-Month Full Kit</h3>
-                <p>The total protocol for maximum density and permanent hair thickness.</p>
-            </div>
-
-            <div class="mossi-card">
-                <img src="https://www.themossi.eu/cdn/shop/files/the-mossi-london-6-months-flacon-set.jpg" class="product-img" alt="Flacon Set">
-                <h3>Serum Flacon Plus</h3>
-                <p>Intensive Procapil treatment for localized thinning and crown repair.</p>
+                <p>The total clinical protocol for maximum density, hair thickness, and permanent graft health.</p>
             </div>
         </div>
     </section>
