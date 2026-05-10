@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRP & Stem Cell | TurkMed Nairobi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { --primary: #04080f; --accent: #c5a059; --clinical: #0d1b2a; --text: #e2e8f0; }
+        body { font-family: 'Inter', sans-serif; background: var(--primary); color: var(--text); margin: 0; line-height: 1.8; }
+        
+        .nav-back { position: fixed; top: 30px; left: 5%; z-index: 1000; color: var(--accent); text-decoration: none; font-family: 'Cinzel'; font-weight: 700; background: rgba(0,0,0,0.8); padding: 12px 25px; border: 1px solid var(--accent); backdrop-filter: blur(10px); }
+
+        /* Page 1 - Clinical Hero */
+        .hero { height: 100vh; background: linear-gradient(rgba(4,8,15,0.9), rgba(4,8,15,0.7)), url('https://images.unsplash.com/photo-1579152276502-545a248a6a49?auto=format&fit=crop&q=80&w=2000'); background-size: cover; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display'; font-size: clamp(40px, 8vw, 80px); }
+
+        /* Page 2 - Science Detail */
+        .section { padding: 120px 10%; }
+        .clinical-card { background: var(--clinical); padding: 60px; border-radius: 4px; box-shadow: 0 30px 60px rgba(0,0,0,0.5); display: flex; gap: 50px; align-items: center; }
+        
+        /* Page 3 - Benefits Grid */
+        .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 50px; }
+        .b-item { padding: 30px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .b-item:hover { border-color: var(--accent); background: rgba(197,160,89,0.05); }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="nav-back">← CLINIC ENTRANCE</a>
+
+    <header class="hero">
+        <div>
+            <span style="color:var(--accent); font-family:'Cinzel'; letter-spacing:5px;">Regenerative Medicine</span>
+            <h1>Stem Cell <br>Bio-Stimulation</h1>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="clinical-card">
+            <div style="flex:1">
+                <h2 style="font-family:'Playfair Display'; font-size: 40px;">Harnessing Your Own Biology</h2>
+                <p>Platelet-Rich Plasma (PRP) is not just a treatment; it is a bio-catalyst. By concentrating the growth factors in your own blood up to 10x, we can "wake up" follicles that have entered the dormant (resting) phase.</p>
+                <div class="benefits-grid">
+                    <div class="b-item">
+                        <h4 style="color:var(--accent)">99% Graft Survival</h4>
+                        <p>When paired with Sapphire FUE, PRP ensures maximum nutrition for new grafts.</p>
+                    </div>
+                    <div class="b-item">
+                        <h4 style="color:var(--accent)">Thicker Diameter</h4>
+                        <p>Increases the physical thickness of existing hair strands.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="flex:1">
+                 <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" style="width:100%; border-radius:10px;" alt="Medical Tech">
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="text-align: center; background: #020408;">
+        <h2 style="font-family:'Playfair Display';">Non-Surgical Recovery</h2>
+        <p style="max-width: 800px; margin: 0 auto; color: #94a3b8;">This 45-minute procedure requires zero downtime. It is the gold standard for patients experiencing the early stages of thinning or those wanting to protect their donor area health.</p>
+        <div style="margin-top: 50px;">
+            <a href="https://wa.me/254726618187" style="background: var(--accent); color:#000; padding: 20px 40px; text-decoration:none; font-weight:700; border-radius:4px;">BOOK BIO-SESSION</a>
+        </div>
+    </section>
+</body>
+</html>
