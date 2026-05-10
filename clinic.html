@@ -1,30 +1,206 @@
-<section id="aftercare-kits" style="background: #050a12;">
-    <div style="text-align: center; width: 100%; margin-bottom: 60px;">
-        <span class="gold-tag">Healing & Growth</span>
-        <h2>Clinical Mossi London Protocols</h2>
-        <p style="margin: 0 auto; max-width: 800px;">A successful transplant is a partnership between surgery and science. We provide the initial recovery set complimentary, with advanced long-term growth protocols recommended by Dr. Ahmet for maximum density.</p>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Clinic | TurkMed Nairobi Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root { 
+            --primary: #04080f; 
+            --accent: #c5a059; 
+            --text: #e2e8f0; 
+            --glass: rgba(255,255,255,0.03);
+            --navy: #0d1b2a;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--primary); color: var(--text); margin: 0; scroll-behavior: smooth; }
 
-    <div style="background: var(--glass); padding: 40px; border-radius: 15px; border: 1px solid var(--accent); margin-bottom: 40px; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px;">
+        /* Navigation */
+        .nav-fixed { position: fixed; top: 0; width: 100%; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(4,8,15,0.9); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .logo { font-family: 'Cinzel'; font-weight: 700; font-size: 22px; text-decoration: none; color: #fff; }
+        .logo span { color: var(--accent); }
+
+        /* Page Layout */
+        section { min-height: 100vh; display: flex; align-items: center; padding: 100px 10%; position: relative; overflow: hidden; border-bottom: 1px solid rgba(197,160,89,0.1); }
+        h2 { font-family: 'Playfair Display'; font-size: clamp(40px, 6vw, 70px); margin-bottom: 30px; line-height: 1.1; }
+        .gold-tag { color: var(--accent); font-family: 'Cinzel'; letter-spacing: 5px; font-size: 14px; display: block; margin-bottom: 20px; }
+        p { font-size: 18px; color: #94a3b8; max-width: 700px; line-height: 1.8; }
+
+        /* CHAPTER 1: HERO - THE SANCTUARY */
+        #hero { background: linear-gradient(rgba(4,8,15,0.7), rgba(4,8,15,0.7)), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=2000'); background-size: cover; text-align: center; justify-content: center; flex-direction: column; }
+
+        /* CHAPTER 2: SURGICAL THEATRE */
+        #theatre { background: var(--navy); }
+        .split-grid { 
+            display: grid; 
+            grid-template-columns: 1.2fr 0.8fr; 
+            gap: 60px; 
+            align-items: center; 
+            width: 100%;
+        }
+        .theatre-img { 
+            width: 100%; 
+            height: 450px; 
+            object-fit: cover; 
+            border-radius: 15px; 
+            border: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        /* CHAPTER 3: DR. AHMET'S OFFICE */
+        #consultation { background: #000; }
+
+        /* CHAPTER 4: VIP RECOVERY WING */
+        #recovery { background: linear-gradient(to right, var(--primary), transparent), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000'); background-size: cover; background-position: center; }
+
+        /* CHAPTER 5: TECHNOLOGY LAB */
+        #lab { background: var(--navy); }
+
+        /* CHAPTER 6: LOCATION - VALLEY VIEW */
+        #location { background: #020408; }
+
+        /* CHAPTER 7: TURKISH HERITAGE */
+        #heritage { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&q=80&w=2000'); background-size: cover; background-attachment: fixed; }
+
+        /* CHAPTER 8: CALL TO ACTION */
+        #cta { height: 70vh; background: var(--accent); color: #000; text-align: center; justify-content: center; flex-direction: column; }
+        #cta h2, #cta p { color: #000; }
+        .btn-black { background: #000; color: #fff; padding: 20px 50px; text-decoration: none; font-weight: 800; border-radius: 4px; transition: 0.3s; }
+        .btn-black:hover { transform: scale(1.1); }
+
+        /* Elements */
+        .stat-box { display: flex; gap: 40px; margin-top: 50px; }
+        .stat-item h4 { color: var(--accent); font-size: 35px; margin: 0; }
+
+        @media (max-width: 900px) { .split-grid { grid-template-columns: 1fr; } section { padding: 80px 5%; } }
+
+        /* Aftercare Kit Styling */
+        .kit-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--accent);
+            font-size: 24px;
+            margin-top: 15px;
+        }
+
+        .kit-card p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #94a3b8;
+        }
+
+        .kit-card:hover {
+            border-color: var(--accent) !important;
+            transform: translateY(-10px);
+            transition: 0.4s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-fixed">
+        <a href="index.html" class="logo">TURK<span>MED</span></a>
+        <a href="index.html" style="color:var(--accent); text-decoration:none; font-weight:700;">← BACK</a>
+    </nav>
+
+    <section id="hero">
+        <span class="gold-tag">Est. 2024</span>
+        <h1>The Nairobi Sanctuary</h1>
+        <p>A fusion of Turkish surgical precision and African warmth. TurkMed is not just a clinic; it is a world-class center for hair restoration and regenerative medicine.</p>
+        <div class="stat-box">
+            <div class="stat-item"><h4>12+</h4><p>Years Turkish Experience</p></div>
+            <div class="stat-item"><h4>100%</h4><p>Certified Surgeons</p></div>
+        </div>
+    </section>
+
+    <section id="theatre">
+        <div class="split-grid">
+            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=1000" class="theatre-img" alt="Surgical Room">
+            <div>
+                <span class="gold-tag">Sterility & Tech</span>
+                <h2>Hospital-Grade Standard</h2>
+                <p>Our theatres are equipped with HEPA-filtration systems and the latest Sapphire micro-instrumentation. Unlike small offices, we provide a true surgical environment that exceeds international hygiene protocols.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="consultation">
+        <div class="split-grid">
+            <div>
+                <span class="gold-tag">Clinical Leadership</span>
+                <h2>Dr. Ahmet's Private Suite</h2>
+                <p>Every journey begins with a microscopic scalp analysis. Dr. Ahmet Başkaya uses AI-driven density mapping to plan your hairline, ensuring your donor area is preserved for life.</p>
+            </div>
+            <img src="./dr ahmetr.jpeg" class="theatre-img" alt="Consultation">
+        </div>
+    </section>
+
+    <section id="recovery">
         <div>
-            <span class="gold-tag" style="letter-spacing: 2px;">Included in Package</span>
-            <h3 style="font-family: 'Cinzel'; color: #fff;">Complimentary Recovery Suite</h3>
-            <p>Every TurkMed patient receives the Mossi London Shampoo and ProSkin Foam for the critical 10-day post-op washing phase. This ensures graft integrity and sterile healing at no extra cost.</p>
+            <span class="gold-tag">5-Star Hospitality</span>
+            <h2>Luxury Private Recovery</h2>
+            <p>Our 2nd-floor wing at Valley View is designed for privacy. Post-op, you will relax in a VIP suite with a custom medical menu, high-speed Wi-Fi, and a dedicated nurse-concierge.</p>
         </div>
-        <img src="./The Mossi London - Hair Loss Shampoo + Washing Foam.jpg" alt="Complimentary Set" class="theatre-img" style="height: 300px; object-fit: contain; background: #fff; padding: 15px;">
-    </div>
+    </section>
 
-    <div class="split-grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
-        <div class="kit-card" style="background: var(--glass); padding: 30px; border-radius: 15px; border: 1px solid rgba(197,160,89,0.2); text-align: center;">
-            <img src="./mossi london kit 2 months.webp" alt="Mossi 2 Month Kit" class="theatre-img" style="height: 250px; width: 100%; object-fit: contain; background: #fff; margin-bottom: 20px; padding: 10px;">
-            <h3>2-Month Intensive Kit</h3>
-            <p>The "Flacon Plus" system. Designed to secure graft anchoring and prevent shock loss during the first 60 days.</p>
+    <section id="lab">
+        <div class="split-grid">
+            <div>
+                <span class="gold-tag">Regeneration</span>
+                <h2>In-House Bio-Stem Cell Lab</h2>
+                <p>We process all PRP and Stem Cell treatments in-house using high-speed centrifugation. This ensures that the growth factors injected into your scalp are at peak potency for graft survival.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" class="theatre-img" alt="Lab">
+        </div>
+    </section>
+
+    <section id="location">
+        <div class="split-grid">
+            <div>
+                <span class="gold-tag">Valley View Office Park</span>
+                <h2>The Heart of Parklands</h2>
+                <p>Located in Nairobi's premier business district, our clinic offers 24/7 security, ample parking, and a peaceful environment away from the city noise, ideal for surgical recovery.</p>
+            </div>
+            <img src="./valley-view-building.jpg" class="theatre-img" alt="Building">
+        </div>
+    </section>
+
+    <section id="heritage">
+        <div style="text-align: center; width: 100%;">
+            <span class="gold-tag">Istanbul to Nairobi</span>
+            <h2>Global Standards, Local Care</h2>
+            <p style="margin: 0 auto;">We bring the protocols from Istanbul's finest hospitals directly to Nairobi. Every instrument, from the Sapphire blades to the post-op shampoos, is imported from Turkey.</p>
+        </div>
+    </section>
+
+    <section id="aftercare-kits" style="background: #050a12;">
+        <div style="text-align: center; width: 100%; margin-bottom: 60px;">
+            <span class="gold-tag">Healing & Growth</span>
+            <h2>Premium Mossi London Protocols</h2>
+            <p style="margin: 0 auto;">Your surgery is only 50% of the journey. The rest is Mossi London. We provide specialized kits designed to nourish transplanted follicles and accelerate scalp recovery.</p>
         </div>
 
-        <div class="kit-card" style="background: var(--glass); padding: 30px; border-radius: 15px; border: 1px solid rgba(197,160,89,0.2); text-align: center;">
-            <img src="./mossi london kit 6 months.webp" alt="Mossi 6 Month Kit" class="theatre-img" style="height: 250px; width: 100%; object-fit: contain; background: #fff; margin-bottom: 20px; padding: 10px;">
-            <h3>6-Month Full Recovery</h3>
-            <p>The gold-standard protocol for patients seeking maximum hair thickness and long-term follicular health.</p>
+        <div class="split-grid" style="grid-template-columns: 1fr 1fr; gap: 40px;">
+            <div class="kit-card" style="background: var(--glass); padding: 30px; border-radius: 15px; border: 1px solid rgba(197,160,89,0.2);">
+                <img src="./mossi london kit 2 months.webp" alt="Mossi 2 Month Kit" class="theatre-img" style="height: 300px; margin-bottom: 20px; object-fit: contain; background: #fff; padding: 20px;">
+                <h3>2-Month Intensive Kit</h3>
+                <p>The essential starter kit. Includes Procapil-infused shampoo, ozonized oil, and vitamins to secure the grafts during the critical first 60 days.</p>
+            </div>
+
+            <div class="kit-card" style="background: var(--glass); padding: 30px; border-radius: 15px; border: 1px solid rgba(197,160,89,0.2);">
+                <img src="./mossi london kit 6 months.webp" alt="Mossi 6 Month Kit" class="theatre-img" style="height: 300px; margin-bottom: 20px; object-fit: contain; background: #fff; padding: 20px;">
+                <h3>6-Month Full Recovery Set</h3>
+                <p>Our gold-standard protocol. A comprehensive supply of serum, hair vitamins, and specialized repair complexes to ensure maximum density and thickness.</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section id="cta">
+        <h2>Experience the Standard</h2>
+        <p>Your transformation begins with a single conversation.</p>
+        <div style="margin-top: 40px;">
+            <a href="https://wa.me/254726618187" class="btn-black">BOOK CONSULTATION</a>
+        </div>
+    </section>
+
+</body>
+</html>
