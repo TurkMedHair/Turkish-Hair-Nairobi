@@ -17,7 +17,7 @@
         /* HERO SECTION */
         .hero { 
             height: 70vh; 
-            background: linear-gradient(rgba(4,8,15,0.9), rgba(4,8,15,0.7)), url('image_ce2b92.png'); 
+            background: linear-gradient(rgba(4,8,15,0.9), rgba(4,8,15,0.7)), url('https://images.unsplash.com/photo-1596711786524-ac15f79564c8?auto=format&fit=crop&q=80&w=2000'); 
             background-size: cover; 
             background-position: center; 
             display: flex; 
@@ -28,11 +28,11 @@
 
         /* GALLERY & CARDS */
         .comparison-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; }
-        .result-card { background: var(--dark-card); border: 1px solid rgba(197,160,89,0.1); padding: 20px; text-align: center; border-radius: 8px; transition: 0.3s; }
-        .result-card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .result-img { width: 100%; height: 450px; object-fit: cover; margin-bottom: 20px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); }
+        .result-card { background: var(--dark-card); border: 1px solid rgba(197,160,89,0.1); padding: 20px; text-align: center; }
+        .result-img { width: 100%; height: 400px; object-fit: cover; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; }
 
         .tech-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; margin-top: 80px; }
+        .choi-pen-graphic { width: 100%; height: auto; border: 1px solid var(--accent); border-radius: 4px; }
 
         /* BUTTONS */
         .nav-back { position: fixed; top: 30px; left: 5%; color: var(--accent); text-decoration: none; font-weight: 700; z-index: 1000; background: rgba(0,0,0,0.8); padding: 10px 20px; border: 1px solid var(--accent); font-family: 'Cinzel'; }
@@ -50,12 +50,49 @@
         <div style="max-width: 600px;">
             <span class="gold-label">The Discrete Revolution</span>
             <h1 style="font-family:'Playfair Display'; font-size:65px; color:#fff; margin:0; line-height:1.1;">DHI Unshaven</h1>
-            <p style="font-size:18px; opacity:0.8; margin: 30px 0;">The highest evolution of hair transplants. We implant hair directly into the scalp without shaving a single inch of your existing hair.</p>
+            <p style="font-size:18px; opacity:0.8; margin: 30px 0;">A premier choice for female clients and busy professionals. DHI Unshaven allows us to implant follicles without shaving the recipient area, offering maximum density with zero visible downtime.</p>
             <span style="font-family:'Cinzel'; color:var(--accent); font-weight:700; letter-spacing:2px; font-size:14px; border-bottom:1px solid var(--accent); padding-bottom:5px;">NO SHAVING. NO VISIBLE SCARS. NO DOWNTIME.</span>
         </div>
     </header>
 
-    <section class="section" id="male-results">
+    <section class="section" id="choi-pen">
+        <div class="tech-grid">
+            <div>
+                <span class="gold-label">Phase 1: The Choi Pen</span>
+                <h2>Choi Implanter Pen Technology</h2>
+                <p>The core of the DHI (Direct Hair Implant) process is the specialized Choi Implanter Pen. It allows the surgeon to control the angle, depth, and direction of each graft with absolute precision, matching your natural growth pattern.</p>
+                <ul style="list-style: none; padding: 0; margin-top: 40px;">
+                    <li style="margin-bottom: 20px;">• <b>Simultaneous Action:</b> The skin is opened and the graft placed in a single movement.</li>
+                    <li style="margin-bottom: 20px;">• <b>Minimized Trauma:</b> No pre-made slits mean faster healing and near-zero bleeding.</li>
+                    <li style="margin-bottom: 20px;">• <b>Maximum Density:</b> We can safely implant grafts closer together.</li>
+                </ul>
+            </div>
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800" class="choi-pen-graphic" alt="Choi Pen Technology">
+        </div>
+    </section>
+
+    <section class="section" id="female-clients">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="gold-label">Female Discrete Restoration</span>
+            <h2>Premium Female Hairlines</h2>
+            <p style="max-width: 650px; margin: 0 auto; opacity: 0.8;">The DHI Unshaven method is specifically adapted for female clients facing thinning or a high hairline. We can artistically restore a feminine hairline while keeping your existing hair long, making the procedure entirely private.</p>
+        </div>
+
+        <div class="comparison-gallery">
+            <div class="result-card">
+                <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&q=80&w=800" class="result-img" alt="Female Client Result A">
+                <h3>Female Client Case A</h3>
+                <p>Focus on hairline lowering and temple thickening. Procedure completely discrete.</p>
+            </div>
+            <div class="result-card">
+                <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&q=80&w=800" class="result-img" alt="Female Client Result B">
+                <h3>Female Client Case B</h3>
+                <p>Address crown thinning without cutting long hair, maintaining the standard female aesthetic.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="male-clients">
         <div style="text-align: center; margin-bottom: 60px;">
             <span class="gold-label">Male Clinical Excellence</span>
             <h2>Artistry & Survival</h2>
@@ -63,14 +100,14 @@
 
         <div class="comparison-gallery">
             <div class="result-card">
-                <img src="https://images.unsplash.com/photo-1503910321442-7fce89d4d896?auto=format&fit=crop&q=80&w=800" class="result-img" alt="Male Hairline Result">
+                <img src="https://images.unsplash.com/photo-1503910321442-7fce89d4d896?auto=format&fit=crop&q=80&w=800" class="result-img" alt="Male Client Result A">
                 <h3>Male Client Case A</h3>
-                <p>Nearly 100% graft survival rate. Choi Pen technology ensures a natural, sharp hairline.</p>
+                <p>100% graft survival rate. Choi Pen technology ensures a natural, sharp hairline.</p>
             </div>
             <div class="result-card">
-                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800" class="result-img" alt="Male Density Result">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=800" class="result-img" alt="Male Client Result B">
                 <h3>Male Client Case B</h3>
-                <p>Simultaneous creation and placement for immediate anchoring and maximum density.</p>
+                <p>Simultaneous creation and placement for immediate anchoring.</p>
             </div>
         </div>
     </section>
@@ -82,8 +119,8 @@
                 <p>Unlike other methods where we create holes and then plant later, DHI uses the Choi Implanter Pen to open the skin and place the follicle at the exact same moment.</p>
             </div>
             <div>
-                <h3>2. 100% Survival Rate</h3>
-                <p>Follicles spend less than 3 minutes outside the body. This hyper-speed transfer ensures the root never "dies," leading to nearly 100% growth success.</p>
+                <h3>2. Hyper-Speed Transfer</h3>
+                <p>Follicles spend less than 3 minutes outside the body. This hyper-speed transfer ensures the root never "dies," leading to a consistent 100% growth success rate.</p>
             </div>
         </div>
         <div style="text-align: center;">
