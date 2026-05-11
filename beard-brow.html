@@ -33,6 +33,46 @@
         .dark-bg { background: #0a0a0a; border-top: 1px solid rgba(197,160,89,0.2); }
         .process-step { text-align: center; padding: 40px; }
         .process-step i { font-size: 40px; color: var(--accent); margin-bottom: 20px; }
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 968px) {
+            .nav-back { 
+                top: 20px; 
+                left: 20px; 
+                padding: 10px 15px; 
+                font-size: 12px; 
+            }
+            
+            .hero { 
+                background-attachment: scroll; /* Smoother on mobile */
+            }
+
+            .hero h1 { 
+                font-size: 45px; 
+                padding: 0 5%; 
+            }
+
+            .section { 
+                padding: 60px 8%; 
+            }
+
+            .grid { 
+                grid-template-columns: 1fr !important; /* Stack columns vertically */
+                gap: 40px; 
+                text-align: center;
+            }
+
+            .img-wrap::after { 
+                display: none; /* Simplify UI for small screens */
+            }
+
+            .feature-box { 
+                text-align: left; 
+            }
+
+            .process-step {
+                padding: 20px 0;
+            }
+        }
     </style>
 </head>
 <body>
