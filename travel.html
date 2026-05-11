@@ -5,40 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Tourism | TurkMed Nairobi</title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #04080f; --accent: #c5a059; }
-        body { font-family: 'Inter', sans-serif; background: var(--primary); color: #e2e8f0; margin: 0; line-height: 1.8; }
-        .hero { height: 70vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1549144464-325345719992?auto=format&fit=crop&q=80&w=2000'); background-size: cover; display: flex; align-items: center; justify-content: center; text-align: center; }
+        :root { --primary: #04080f; --accent: #c5a059; --dark-card: #0d1b2a; }
+        body { font-family: 'Inter', sans-serif; background: var(--primary); color: #e2e8f0; margin: 0; line-height: 1.8; overflow-x: hidden; }
+        
+        /* Navigation back to root */
+        .nav-back { position: fixed; top: 30px; left: 5%; color: var(--accent); text-decoration: none; font-weight: 700; z-index: 1000; background: rgba(0,0,0,0.8); padding: 12px 25px; border: 1px solid var(--accent); font-family: 'Cinzel'; backdrop-filter: blur(10px); transition: 0.3s; }
+        .nav-back:hover { background: var(--accent); color: #000; }
+
+        .hero { height: 60vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1549144464-325345719992?auto=format&fit=crop&q=80&w=2000'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; }
+        
         .section { padding: 100px 10%; }
-        .travel-grid { display: flex; gap: 50px; align-items: center; }
-        .nav-back { position: fixed; top: 30px; left: 5%; color: var(--accent); text-decoration: none; font-weight: 700; z-index: 1000; background: rgba(0,0,0,0.8); padding: 10px 20px; border: 1px solid var(--accent); }
+        
+        .travel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        
+        .info-box { background: var(--dark-card); padding: 40px; border-left: 4px solid var(--accent); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 60px; }
+        .feature-card { background: rgba(255,255,255,0.03); padding: 30px; border: 1px solid rgba(197,160,89,0.1); border-radius: 4px; transition: 0.3s; }
+        .feature-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .feature-card i { color: var(--accent); font-size: 30px; margin-bottom: 20px; }
+
+        .cta-btn { display: inline-block; background: var(--accent); color: #000; padding: 18px 35px; text-decoration: none; font-weight: 700; border-radius: 4px; font-family: 'Cinzel'; margin-top: 30px; transition: 0.3s; }
+        .cta-btn:hover { background: #fff; transform: scale(1.05); }
+        
+        /* Mobile Adjustments */
+        @media (max-width: 968px) {
+            .nav-back { top: 20px; left: 20px; padding: 10px 15px; font-size: 12px; }
+            .hero { height: 50vh; }
+            .hero h1 { font-size: 40px !important; }
+            .section { padding: 60px 5%; }
+            .travel-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+            .info-box { text-align: left; padding: 25px; }
+            .feature-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <a href="index.html" class="nav-back">← BACK</a>
+
+    <a href="/" class="nav-back">← CLINIC ENTRANCE</a>
+
     <header class="hero">
-        <div>
-            <span style="color:var(--accent); font-family:'Cinzel'; letter-spacing:5px;">International Care</span>
-            <h1 style="font-family:'Playfair Display'; font-size:60px;">Travel Concierge</h1>
+        <div style="padding: 0 20px;">
+            <span style="color:var(--accent); font-family:'Cinzel'; letter-spacing:5px; display: block; margin-bottom: 15px;">International Care</span>
+            <h1 style="font-family:'Playfair Display'; font-size:70px; margin: 0;">Travel Concierge</h1>
+            <p style="max-width: 600px; margin: 20px auto; opacity: 0.9;">Seamless medical tourism for our global patients visiting Nairobi.</p>
         </div>
     </header>
 
     <section class="section">
         <div class="travel-grid">
             <div style="flex:1">
-                <h2 style="font-family:'Playfair Display';">Welcome to Nairobi</h2>
-                <p>For our patients traveling from abroad or other parts of Kenya, we offer a seamless VIP experience. Nairobi is the hub of East Africa, and we ensure your stay is as comfortable as your surgery.</p>
-                <div style="background: #0d1b2a; padding: 30px; border-left: 4px solid var(--accent);">
-                    <h4 style="margin-top:0">Airport Transfers</h4>
-                    <p>Private pickup from JKIA directly to your hotel or our clinic at Valley View Office Park.</p>
-                    <h4 style="margin-top:20px">Hotel Partners</h4>
-                    <p>Preferred rates at 5-star hotels in the Parklands and Westlands areas, just minutes from the clinic.</p>
+                <h2 style="font-family:'Playfair Display'; font-size: 42px; margin-bottom: 25px;">Welcome to Nairobi</h2>
+                <p>For patients traveling from abroad or across Kenya, TurkMed provides a <b>Gold-Standard VIP experience</b>. We understand that medical travel requires precision timing and absolute comfort.</p>
+                
+                <div class="info-box">
+                    <h4 style="margin-top:0; color: var(--accent); font-family: 'Cinzel';">The TurkMed Itinerary</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> <b>Day 1:</b> VIP Pickup & Consultation</li>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> <b>Day 2:</b> Procedure Day (6-8 hours)</li>
+                        <li style="margin-bottom: 15px;"><i class="fas fa-check" style="color: var(--accent); margin-right: 10px;"></i> <b>Day 3:</b> First Wash & Aftercare Training</li>
+                    </ul>
                 </div>
             </div>
             <div style="flex:1">
-                <img src="valley-view-building.jpg" style="width:100%; border: 1px solid var(--accent);" alt="TurkMed Office">
+                <img src="valley-view-building.jpg" style="width:100%; border-radius: 4px; box-shadow: -15px 15px 0 var(--accent);" alt="TurkMed Office">
             </div>
         </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fas fa-plane-arrival"></i>
+                <h3 style="font-family: 'Cinzel';">Airport Transfers</h3>
+                <p style="font-size: 14px; opacity: 0.8;">Our private driver meets you at JKIA (Jomo Kenyatta International Airport) for a secure, direct transfer to your hotel or the clinic.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-hotel"></i>
+                <h3 style="font-family: 'Cinzel';">Hotel Partners</h3>
+                <p style="font-size: 14px; opacity: 0.8;">Enjoy discounted rates at our partner 5-star hotels in Westlands and Parklands, ensuring you stay within 5-10 minutes of the clinic.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-language"></i>
+                <h3 style="font-family: 'Cinzel';">Global Support</h3>
+                <p style="font-size: 14px; opacity: 0.8;">Our concierge team assists with e-visa applications, local SIM cards, and safe currency exchange upon arrival.</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 80px; background: #020408; padding: 60px 20px; border: 1px solid rgba(197,160,89,0.2);">
+            <h2 style="font-family: 'Playfair Display';">Begin Your Journey</h2>
+            <p style="max-width: 600px; margin: 20px auto; opacity: 0.8;">Our international patient coordinator is available 24/7 to help you book your flights and finalize your surgery dates.</p>
+            <a href="https://wa.me/254726618187" class="cta-btn">
+                <i class="fab fa-whatsapp" style="margin-right: 10px;"></i> CHAT WITH CONCIERGE
+            </a>
+        </div>
     </section>
+
 </body>
 </html>
