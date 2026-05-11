@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root { --primary: #04080f; --accent: #c5a059; --clinical: #0d1b2a; --text: #e2e8f0; }
-        body { font-family: 'Inter', sans-serif; background: var(--primary); color: var(--text); margin: 0; line-height: 1.8; }
+        body { font-family: 'Inter', sans-serif; background: var(--primary); color: var(--text); margin: 0; line-height: 1.8; overflow-x: hidden; }
         
-        .nav-back { position: fixed; top: 30px; left: 5%; z-index: 1000; color: var(--accent); text-decoration: none; font-family: 'Cinzel'; font-weight: 700; background: rgba(0,0,0,0.8); padding: 12px 25px; border: 1px solid var(--accent); backdrop-filter: blur(10px); }
+        /* Updated to land on root domain co.ke */
+        .nav-back { position: fixed; top: 30px; left: 5%; z-index: 1000; color: var(--accent); text-decoration: none; font-family: 'Cinzel'; font-weight: 700; background: rgba(0,0,0,0.8); padding: 12px 25px; border: 1px solid var(--accent); backdrop-filter: blur(10px); transition: 0.3s; }
+        .nav-back:hover { background: var(--accent); color: #000; }
 
         /* Page 1 - Clinical Hero */
-        .hero { height: 100vh; background: linear-gradient(rgba(4,8,15,0.9), rgba(4,8,15,0.7)), url('https://images.unsplash.com/photo-1579152276502-545a248a6a49?auto=format&fit=crop&q=80&w=2000'); background-size: cover; display: flex; align-items: center; justify-content: center; text-align: center; }
-        .hero h1 { font-family: 'Playfair Display'; font-size: clamp(40px, 8vw, 80px); }
+        .hero { height: 100vh; background: linear-gradient(rgba(4,8,15,0.9), rgba(4,8,15,0.7)), url('https://images.unsplash.com/photo-1579152276502-545a248a6a49?auto=format&fit=crop&q=80&w=2000'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .hero h1 { font-family: 'Playfair Display'; font-size: clamp(40px, 8vw, 80px); margin: 0; }
 
         /* Page 2 - Science Detail */
         .section { padding: 120px 10%; }
@@ -24,10 +26,20 @@
         .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 50px; }
         .b-item { padding: 30px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
         .b-item:hover { border-color: var(--accent); background: rgba(197,160,89,0.05); }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 968px) {
+            .nav-back { top: 20px; left: 20px; padding: 10px 15px; font-size: 12px; }
+            .section { padding: 60px 5%; }
+            .clinical-card { flex-direction: column; padding: 40px 20px; gap: 30px; text-align: center; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 45px; padding: 0 5%; }
+            .hero { height: 70vh; } /* Adjust hero height for mobile aspect ratios */
+        }
     </style>
 </head>
 <body>
-    <a href="index.html" class="nav-back">← CLINIC ENTRANCE</a>
+    <a href="/" class="nav-back">← CLINIC ENTRANCE</a>
 
     <header class="hero">
         <div>
@@ -62,7 +74,7 @@
         <h2 style="font-family:'Playfair Display';">Non-Surgical Recovery</h2>
         <p style="max-width: 800px; margin: 0 auto; color: #94a3b8;">This 45-minute procedure requires zero downtime. It is the gold standard for patients experiencing the early stages of thinning or those wanting to protect their donor area health.</p>
         <div style="margin-top: 50px;">
-            <a href="https://wa.me/254726618187" style="background: var(--accent); color:#000; padding: 20px 40px; text-decoration:none; font-weight:700; border-radius:4px;">BOOK BIO-SESSION</a>
+            <a href="https://wa.me/254726618187" style="background: var(--accent); color:#000; padding: 20px 40px; text-decoration:none; font-weight:700; border-radius:4px; display: inline-block;">BOOK BIO-SESSION</a>
         </div>
     </section>
 </body>
