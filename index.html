@@ -53,33 +53,64 @@
         .reveal { opacity: 0; transform: translateY(30px); transition: var(--transition-hq); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* 
+       /* 
            ================================================
-           3. NAVIGATION (Este-Inspired Glassmorphism)
+           3. NAVIGATION (Updated for Single Line Layout)
            ================================================
         */
         .header-main {
             position: fixed; top: 0; width: 100%; z-index: 9999;
-            background: rgba(4, 8, 15, 0.85); backdrop-filter: blur(15px);
+            background: rgba(4, 8, 15, 0.95); backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border-light);
-            padding: 15px 0;
+            padding: 20px 0;
         }
-        .nav-container { max-width: 1600px; margin: 0 auto; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; }
-        .logo-box { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .logo-box img { height: 45px; }
-        .logo-text { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; color: #fff; letter-spacing: 2px; }
+        .nav-container { 
+            max-width: 1600px; 
+            margin: 0 auto; 
+            padding: 0 3%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .logo-text { 
+            font-family: 'Cinzel', serif; 
+            font-size: 22px; 
+            font-weight: 700; 
+            color: #fff; 
+            letter-spacing: 2px; 
+            text-decoration: none;
+            flex-shrink: 0;
+        }
         .logo-text span { color: var(--accent-gold); }
         
-        .nav-menu { display: flex; list-style: none; gap: 40px; }
+        .nav-menu { 
+            display: flex; 
+            list-style: none; 
+            gap: 20px; /* Reduced gap to keep it in one line */
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-menu li { white-space: nowrap; } /* Prevents text wrapping */
+
         .nav-menu a { 
-            text-decoration: none; color: var(--text-main); font-size: 13px; font-weight: 700; 
-            text-transform: uppercase; letter-spacing: 1px; transition: var(--transition-hq);
+            text-decoration: none; 
+            color: #fff; 
+            font-size: 11px; /* Slightly smaller to match image_8507e4.png */
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 1.5px; 
+            transition: var(--transition-hq);
         }
         .nav-menu a:hover { color: var(--accent-gold); }
+
+        /* Gold Button Style for Free Scalp Analysis */
         .nav-cta { 
-            background: linear-gradient(45deg, var(--accent-gold), #e6c27a); 
-            color: #000 !important; padding: 12px 30px; border-radius: 4px; 
-            box-shadow: 0 10px 20px rgba(197, 160, 89, 0.2); 
+            background: var(--accent-gold) !important; 
+            color: #000 !important; 
+            padding: 10px 18px !important; 
+            border-radius: 2px; 
+            font-size: 11px !important;
         }
 
         /* 
@@ -203,19 +234,17 @@
 <!-- NAVIGATION -->
 <header class="header-main">
     <div class="nav-container">
-       <a href="/" class="logo-box">
-    <div class="logo-text">TURK<span>MED</span></div>
-</a>
-       <ul class="nav-menu">
-    <li><a href="clinic.html">The Clinic</a></li>
-    <li><a href="sapphire-fue.html">Sapphire FUE</a></li>
-    <li><a href="dhi-unshaven.html">DHI Unshaven</a></li>
-    <li><a href="beard-brow.html">Beard & Brow</a></li>
-    <!-- ADD THIS LINE BELOW -->
-    <li><a href="gallery.html" style="color: var(--accent-gold);">Results Gallery</a></li> 
-    <li><a href="prp-stemcell.html">PRP Stem Cell</a></li>
-    <li><a href="https://wa.me/254726618187" class="nav-cta">Free Scalp Analysis</a></li>
-</ul>
+        <a href="index.html" class="logo-text">TURK<span>MED</span></a>
+        
+        <ul class="nav-menu">
+            <li><a href="clinic.html">The Clinic</a></li>
+            <li><a href="sapphire-fue.html">Sapphire FUE</a></li>
+            <li><a href="dhi-unshaven.html">DHI Unshaven</a></li>
+            <li><a href="beard-brow.html">Beard & Brow</a></li>
+            <li><a href="gallery.html" style="color: var(--accent-gold);">Results Gallery</a></li> 
+            <li><a href="prp-stemcell.html">PRP Stem Cell</a></li>
+            <li><a href="https://wa.me/254726618187" class="nav-cta">Free Scalp Analysis</a></li>
+        </ul>
     </div>
 </header>
 
