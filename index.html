@@ -240,13 +240,44 @@
         }
         .wa-float:hover { transform: scale(1.1); }
 
-        /* MOBILE FIXES */
+       /* 
+           ================================================
+           REPLACED MOBILE FIXES (Lines 211-220 approx.)
+           ================================================
+        */
         @media (max-width: 968px) {
+            .header-main { padding: 15px 0; }
+            
+            .nav-container { 
+                flex-direction: column; 
+                gap: 15px; 
+            }
+
+            /* This makes the links from image_766cfe.png visible & swipeable */
+            .nav-menu { 
+                display: flex !important; 
+                gap: 15px; 
+                overflow-x: auto; 
+                width: 100vw;
+                padding: 5px 20px 15px;
+                justify-content: flex-start;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            /* Hide scrollbar for a cleaner look */
+            .nav-menu::-webkit-scrollbar { display: none; }
+
+            .nav-menu li { flex-shrink: 0; }
+
+            .hero-content h1 { 
+                font-size: 42px; 
+                white-space: normal; /* Allows text to stack on phones */
+                letter-spacing: -0.5px;
+            }
+            
             .doc-card { flex-direction: column; }
             .doc-img, .doc-info { width: 100%; }
             .footer-grid { grid-template-columns: 1fr; gap: 40px; }
-            .hero-content h1 { font-size: 60px; }
-            .nav-menu { display: none; }
         }
     </style>
 </head>
