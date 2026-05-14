@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Procedure Results | TurkMed Nairobi</title>
+    <title>Results Gallery | TurkMed Nairobi</title>
     
+    <!-- BRAND FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
             --primary: #04080f;
-            --secondary: #0d1b2a;
             --accent-gold: #c5a059;
             --glass-bg: rgba(255, 255, 255, 0.02);
             --border-light: rgba(255, 255, 255, 0.08);
@@ -19,56 +19,59 @@
             --text-dim: #94a3b8;
         }
 
-        body { font-family: 'Inter', sans-serif; background: var(--primary); color: var(--text-main); margin: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--primary); color: var(--text-main); margin: 0; overflow-x: hidden; }
 
+        /* HEADER */
         .header-main {
             position: fixed; top: 0; width: 100%; z-index: 9999;
             background: rgba(4, 8, 15, 0.85); backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border-light); padding: 15px 0;
         }
-
-        .nav-container { max-width: 1600px; margin: 0 auto; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; }
-        .logo-text { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: 2px; }
+        .nav-container { max-width: 1400px; margin: 0 auto; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; }
+        .logo-text { font-family: 'Cinzel', serif; font-size: 24px; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: 2px; }
         .logo-text span { color: var(--accent-gold); }
 
-        .gallery-hero { padding: 180px 5% 60px; text-align: center; }
-        .gallery-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 8vw, 70px); margin-bottom: 10px; }
-        .gallery-hero p { color: var(--accent-gold); font-family: 'Cinzel', serif; letter-spacing: 4px; font-size: 14px; }
+        /* HERO */
+        .gallery-header { padding: 160px 5% 60px; text-align: center; }
+        .gallery-header h1 { font-family: 'Playfair Display', serif; font-size: 55px; margin-bottom: 10px; }
+        .gallery-header p { color: var(--accent-gold); font-family: 'Cinzel', serif; letter-spacing: 4px; font-size: 14px; }
 
-        .gallery-section { padding: 0 5% 100px; max-width: 1600px; margin: 0 auto; }
-        
-        /* THE DUAL-IMAGE GRID */
-        .procedure-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 50px; }
-
-        .case-study { background: var(--glass-bg); border: 1px solid var(--border-light); border-radius: 4px; overflow: hidden; }
-
-        /* SPLIT IMAGE CONTAINER */
-        .comparison-box { display: flex; height: 500px; position: relative; gap: 2px; background: var(--primary); }
-        .comparison-box .img-half { flex: 1; position: relative; overflow: hidden; }
-        .comparison-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        
-        /* CORRECT LABELS */
-        .label {
-            position: absolute; top: 20px; padding: 8px 15px;
-            font-size: 10px; font-weight: 800; text-transform: uppercase; border-radius: 2px; letter-spacing: 1px;
-            z-index: 10;
+        /* GRID SYSTEM */
+        .gallery-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+            gap: 30px; 
+            padding: 0 5% 100px; 
+            max-width: 1400px; 
+            margin: 0 auto; 
         }
-        .label-post { left: 20px; background: var(--accent-gold); color: #000; }
-        .label-pre { right: 20px; background: rgba(0,0,0,0.8); color: #fff; border: 1px solid var(--border-light); }
 
-        .case-info { padding: 30px; }
-        .case-info h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: #fff; margin-bottom: 10px; }
-        .case-info p { color: var(--text-dim); font-size: 14px; margin: 0; line-height: 1.6; }
+        .result-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: 0.4s ease;
+        }
+        .result-card:hover { border-color: var(--accent-gold); transform: translateY(-5px); }
+        
+        .img-box { width: 100%; position: relative; line-height: 0; }
+        .img-box img { width: 100%; height: auto; }
 
-        .nav-cta { 
-            background: linear-gradient(45deg, var(--accent-gold), #e6c27a); 
-            color: #000 !important; padding: 12px 25px; border-radius: 4px; 
-            text-decoration: none; font-weight: 700; font-size: 12px;
+        .meta { padding: 20px; border-top: 1px solid var(--border-light); }
+        .meta h3 { font-family: 'Cinzel', serif; font-size: 14px; color: var(--accent-gold); margin-bottom: 5px; }
+        .meta p { font-size: 13px; color: var(--text-dim); margin: 0; }
+
+        .tag {
+            position: absolute; top: 15px; right: 15px;
+            background: rgba(0,0,0,0.7); color: #fff;
+            padding: 5px 12px; font-size: 10px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px; border: 1px solid var(--accent-gold);
         }
 
         @media (max-width: 768px) {
-            .procedure-grid { grid-template-columns: 1fr; }
-            .comparison-box { height: 400px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-header h1 { font-size: 38px; }
         }
     </style>
 </head>
@@ -77,63 +80,122 @@
 <header class="header-main">
     <div class="nav-container">
         <a href="index.html" class="logo-text">TURK<span>MED</span></a>
-        <a href="https://wa.me/254726618187" class="nav-cta">WHATSAPP CONSULTATION</a>
+        <a href="index.html" style="color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: 1px;">BACK TO CLINIC</a>
     </div>
 </header>
 
-<section class="gallery-hero">
-    <p>Clinical Excellence</p>
-    <h1>Procedure <span style="color:var(--accent-gold)">Close-Ups</span></h1>
+<section class="gallery-header">
+    <p>Before & After Comparisons</p>
+    <h1>The Result <span style="color:var(--accent-gold)">Archive</span></h1>
 </section>
 
-<main class="gallery-section">
-    <div class="procedure-grid">
-        
-        <!-- CASE 1: FRONTAL -->
-        <div class="case-study">
-            <div class="comparison-box">
-                <!-- Left: Post-Op Image -->
-                <div class="img-half">
-                    <span class="label label-post">Instantly After</span>
-                    <img src="after procedure 2.jpeg">
-                </div>
-                <!-- Right: Before Image (Using your procedure 20 as placeholder for "Before" logic) -->
-                <div class="img-half">
-                    <span class="label label-pre">Before Procedure</span>
-                    <img src="after procedure 20.jpeg">
-                </div>
-            </div>
-            <div class="case-info">
-                <h3>High-Density Frontal Placement</h3>
-                <p>Detailed view of Sapphire FUE graft distribution. Notice the clean, rhythmic placement which ensures natural-looking density once matured.</p>
-            </div>
+<main class="gallery-grid">
+    
+    <!-- FEMALE RESULT (result1.jpg) -->
+    <div class="result-card">
+        <div class="img-box">
+            <span class="tag">Female Case Study</span>
+            <img src="result1.jpg" alt="Female Hairline Restoration">
         </div>
-
-        <!-- CASE 2: CROWN/TOP -->
-        <div class="case-study">
-            <div class="comparison-box">
-                <!-- Left: Post-Op Image -->
-                <div class="img-half">
-                    <span class="label label-post">Minutes After</span>
-                    <img src="after procedure 3.jpeg">
-                </div>
-                <!-- Right: Before Image -->
-                <div class="img-half">
-                    <span class="label label-pre">Before Procedure</span>
-                    <img src="result3.jpeg">
-                </div>
-            </div>
-            <div class="case-info">
-                <h3>Technical Graft Engineering</h3>
-                <p>Surgical view of the recipient area. Our Turkish specialists focus on angle precision to match the natural growth pattern of your hair.</p>
-            </div>
+        <div class="meta">
+            <h3>DHI Unshaven Technique</h3>
+            <p>Restoring frontal density for a natural, feminine hairline.</p>
         </div>
-
     </div>
+
+    <!-- MALE RESULTS (result 2-9) -->
+    <div class="result-card">
+        <div class="img-box">
+            <span class="tag">Male Case Study</span>
+            <img src="result2.jpeg" alt="Male Hair Transplant 2">
+        </div>
+        <div class="meta">
+            <h3>Sapphire FUE Restoration</h3>
+            <p>Crown and mid-scalp density reconstruction.</p>
+        </div>
+    </div>
+
+    <div class="result-card">
+        <div class="img-box">
+            <span class="tag">Male Case Study</span>
+            <img src="result3.jpeg" alt="Male Hair Transplant 3">
+        </div>
+        <div class="meta">
+            <h3>Afro-Textured Precision</h3>
+            <p>Specialized extraction for curved 4C hair follicles.</p>
+        </div>
+    </div>
+
+    <div class="result-card">
+        <div class="img-box">
+            <span class="tag">Male Case Study</span>
+            <img src="result4.jpeg" alt="Male Hair Transplant 4">
+        </div>
+        <div class="meta">
+            <h3>Hairline Receding Correction</h3>
+            <p>Re-establishing the natural frame of the face.</p>
+        </div>
+    </div>
+
+    <div class="result-card">
+        <div class="img-box">
+            <span class="tag">Male Case Study</span>
+            <img src="result5.jpeg" alt="Male Hair Transplant 5">
+        </div>
+        <div class="meta">
+            <h3>High-Density Grafting</h3>
+            <p>Focusing on maximum coverage for thinning areas.</p>
+        </div>
+    </div>
+
+    <div class="result-card">
+        <div class="img-box">
+            <span class="tag">Male Case Study</span>
+            <img src="result6.jpeg" alt="Male Hair Transplant 6">
+        </div>
+        <div class="meta">
+            <h3>Temple & Peak Design</h3>
+            <p>Refining the lateral profiles for a youthful look.</p>
+        </div>
+    </div>
+
+    <div class="result-card">
+        <div class="img-box">
+            <span class="tag">Male Case Study</span>
+            <img src="result7.jpeg" alt="Male Hair Transplant 7">
+        </div>
+        <div class="meta">
+            <h3>Complete Top Restoration</h3>
+            <p>Strategic graft placement across the entire scalp.</p>
+        </div>
+    </div>
+
+    <div class="result-card">
+        <div class="img-box">
+            <span class="tag">Male Case Study</span>
+            <img src="result8.jpeg" alt="Male Hair Transplant 8">
+        </div>
+        <div class="meta">
+            <h3>FUE Precision Work</h3>
+            <p>Seamless blending with existing natural hair.</p>
+        </div>
+    </div>
+
+    <div class="result-card">
+        <div class="img-box">
+            <span class="tag">Male Case Study</span>
+            <img src="result9.jpeg" alt="Male Hair Transplant 9">
+        </div>
+        <div class="meta">
+            <h3>Advanced Stage Recovery</h3>
+            <p>Transformation for significant hair loss patterns.</p>
+        </div>
+    </div>
+
 </main>
 
-<footer style="text-align: center; padding-bottom: 100px;">
-    <a href="index.html" style="color: var(--accent-gold); text-decoration: none; font-family: 'Cinzel'; font-size: 13px; letter-spacing: 2px;">← BACK TO OVERVIEW</a>
+<footer style="text-align: center; padding-bottom: 80px;">
+    <a href="https://wa.me/254726618187" class="nav-cta" style="background: var(--accent-gold); color: #000; padding: 15px 40px; text-decoration: none; font-weight: 800; border-radius: 4px; font-size: 14px;">BOOK YOUR TRANSFORMATION</a>
 </footer>
 
 </body>
