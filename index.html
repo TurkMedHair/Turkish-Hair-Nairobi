@@ -128,16 +128,30 @@
         }
         .hero-overlay { position: absolute; inset: 0; background: radial-gradient(circle, transparent, var(--primary)); }
         
-     .hero-content h1 { 
+     /* Updated Headline for Desktop & Mobile */
+        .hero-content h1 { 
             font-family: 'Playfair Display', serif; 
-            /* Shrinking the clamp values to ensure it fits the width */
             font-size: clamp(38px, 7.5vw, 88px); 
             line-height: 1.1; 
             margin-bottom: 20px; 
             font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: -1.5px; /* Tighter spacing like image_84edf7.png */
-            white-space: nowrap; /* Forces one single line */
+            letter-spacing: -1.5px; 
+            white-space: nowrap; /* Keeps it as one 'sentence' on desktop */
+        }
+
+        /* MOBILE OVERRIDE: Add this below the block above */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                white-space: normal; /* Allows text to wrap on phones */
+                font-size: 45px;      /* Fixed readable size for mobile */
+                letter-spacing: -0.5px;
+                line-height: 1.2;
+            }
+            .nav-cta {
+                padding: 8px 12px !important; /* Smaller button for mobile */
+            }
+        }
         }
         .hero-content .subtitle { 
             color: var(--accent-gold); font-family: 'Cinzel', serif; 
