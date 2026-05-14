@@ -128,9 +128,16 @@
         }
         .hero-overlay { position: absolute; inset: 0; background: radial-gradient(circle, transparent, var(--primary)); }
         
-        .hero-content h1 { 
-            font-family: 'Playfair Display', serif; font-size: clamp(50px, 10vw, 120px); 
-            line-height: 0.9; margin-bottom: 20px; font-weight: 900;
+     .hero-content h1 { 
+            font-family: 'Playfair Display', serif; 
+            /* Shrinking the clamp values to ensure it fits the width */
+            font-size: clamp(38px, 7.5vw, 88px); 
+            line-height: 1.1; 
+            margin-bottom: 20px; 
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1.5px; /* Tighter spacing like image_84edf7.png */
+            white-space: nowrap; /* Forces one single line */
         }
         .hero-content .subtitle { 
             color: var(--accent-gold); font-family: 'Cinzel', serif; 
@@ -249,6 +256,7 @@
 </header>
 
 <!-- HERO -->
+<!-- HERO -->
 <section class="hero-premium">
     <video autoplay muted loop class="hero-video-bg">
         <source src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da375747a1dcb30d9306450b32f627a3c3d0c&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
@@ -256,7 +264,8 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <span class="subtitle animate__animated animate__fadeIn">World-Class Hair Restoration</span>
-        <h1 class="animate__animated animate__fadeInUp">PRECISION <br><span style="color:var(--accent-gold)">WITHOUT</span> LIMITS</h1>
+        <!-- Line break <br> removed below to keep text on one line -->
+        <h1 class="animate__animated animate__fadeInUp">PRECISION <span style="color:var(--accent-gold)">WITHOUT</span> LIMITS</h1>
         <p class="animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">Leading the African continent in Turkish surgical artistry. <br>The destination for Sapphire FUE and DHI excellence in Nairobi.</p>
         <div class="hero-actions animate__animated animate__fadeInUp" style="animation-delay: 0.6s; margin-top: 50px;">
             <a href="#technique" class="nav-cta" style="padding: 20px 50px; font-size: 16px;">View Our Technology</a>
