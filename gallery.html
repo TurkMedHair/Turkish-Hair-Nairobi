@@ -3,98 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results Gallery | TurkMed Nairobi</title>
+    <title>Procedure Results | TurkMed Nairobi</title>
     
-    <!-- FONTS & ICONOGRAPHY (Matches Index) -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* MATCHING YOUR ORIGINAL COLOR PALETTE */
         :root {
-            --primary: #04080f;        /* Deep Space Blue */
-            --secondary: #0d1b2a;      /* Navy Shadow */
-            --accent-gold: #c5a059;    /* Turkish Gold */
+            --primary: #04080f;
+            --secondary: #0d1b2a;
+            --accent-gold: #c5a059;
             --glass-bg: rgba(255, 255, 255, 0.02);
             --border-light: rgba(255, 255, 255, 0.08);
             --text-main: #e2e8f0;
             --text-dim: #94a3b8;
         }
 
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background: var(--primary); 
-            color: var(--text-main); 
-            margin: 0;
-            line-height: 1.8;
-        }
+        body { font-family: 'Inter', sans-serif; background: var(--primary); color: var(--text-main); margin: 0; }
 
-        /* MATCHING HEADER DESIGN */
         .header-main {
             position: fixed; top: 0; width: 100%; z-index: 9999;
             background: rgba(4, 8, 15, 0.85); backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border-light);
-            padding: 15px 0;
+            border-bottom: 1px solid var(--border-light); padding: 15px 0;
         }
+
         .nav-container { max-width: 1600px; margin: 0 auto; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; }
-        .logo-text { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; color: #fff; letter-spacing: 2px; text-decoration: none;}
+        .logo-text { font-family: 'Cinzel', serif; font-size: 26px; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: 2px; }
         .logo-text span { color: var(--accent-gold); }
 
-        /* HERO SECTION FOR GALLERY */
-        .gallery-hero {
-            padding: 180px 5% 100px;
-            text-align: center;
-            background: linear-gradient(to bottom, var(--secondary), var(--primary));
-        }
-        .gallery-hero h1 { 
-            font-family: 'Playfair Display', serif; 
-            font-size: clamp(40px, 8vw, 80px); 
-            margin-bottom: 20px;
-        }
-        .gallery-hero p { color: var(--accent-gold); font-family: 'Cinzel', serif; letter-spacing: 5px; }
+        .gallery-hero { padding: 180px 5% 60px; text-align: center; }
+        .gallery-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 8vw, 70px); margin-bottom: 10px; }
+        .gallery-hero p { color: var(--accent-gold); font-family: 'Cinzel', serif; letter-spacing: 4px; font-size: 14px; }
 
-        /* THE PHOTO GRID */
-        .gallery-section { padding: 50px 5% 150px; max-width: 1600px; margin: 0 auto; }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 40px;
-        }
+        .gallery-section { padding: 0 5% 100px; max-width: 1600px; margin: 0 auto; }
+        
+        /* THE DUAL-IMAGE GRID */
+        .procedure-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); gap: 50px; }
 
-        .photo-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--border-light);
-            padding: 15px;
-            position: relative;
-            transition: all 0.5s ease;
-        }
-        .photo-card:hover { border-color: var(--accent-gold); transform: translateY(-10px); }
+        .case-study { background: var(--glass-bg); border: 1px solid var(--border-light); border-radius: 4px; overflow: hidden; }
 
-        .img-wrapper { position: relative; height: 500px; overflow: hidden; }
-        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* MATCHING LABELS FROM IMAGE_86659D.PNG */
+        /* SPLIT IMAGE CONTAINER */
+        .comparison-box { display: flex; height: 500px; position: relative; gap: 2px; background: var(--primary); }
+        .comparison-box .img-half { flex: 1; position: relative; overflow: hidden; }
+        .comparison-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        
+        /* CORRECT LABELS */
         .label {
-            position: absolute; top: 20px; padding: 8px 20px;
-            font-size: 11px; font-weight: 800; text-transform: uppercase; border-radius: 4px;
+            position: absolute; top: 20px; padding: 8px 15px;
+            font-size: 10px; font-weight: 800; text-transform: uppercase; border-radius: 2px; letter-spacing: 1px;
+            z-index: 10;
         }
-        .label-before { left: 20px; background: rgba(0,0,0,0.8); color: white; border: 1px solid var(--border-light); }
-        .label-after { right: 20px; background: var(--accent-gold); color: #000; }
+        .label-post { left: 20px; background: var(--accent-gold); color: #000; }
+        .label-pre { right: 20px; background: rgba(0,0,0,0.8); color: #fff; border: 1px solid var(--border-light); }
 
-        .card-meta { padding: 25px 10px; }
-        .card-meta h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 5px; color: #fff; }
-        .card-meta p { color: var(--text-dim); font-size: 14px; margin: 0; }
+        .case-info { padding: 30px; }
+        .case-info h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: #fff; margin-bottom: 10px; }
+        .case-info p { color: var(--text-dim); font-size: 14px; margin: 0; line-height: 1.6; }
 
-        /* CTA BUTTON */
         .nav-cta { 
             background: linear-gradient(45deg, var(--accent-gold), #e6c27a); 
-            color: #000 !important; padding: 12px 30px; border-radius: 4px; 
-            text-decoration: none; font-weight: 700; font-size: 13px;
+            color: #000 !important; padding: 12px 25px; border-radius: 4px; 
+            text-decoration: none; font-weight: 700; font-size: 12px;
         }
 
         @media (max-width: 768px) {
-            .grid-container { grid-template-columns: 1fr; }
-            .img-wrapper { height: 350px; }
+            .procedure-grid { grid-template-columns: 1fr; }
+            .comparison-box { height: 400px; }
         }
     </style>
 </head>
@@ -103,75 +77,63 @@
 <header class="header-main">
     <div class="nav-container">
         <a href="index.html" class="logo-text">TURK<span>MED</span></a>
-        <a href="https://wa.me/254726618187" class="nav-cta">BOOK ANALYSIS</a>
+        <a href="https://wa.me/254726618187" class="nav-cta">WHATSAPP CONSULTATION</a>
     </div>
 </header>
 
 <section class="gallery-hero">
-    <p>TRANSFORMATION LOGS</p>
-    <h1>The Art of the <br><span style="color:var(--accent-gold)">Possible</span></h1>
+    <p>Clinical Excellence</p>
+    <h1>Procedure <span style="color:var(--accent-gold)">Close-Ups</span></h1>
 </section>
 
 <main class="gallery-section">
-    <div class="grid-container">
+    <div class="procedure-grid">
         
-        <!-- ITEM 1 -->
-        <div class="photo-card">
-            <div class="img-wrapper">
-                <span class="label label-before">Before</span>
-                <span class="label label-after">7 Months After</span>
-                <img src="after procedure 2.jpeg">
+        <!-- CASE 1: FRONTAL -->
+        <div class="case-study">
+            <div class="comparison-box">
+                <!-- Left: Post-Op Image -->
+                <div class="img-half">
+                    <span class="label label-post">Instantly After</span>
+                    <img src="after procedure 2.jpeg">
+                </div>
+                <!-- Right: Before Image (Using your procedure 20 as placeholder for "Before" logic) -->
+                <div class="img-half">
+                    <span class="label label-pre">Before Procedure</span>
+                    <img src="after procedure 20.jpeg">
+                </div>
             </div>
-            <div class="card-meta">
-                <h3>Frontal Hairline Design</h3>
-                <p>Technique: Sapphire FUE | 3,500 Grafts</p>
-            </div>
-        </div>
-
-        <!-- ITEM 2 -->
-        <div class="photo-card">
-            <div class="img-wrapper">
-                <span class="label label-before">Before</span>
-                <span class="label label-after">12 Months After</span>
-                <img src="after procedure 20.jpeg">
-            </div>
-            <div class="card-meta">
-                <h3>Crown Density Restoration</h3>
-                <p>Technique: DHI Unshaven | Maximum Volume</p>
+            <div class="case-info">
+                <h3>High-Density Frontal Placement</h3>
+                <p>Detailed view of Sapphire FUE graft distribution. Notice the clean, rhythmic placement which ensures natural-looking density once matured.</p>
             </div>
         </div>
 
-        <!-- ITEM 3 -->
-        <div class="photo-card">
-            <div class="img-wrapper">
-                <span class="label label-before">Procedure</span>
-                <span class="label label-after">Final Result</span>
-                <img src="beard1.jpeg">
+        <!-- CASE 2: CROWN/TOP -->
+        <div class="case-study">
+            <div class="comparison-box">
+                <!-- Left: Post-Op Image -->
+                <div class="img-half">
+                    <span class="label label-post">Minutes After</span>
+                    <img src="after procedure 3.jpeg">
+                </div>
+                <!-- Right: Before Image -->
+                <div class="img-half">
+                    <span class="label label-pre">Before Procedure</span>
+                    <img src="result3.jpeg">
+                </div>
             </div>
-            <div class="card-meta">
-                <h3>Beard & Jawline Sculpting</h3>
-                <p>Custom extraction for facial hair density.</p>
-            </div>
-        </div>
-
-        <!-- ITEM 4 -->
-        <div class="photo-card">
-            <div class="img-wrapper">
-                <span class="label label-before">Day 1</span>
-                <span class="label label-after">Aftercare Complete</span>
-                <img src="result3.jpeg">
-            </div>
-            <div class="card-meta">
-                <h3>Afro-Textured Specialized FUE</h3>
-                <p>Preserving follicle health in 4C hair textures.</p>
+            <div class="case-info">
+                <h3>Technical Graft Engineering</h3>
+                <p>Surgical view of the recipient area. Our Turkish specialists focus on angle precision to match the natural growth pattern of your hair.</p>
             </div>
         </div>
 
     </div>
 </main>
 
-<footer style="text-align: center; padding: 100px 5%; border-top: 1px solid var(--border-light);">
-    <a href="index.html" style="color: var(--accent-gold); text-decoration: none; font-family: 'Cinzel'; letter-spacing: 2px;">← BACK TO MAIN CLINIC</a>
+<footer style="text-align: center; padding-bottom: 100px;">
+    <a href="index.html" style="color: var(--accent-gold); text-decoration: none; font-family: 'Cinzel'; font-size: 13px; letter-spacing: 2px;">← BACK TO OVERVIEW</a>
 </footer>
 
 </body>
