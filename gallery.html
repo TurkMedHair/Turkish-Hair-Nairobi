@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results Gallery | TurkMed Hair Clinic Nairobi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root { --primary: #1a237e; --secondary: #b71c1c; --gold: #c5a059; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: #fafafa; color: #333; }
+
+        /* HEADER */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: #fff; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo-main { font-size: 24px; font-weight: 800; color: var(--primary); text-decoration: none; }
+        nav ul { list-style: none; display: flex; gap: 20px; }
+        nav ul li a { text-decoration: none; color: #333; font-weight: 600; font-size: 14px; }
+
+        /* GALLERY HEADER */
+        .page-header { background: var(--primary); color: white; padding: 80px 5%; text-align: center; }
+        .page-header h1 { font-size: 50px; margin: 0; font-weight: 800; }
+        .page-header p { font-size: 18px; opacity: 0.8; margin-top: 10px; }
+
+        /* WIDE GALLERY GRID */
+        .gallery-container { padding: 80px 4%; max-width: 1600px; margin: 0 auto; }
+        
+        .photo-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+            gap: 25px; 
+        }
+
+        .gallery-item { 
+            position: relative; 
+            overflow: hidden; 
+            border-radius: 20px; 
+            height: 500px; 
+            background: #eee;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .gallery-item:hover img { transform: scale(1.08); }
+
+        /* LABELS */
+        .badge { 
+            position: absolute; top: 20px; padding: 8px 15px; 
+            border-radius: 5px; font-size: 12px; font-weight: 800; text-transform: uppercase; 
+        }
+        .before-badge { left: 20px; background: rgba(0,0,0,0.7); color: white; }
+        .after-badge { right: 20px; background: var(--gold); color: white; }
+
+        .item-details { 
+            position: absolute; bottom: 0; width: 100%; 
+            background: linear-gradient(transparent, rgba(0,0,0,0.8)); 
+            color: white; padding: 30px 20px 20px; 
+        }
+        .item-details h3 { margin: 0; font-size: 20px; }
+        .item-details p { margin: 5px 0 0; font-size: 14px; opacity: 0.8; }
+
+        footer { background: #111; color: white; padding: 60px 5%; text-align: center; margin-top: 50px; }
+
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 36px; }
+            .photo-grid { grid-template-columns: 1fr; }
+            .gallery-item { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo-main">TURK<span style="color:var(--secondary)">MED</span></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="https://wa.me/254726618187" style="color:var(--secondary)">Consultation</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>Transformation Gallery</h1>
+        <p>Witness the Turkish Excellence in Hair Restoration</p>
+    </header>
+
+    <main class="gallery-container">
+        <div class="photo-grid">
+            
+            <!-- Patient 1 -->
+            <div class="gallery-item">
+                <span class="badge before-badge">Before</span>
+                <span class="badge after-badge">7 Months After</span>
+                <img src="after procedure 2.jpeg" alt="Patient Result 1">
+                <div class="item-details">
+                    <h3>Hairline Restoration</h3>
+                    <p>Sapphire FUE Technique | 3,800 Grafts</p>
+                </div>
+            </div>
+
+            <!-- Patient 2 -->
+            <div class="gallery-item">
+                <span class="badge before-badge">Before</span>
+                <span class="badge after-badge">12 Months After</span>
+                <img src="after procedure 20.jpeg" alt="Patient Result 2">
+                <div class="item-details">
+                    <h3>Full Crown Coverage</h3>
+                    <p>DHI Method | Maximum Density</p>
+                </div>
+            </div>
+
+            <!-- Patient 3 -->
+            <div class="gallery-item">
+                <span class="badge before-badge">Before</span>
+                <span class="badge after-badge">Complete Result</span>
+                <img src="beard1.jpeg" alt="Beard Result">
+                <div class="item-details">
+                    <h3>Beard & Mustache Transplant</h3>
+                    <p>Natural Jawline Reconstruction</p>
+                </div>
+            </div>
+
+            <!-- Patient 4 -->
+            <div class="gallery-item">
+                <span class="badge before-badge">Day 1</span>
+                <span class="badge after-badge">Healed</span>
+                <img src="result3.jpeg" alt="Afro Hair Result">
+                <div class="item-details">
+                    <h3>Afro-Hair Specialization</h3>
+                    <p>Specialized extraction for curved follicles</p>
+                </div>
+            </div>
+
+            <!-- Patient 5 -->
+            <div class="gallery-item">
+                <span class="badge before-badge">Before</span>
+                <span class="badge after-badge">Result</span>
+                <img src="after procedure 3.jpeg" alt="High Density Result">
+                <div class="item-details">
+                    <h3>High-Density Grafting</h3>
+                    <p>Technique focusing on volume and texture</p>
+                </div>
+            </div>
+
+            <!-- Patient 6 -->
+            <div class="gallery-item">
+                <span class="badge before-badge">Before</span>
+                <span class="badge after-badge">Final Result</span>
+                <img src="result4.jpeg" alt="Side Profile Result">
+                <div class="item-details">
+                    <h3>Temple & Side Reconstruction</h3>
+                    <p>Natural angle placement for side profile</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TurkMed Nairobi. Results vary by patient.</p>
+        <a href="index.html" style="color:var(--gold); text-decoration:none;">Back to Home Page</a>
+    </footer>
+
+</body>
+</html>
