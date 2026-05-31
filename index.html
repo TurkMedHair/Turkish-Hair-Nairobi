@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TurkMed Nairobi | International Center for Hair Restoration</title>
     
-    <!-- GOOGLE ADSENSE VERIFICATION CODE (From image_6b88bb.png) -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9863464747964215" crossorigin="anonymous"></script>
-
     <!-- SEO & META -->
     <meta name="description" content="TurkMed Nairobi combines Turkish surgical mastery with Kenyan hospitality. Specialized in Sapphire FUE, DHI, and Afro-textured hair transplants.">
     
@@ -89,17 +86,17 @@
         .nav-menu { 
             display: flex; 
             list-style: none; 
-            gap: 20px; 
+            gap: 20px; /* Reduced gap to keep it in one line */
             align-items: center;
             margin: 0;
             padding: 0;
         }
-        .nav-menu li { white-space: nowrap; } 
+        .nav-menu li { white-space: nowrap; } /* Prevents text wrapping */
 
         .nav-menu a { 
             text-decoration: none; 
             color: #fff; 
-            font-size: 11px; 
+            font-size: 11px; /* Slightly smaller to match image_8507e4.png */
             font-weight: 700; 
             text-transform: uppercase; 
             letter-spacing: 1.5px; 
@@ -107,6 +104,7 @@
         }
         .nav-menu a:hover { color: var(--accent-gold); }
 
+        /* Gold Button Style for Free Scalp Analysis */
         .nav-cta { 
             background: var(--accent-gold) !important; 
             color: #000 !important; 
@@ -130,6 +128,7 @@
         }
         .hero-overlay { position: absolute; inset: 0; background: radial-gradient(circle, transparent, var(--primary)); }
         
+     /* Updated Headline for Desktop & Mobile */
         .hero-content h1 { 
             font-family: 'Playfair Display', serif; 
             font-size: clamp(38px, 7.5vw, 88px); 
@@ -138,21 +137,22 @@
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: -1.5px; 
-            white-space: nowrap; 
+            white-space: nowrap; /* Keeps it as one 'sentence' on desktop */
         }
 
+        /* MOBILE OVERRIDE: Add this below the block above */
         @media (max-width: 768px) {
             .hero-content h1 {
-                white-space: normal; 
-                font-size: 45px;      
+                white-space: normal; /* Allows text to wrap on phones */
+                font-size: 45px;      /* Fixed readable size for mobile */
                 letter-spacing: -0.5px;
                 line-height: 1.2;
             }
             .nav-cta {
-                padding: 8px 12px !important; 
+                padding: 8px 12px !important; /* Smaller button for mobile */
             }
         }
-        
+        }
         .hero-content .subtitle { 
             color: var(--accent-gold); font-family: 'Cinzel', serif; 
             letter-spacing: 10px; font-size: 18px; margin-bottom: 40px; display: block;
@@ -240,6 +240,11 @@
         }
         .wa-float:hover { transform: scale(1.1); }
 
+       /* 
+           ================================================
+           REPLACED MOBILE FIXES (Lines 211-220 approx.)
+           ================================================
+        */
         @media (max-width: 968px) {
             .header-main { padding: 15px 0; }
             
@@ -248,6 +253,7 @@
                 gap: 15px; 
             }
 
+            /* This makes the links from image_766cfe.png visible & swipeable */
             .nav-menu { 
                 display: flex !important; 
                 gap: 15px; 
@@ -258,12 +264,14 @@
                 -webkit-overflow-scrolling: touch;
             }
             
+            /* Hide scrollbar for a cleaner look */
             .nav-menu::-webkit-scrollbar { display: none; }
+
             .nav-menu li { flex-shrink: 0; }
 
             .hero-content h1 { 
                 font-size: 42px; 
-                white-space: normal; 
+                white-space: normal; /* Allows text to stack on phones */
                 letter-spacing: -0.5px;
             }
             
@@ -274,7 +282,7 @@
 
         /* 
            ================================================
-           ADDITIONAL STYLING
+           PROMPTED INJECTIONS - ADDITIONAL STYLING
            ================================================
         */
         .trust-badge-row {
@@ -342,6 +350,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
         <span class="subtitle animate__animated animate__fadeIn">World-Class Hair Restoration</span>
+        <!-- Line break <br> removed below to keep text on one line -->
         <h1 class="animate__animated animate__fadeInUp">PRECISION <span style="color:var(--accent-gold)">WITHOUT</span> LIMITS</h1>
         <p class="animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">Leading the African continent in Turkish surgical artistry. <br>The destination for Sapphire FUE and DHI excellence in Nairobi.</p>
         <div class="hero-actions animate__animated animate__fadeInUp" style="animation-delay: 0.6s; margin-top: 50px;">
@@ -375,7 +384,7 @@
     </div>
 </section>
 
-<!-- THE TECHNOLOGY -->
+<!-- THE TECHNOLOGY (Leader Inspired) -->
 <section class="section-padding" id="technique">
     <div style="text-align: center; margin-bottom: 100px;">
         <h4 style="color:var(--accent-gold); letter-spacing: 5px;">SURGICAL PROTOCOLS</h4>
@@ -415,7 +424,7 @@
     </div>
 </section>
 
-<!-- VISUAL TRANSFORMATION GALLERY -->
+<!-- HIGH-DENSITY VISUAL TRANSFORMATION GALLERY -->
 <section class="section-padding" id="transformations" style="background: #02050a; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
     <div style="text-align: center; margin-bottom: 60px;">
         <h4 style="color:var(--accent-gold); letter-spacing: 5px;">VERIFIABLE OUTCOMES</h4>
@@ -461,6 +470,7 @@
 <section class="doctor-showcase" id="doctors">
     <div class="container">
         <div class="doc-card reveal">
+            <!-- Background updated to your new filename -->
             <div class="doc-img" style="background: url('dr ahmetr.jpeg') center/cover;"></div>
             <div class="doc-info">
                 <h4>Chief Surgeon</h4>
@@ -476,7 +486,7 @@
     </div>
 </section>
 
-<!-- GRAFT ESTIMATOR SECTION -->
+<!-- DYNAMIC INTUITIVE GRAFT ESTIMATOR SECTION -->
 <section class="section-padding" style="background: #060b13; text-align: center;">
     <div style="margin-bottom: 50px;">
         <h4 style="color:var(--accent-gold); letter-spacing: 5px;">PRE-CLINICAL ASSESSMENT</h4>
@@ -500,7 +510,7 @@
     </div>
 </section>
 
-<!-- THE CLINIC -->
+<!-- THE CLINIC (Updated with specific location details) -->
 <section class="section-padding" id="about">
     <div style="display: flex; gap: 80px; align-items: center; flex-wrap: wrap;">
         <div style="flex: 1; min-width: 400px;">
@@ -519,12 +529,13 @@
             </div>
         </div>
         <div style="flex: 1; min-width: 400px;">
+            <!-- This refers to the building image you provided -->
              <img src="valley-view-building.jpg" style="width: 100%; border-radius: 4px; box-shadow: -20px 20px 0 var(--accent-gold);" alt="TurkMed Valley View Office Park">
         </div>
     </div>
 </section>
 
-<!-- MEDICAL FAQ -->
+<!-- MEDICAL FAQ (20 Item Capacity) -->
 <section class="section-padding" id="faq">
     <div style="text-align: center; margin-bottom: 80px;">
         <h2>The Medical Expert FAQ</h2>
@@ -547,6 +558,8 @@
             <div class="faq-question">Does it work for women? <span>+</span></div>
             <div class="faq-answer">Absolutely. We use the DHI technique for women which allows us to restore density without shaving the head.</div>
         </div>
+        
+        <!-- HIGH DENSITY FAQ EXTENSIONS -->
         <div class="faq-item">
             <div class="faq-question">What is the difference between standard FUE and Sapphire FUE? <span>+</span></div>
             <div class="faq-answer">Standard FUE uses steel micro-blades to open micro-channels. Sapphire FUE utilizes custom single-crystal V-shaped sapphire gemstone edges which dramatically reduce cellular trauma, bleeding, and recovery times down to just 72 hours.</div>
@@ -562,7 +575,7 @@
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER (Updated with dynamic row logic to inject image_6bed25.png) -->
 <footer class="footer-ultra">
     <div class="footer-grid">
         <div class="footer-col">
@@ -583,6 +596,7 @@
             <a href="travel.html" class="footer-link">Travel Concierge</a><br>
             <a href="finance.html" class="footer-link">Finance Plans</a>
         </div>
+        <!-- INJECTED LEGAL LINKS FROM image_6bed25.png REFERENCE -->
         <div class="footer-col">
             <h5>Legal Links</h5>
             <a href="about.html" class="footer-link">About Us</a><br>
@@ -606,7 +620,6 @@
         &copy; 2026 TurkMed Nairobi Clinic. All Surgical Procedures Performed by Licensed Specialists.
     </div>
 </footer>
-
 <a href="https://wa.me/254726618187" class="wa-float">
     <i class="fab fa-whatsapp"></i>
 </a>
