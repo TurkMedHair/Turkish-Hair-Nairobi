@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | TurkMed Nairobi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #050709;
+            --secondary: #0f1319;
+            --accent-gold: #c39b50;
+            --text-light: #f3f4f6;
+            --text-muted: #9ca3af;
+            --font-serif: 'Playfair Display', serif;
+            --font-display: 'Cinzel', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text-light);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(5, 7, 9, 0.95);
+            border-bottom: 1px solid rgba(195, 155, 80, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .logo-text span { color: var(--accent-gold); }
+
+        nav { display: flex; align-items: center; gap: 25px; }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active { color: var(--accent-gold); }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #c39b50 0%, #a47a32 100%);
+            color: #050709;
+            padding: 12px 24px;
+            border-radius: 2px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            text-decoration: none;
+        }
+
+        .about-hero {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+
+        .about-hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .about-hero h1 span { color: var(--accent-gold); }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        footer {
+            background-color: #030507;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 60px 20px 30px;
+            margin-top: 100px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">TURKMED<span>.</span></a>
+            <nav>
+                <a href="index.html">The Clinic</a>
+                <a href="index.html#procedures">Procedures</a>
+                <a href="index.html#gallery">Results Gallery</a>
+                <a href="about.html" class="active">About Us</a>
+            </nav>
+            <a href="index.html#analysis" class="cta-btn">Free Scalp Analysis</a>
+        </div>
+    </header>
+
+    <section class="about-hero">
+        <h1>About <span>Our Clinic</span></h1>
+    </section>
+
+    <main class="about-content">
+        <p>TurkMed Nairobi brings structural elite hair restoration procedures directly from leading global expertise networks straight into Kenya. We blend premium clinical standards with refined artistic execution metrics.</p>
+        <p>Our focus targets non-compromised graft preservation values, state-of-the-art micro Sapphire extraction, and highly localized post-operation patient support mechanisms designed for seamless healing cycles.</p>
+    </main>
+
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TurkMed Nairobi. All rights reserved.</p>
+            <a href="index.html" style="color: var(--accent-gold); text-decoration: none;">Return Home &rarr;</a>
+        </div>
+    </footer>
+
+</body>
+</html>
