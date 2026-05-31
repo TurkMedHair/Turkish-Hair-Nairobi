@@ -219,7 +219,7 @@
             background: #020408; padding: 100px 5% 50px; border-top: 1px solid var(--border-light);
         }
         .footer-grid { 
-            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 80px; 
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px; 
             max-width: 1600px; margin: 0 auto; 
         }
         .footer-col h5 { font-family: 'Cinzel', serif; color: var(--accent-gold); margin-bottom: 30px; font-size: 18px; }
@@ -310,6 +310,17 @@
         .estimator-range { width: 100%; margin: 30px 0; -webkit-appearance: none; background: var(--secondary); height: 6px; outline: none; border: 1px solid var(--border-light); }
         .estimator-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; background: var(--accent-gold); cursor: pointer; border-radius: 50%; }
         .estimator-output { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-light); padding-top: 30px; margin-top: 30px; }
+        
+        .footer-link {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 15px;
+            line-height: 2;
+            transition: var(--transition-hq);
+        }
+        .footer-link:hover {
+            color: var(--accent-gold);
+        }
     </style>
 </head>
 <body>
@@ -348,7 +359,7 @@
     </div>
 </section>
 
-<!-- INJECTED CLINICAL TRUST BADGES -->
+<!-- CLINICAL TRUST BADGES -->
 <section class="trust-badge-row">
     <div class="trust-badge-card reveal">
         <i class="fas fa-ribbon"></i>
@@ -413,7 +424,7 @@
     </div>
 </section>
 
-<!-- INJECTED HIGH-DENSITY VISUAL TRANSFORMATION GALLERY -->
+<!-- HIGH-DENSITY VISUAL TRANSFORMATION GALLERY -->
 <section class="section-padding" id="transformations" style="background: #02050a; border-top: 1px solid var(--border-light); border-bottom: 1px solid var(--border-light);">
     <div style="text-align: center; margin-bottom: 60px;">
         <h4 style="color:var(--accent-gold); letter-spacing: 5px;">VERIFIABLE OUTCOMES</h4>
@@ -475,7 +486,7 @@
     </div>
 </section>
 
-<!-- INJECTED DYNAMIC INTUITIVE GRAFT ESTIMATOR SECTION -->
+<!-- DYNAMIC INTUITIVE GRAFT ESTIMATOR SECTION -->
 <section class="section-padding" style="background: #060b13; text-align: center;">
     <div style="margin-bottom: 50px;">
         <h4 style="color:var(--accent-gold); letter-spacing: 5px;">PRE-CLINICAL ASSESSMENT</h4>
@@ -564,27 +575,36 @@
     </div>
 </section>
 
-<!-- FOOTER (Updated with Valley View Office Park Address) -->
+<!-- FOOTER (Updated with dynamic row logic to inject image_6bed25.png) -->
 <footer class="footer-ultra">
     <div class="footer-grid">
         <div class="footer-col">
             <div class="logo-text" style="margin-bottom: 30px;">TURK<span>MED</span></div>
             <p>Setting the gold standard for medical excellence in East Africa. Our collaboration with Turkish surgeons ensures you receive the world's best care in Nairobi.</p>
         </div>
-       <div class="footer-col">
-    <h5>Treatments</h5>
-    <a href="sapphire-fue.html" class="footer-link">Sapphire FUE</a><br>
-    <a href="dhi-unshaven.html" class="footer-link">DHI Unshaven</a><br>
-    <a href="beard-brow.html" class="footer-link">Beard & Brow</a><br>
-    <a href="prp-stemcell.html" class="footer-link">PRP Stem Cell</a>
-</div>
-<div class="footer-col">
-    <h5>Patient Info</h5>
-    <a href="preparation.html" class="footer-link">Preparation</a><br>
-    <a href="aftercare.html" class="footer-link">Aftercare Kit</a><br>
-    <a href="travel.html" class="footer-link">Travel Concierge</a><br>
-    <a href="finance.html" class="footer-link">Finance Plans</a>
-</div>
+        <div class="footer-col">
+            <h5>Treatments</h5>
+            <a href="sapphire-fue.html" class="footer-link">Sapphire FUE</a><br>
+            <a href="dhi-unshaven.html" class="footer-link">DHI Unshaven</a><br>
+            <a href="beard-brow.html" class="footer-link">Beard & Brow</a><br>
+            <a href="prp-stemcell.html" class="footer-link">PRP Stem Cell</a>
+        </div>
+        <div class="footer-col">
+            <h5>Patient Info</h5>
+            <a href="preparation.html" class="footer-link">Preparation</a><br>
+            <a href="aftercare.html" class="footer-link">Aftercare Kit</a><br>
+            <a href="travel.html" class="footer-link">Travel Concierge</a><br>
+            <a href="finance.html" class="footer-link">Finance Plans</a>
+        </div>
+        <!-- INJECTED LEGAL LINKS FROM image_6bed25.png REFERENCE -->
+        <div class="footer-col">
+            <h5>Legal Links</h5>
+            <a href="about.html" class="footer-link">About Us</a><br>
+            <a href="#faq" class="footer-link">Full FAQ Page</a><br>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a><br>
+            <a href="terms.html" class="footer-link">Terms & Conditions</a><br>
+            <a href="cookie.html" class="footer-link">Cookie Policy</a>
+        </div>
         <div class="footer-col">
             <h5>Contact Us</h5>
             <p>
@@ -633,7 +653,7 @@
     if(rangeSlider) {
         rangeSlider.addEventListener('input', (e) => {
             const val = parseInt(e.target.value);
-            let grafts = "1,500 Grafts";
+            let grafts = "3,500 Grafts";
             let days = "1 Day Session";
             if(val === 1) { grafts = "1,200 - 1,800 Grafts"; days = "Mini Session"; }
             else if(val === 2) { grafts = "2,000 - 2,500 Grafts"; days = "1 Day Session"; }
