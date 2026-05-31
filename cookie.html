@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy | TurkMed Nairobi</title>
+    <!-- Google Fonts for Luxury Aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #050709;
+            --secondary: #0f1319;
+            --accent-gold: #c39b50;
+            --text-light: #f3f4f6;
+            --text-muted: #9ca3af;
+            --font-serif: 'Playfair Display', serif;
+            --font-display: 'Cinzel', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text-light);
+            font-family: var(--font-sans);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            background-color: rgba(5, 7, 9, 0.95);
+            border-bottom: 1px solid rgba(195, 155, 80, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo-text {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .logo-text span {
+            color: var(--accent-gold);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-gold);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #c39b50 0%, #a47a32 100%);
+            color: #050709;
+            padding: 12px 24px;
+            border-radius: 2px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(195, 155, 80, 0.4);
+        }
+
+        /* --- COOKIE HERO --- */
+        .legal-hero {
+            padding: 100px 20px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--secondary) 0%, var(--primary) 100%);
+        }
+
+        .legal-hero h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(32px, 5vw, 55px);
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .legal-hero h1 span {
+            color: var(--accent-gold);
+        }
+
+        .legal-hero p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- DOCUMENT LAYOUT --- */
+        .legal-container {
+            max-width: 800px;
+            margin: 60px auto 120px;
+            padding: 0 20px;
+        }
+
+        .legal-section {
+            margin-bottom: 40px;
+        }
+
+        .legal-section h2 {
+            font-family: var(--font-display);
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .legal-section p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- TABLE CONFIGURATION --- */
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background-color: var(--secondary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .cookie-table th, .cookie-table td {
+            padding: 15px 20px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .cookie-table th {
+            background-color: rgba(195, 155, 80, 0.1);
+            color: var(--accent-gold);
+            font-family: var(--font-display);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(195, 155, 80, 0.2);
+        }
+
+        .cookie-table td {
+            color: var(--text-muted);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .cookie-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #030507;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 80px 20px 30px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-display);
+            color: var(--accent-gold);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .cookie-table th, .cookie-table td { padding: 10px 12px; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION HEADER -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-text">TURKMED<span>.</span></a>
+            <nav>
+                <a href="index.html">The Clinic</a>
+                <a href="index.html#procedures">Procedures</a>
+                <a href="index.html#gallery">Results Gallery</a>
+                <a href="about.html">About Us</a>
+            </nav>
+            <a href="index.html#analysis" class="cta-btn">Free Scalp Analysis</a>
+        </div>
+    </header>
+
+    <!-- HERO HEADER -->
+    <section class="legal-hero">
+        <h1>Cookie <span>Policy</span></h1>
+        <p>Last Updated: June 1, 2026</p>
+    </section>
+
+    <!-- CONTENT WRAPPER -->
+    <main class="legal-container">
+        
+        <div class="legal-section">
+            <h2>1. What Are Cookies</h2>
+            <p>Cookies are minimalist text strings cached securely in your browser framework when navigating through our luxury experience portal. They allow us to fine-tune system interface transitions, record preferred interactive configurations, and maintain consistent styling performance.</p>
+        </div>
+
+        <div class="legal-section">
+            <h2>2. How We Employ Cookies</h2>
+            <p>Our platform treats cookies strictly to maintain premium interactive stability and trace functional traffic patterns. We use them across the following primary classifications:</p>
+            
+            <table class="cookie-table">
+                <thead>
+                    <tr>
+                        <th>Classification</th>
+                        <th>Purpose</th>
+                        <th>Persistence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Essential</td>
+                        <td>Maintains responsive theme rendering and navigation security flags.</td>
+                        <td>Session</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics</td>
+                        <td>Monitors anonymized engagement paths to optimize digital page speed performance.</td>
+                        <td>Persistent</td>
+                    </tr>
+                    <tr>
+                        <td>Functional</td>
+                        <td>Preserves interactive preferences, such as image alignment parameters.</td>
+                        <td>Persistent</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="legal-section">
+            <h2>3. Managing Cookie Preferences</h2>
+            <p>You preserve full structural dominion over your data parameters. At any time, you can instruct your native browser architecture to decline, drop, or systematically purge our stored tracking cookies. Please note that restricting essential data flags may subtly alter smooth page load pacing or degrade micro-animations.</p>
+        </div>
+
+    </main>
+
+    <!-- SYNCHRONIZED FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>TurkMed Nairobi</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Providing world-class technical hair transplantation and aesthetic restorations natively in Nairobi, Kenya.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Procedures</h4>
+                <ul>
+                    <li><a href="index.html#procedures">Sapphire FUE</a></li>
+                    <li><a href="index.html#procedures">DHI Unshaven</a></li>
+                    <li><a href="index.html#procedures">Beard & Brow Restoration</a></li>
+                    <li><a href="index.html#procedures">PRP Treatment</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="faq.html">Full FAQ Page</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="cookie.html" style="color: var(--accent-gold);">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TurkMed Nairobi. All rights reserved.</p>
+            <p>Designed for Ultimate Precision</p>
+        </div>
+    </footer>
+
+</body>
+</html>
