@@ -1,24 +1,1781 @@
-I can see your existing TurkMed branding — dark luxury aesthetic, Cinzel/Playfair Display fonts, gold accents `#c39b50`, deep navy-black backgrounds. I'll build a stunning full `index.html` that matches and massively elevates the `about.html` style.Here's your complete `index.html` — fully production-ready and consistent with your existing `about.html` branding. Here's what was built and improved:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TurkMed Nairobi | Elite Hair Restoration Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary:       #050709;
+      --secondary:     #0f1319;
+      --surface:       #0a0d12;
+      --gold:          #c39b50;
+      --gold-light:    #d4b070;
+      --gold-dim:      #8a6d37;
+      --gold-pale:     rgba(195,155,80,0.08);
+      --text:          #f3f4f6;
+      --text-muted:    #7a8494;
+      --text-dim:      #4a5568;
+      --border:        rgba(195,155,80,0.12);
+      --border-hover:  rgba(195,155,80,0.3);
+      --font-display:  'Cinzel', serif;
+      --font-serif:    'Playfair Display', serif;
+      --font-cormo:    'Cormorant Garamond', serif;
+      --font-sans:     'Inter', sans-serif;
+    }
 
-**Design system preserved & elevated:**
-- Cinzel + Playfair Display fonts, gold `#c39b50` palette, deep dark backgrounds — all carried through
-- Added **Cormorant Garamond** for large numerals and pull-quote styling — adds editorial luxury depth
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-**New sections included:**
-- **Hero** — split layout with animated geometric rings, staggered text reveals, trust badges
-- **Marquee ticker strip** — gold bar scrolling all procedures/services
-- **Stats bar** — 4 key metrics in a full-width grid
-- **Procedures grid** — 6 cards with animated gold underline on hover
-- **Why TurkMed** — feature list paired with decorative visual panel
-- **4-step process** — connected timeline with timeline line effect
-- **Gallery** — asymmetric 12-column grid layout with before/after tags
-- **Testimonials** — 3-column with Cormorant quote styling
-- **Consultation form** — two-column layout with all fields + Norwood scale dropdown
-- **Footer** — 4-column with social links
+    html { scroll-behavior: smooth; }
 
-**To deploy to GitHub Pages:**
-1. Add `index.html` and `about.html` to your repo root
-2. Enable GitHub Pages from `Settings → Pages → main branch / root`
-3. Your site goes live at `https://yourusername.github.io/repo-name`
+    body {
+      background: var(--primary);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-Would you like me to also rewrite/upgrade the `about.html` to match this same elevated standard?
+    /* ── NOISE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5,7,9,0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-wrap {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: 3px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .logo span { color: var(--gold); }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: color 0.25s;
+    }
+    nav a:hover, nav a.active { color: var(--gold-light); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--primary);
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 11px 22px;
+      border: none;
+      border-radius: 1px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 4rem 6rem 5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 2rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero-eyebrow span {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: 4.2rem;
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 1.8rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+      display: block;
+    }
+    .hero-title strong {
+      font-weight: 700;
+      font-family: var(--font-display);
+      font-size: 1.1em;
+      letter-spacing: 2px;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.85;
+      max-width: 440px;
+      margin-bottom: 3rem;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--primary);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 1px;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border: 1px solid var(--border-hover);
+      border-radius: 1px;
+      cursor: pointer;
+      transition: border-color 0.25s, color 0.25s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-trust {
+      margin-top: 3.5rem;
+      display: flex;
+      gap: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .trust-item { }
+    .trust-num {
+      font-family: var(--font-cormo);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .trust-label {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .hero-right {
+      position: relative;
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .hero-visual {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 60% 40%, rgba(195,155,80,0.07) 0%, transparent 70%),
+        linear-gradient(160deg, #0d1018 0%, #050709 80%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Geometric abstract art element */
+    .hero-geo {
+      position: absolute;
+      width: 340px;
+      height: 460px;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .geo-silhouette {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 220px;
+      height: 380px;
+      background: linear-gradient(170deg, #1a1208 10%, #080604 100%);
+      clip-path: ellipse(50% 55% at 50% 45%);
+    }
+
+    .geo-ring {
+      position: absolute;
+      border: 1px solid rgba(195,155,80,0.15);
+      border-radius: 50%;
+    }
+    .geo-ring-1 {
+      width: 300px; height: 300px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin 40s linear infinite;
+    }
+    .geo-ring-2 {
+      width: 200px; height: 200px;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      border-color: rgba(195,155,80,0.08);
+      animation: spin 25s linear infinite reverse;
+    }
+    .geo-dot {
+      position: absolute;
+      width: 4px; height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 8px var(--gold);
+    }
+
+    @keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+    .hero-badge {
+      position: absolute;
+      top: 3rem;
+      right: 2.5rem;
+      border: 1px solid var(--border-hover);
+      padding: 1rem 1.4rem;
+      text-align: center;
+      background: rgba(5,7,9,0.7);
+      backdrop-filter: blur(8px);
+    }
+    .hero-badge-num {
+      font-family: var(--font-cormo);
+      font-size: 2.2rem;
+      color: var(--gold-light);
+      font-weight: 600;
+      display: block;
+      line-height: 1;
+    }
+    .hero-badge-label {
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+
+    .hero-badge-2 {
+      position: absolute;
+      bottom: 4rem;
+      left: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(5,7,9,0.75);
+      border: 1px solid var(--border);
+      padding: 1rem 1.2rem;
+      backdrop-filter: blur(8px);
+    }
+    .star-rating { color: var(--gold); font-size: 0.85rem; letter-spacing: 2px; }
+    .rating-text { }
+    .rating-num { font-family: var(--font-cormo); font-size: 1.4rem; color: var(--text); line-height: 1; }
+    .rating-sub { font-size: 0.68rem; color: var(--text-dim); letter-spacing: 1px; text-transform: uppercase; }
+
+    /* Animated glow lines */
+    .hero-lines {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      opacity: 0.4;
+    }
+    .hero-line {
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent 0%, rgba(195,155,80,0.3) 50%, transparent 100%);
+      animation: lineFloat 8s ease-in-out infinite;
+    }
+    .hero-line:nth-child(1) { left: 20%; animation-delay: 0s; }
+    .hero-line:nth-child(2) { left: 50%; animation-delay: 2.5s; opacity: 0.5; }
+    .hero-line:nth-child(3) { left: 80%; animation-delay: 5s; }
+    @keyframes lineFloat {
+      0%, 100% { transform: scaleY(0) translateY(-100%); opacity: 0; }
+      20% { opacity: 1; transform: scaleY(1) translateY(0); }
+      80% { opacity: 1; transform: scaleY(1) translateY(0); }
+    }
+
+    /* ── MARQUEE STRIP ── */
+    .marquee-strip {
+      background: var(--gold);
+      overflow: hidden;
+      padding: 0;
+      height: 42px;
+      display: flex;
+      align-items: center;
+    }
+    .marquee-track {
+      display: flex;
+      gap: 0;
+      animation: marquee 30s linear infinite;
+      white-space: nowrap;
+    }
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0 2rem;
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+    .marquee-dot {
+      display: inline-block;
+      width: 4px; height: 4px;
+      background: rgba(5,7,9,0.4);
+      border-radius: 50%;
+    }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--secondary);
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-cell {
+      padding: 2.2rem 2rem;
+      text-align: center;
+      border-right: 1px solid var(--border);
+      transition: background 0.25s;
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-cell:hover { background: var(--gold-pale); }
+    .stat-n {
+      font-family: var(--font-cormo);
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+    .stat-l {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    /* ── SHARED SECTION STYLES ── */
+    .section-wrap {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .sec-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
+    .sec-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--gold);
+    }
+    .sec-eyebrow span {
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .sec-title {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .sec-title em { font-style: italic; color: var(--gold-light); }
+
+    .sec-sub {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      font-weight: 300;
+      max-width: 500px;
+    }
+
+    /* ── PROCEDURES ── */
+    #procedures {
+      padding: 8rem 0;
+      background: var(--primary);
+      position: relative;
+    }
+
+    .procs-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+    }
+
+    .procs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .proc-card {
+      background: var(--primary);
+      padding: 2.8rem 2.4rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    .proc-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width 0.4s ease;
+    }
+    .proc-card:hover { background: #080b10; }
+    .proc-card:hover::before { width: 100%; }
+
+    .proc-num {
+      font-family: var(--font-cormo);
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: rgba(195,155,80,0.15);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      transition: color 0.3s;
+    }
+    .proc-card:hover .proc-num { color: rgba(195,155,80,0.35); }
+
+    .proc-icon {
+      width: 40px; height: 40px;
+      border: 1px solid var(--border-hover);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.4rem;
+      color: var(--gold);
+      font-size: 1.1rem;
+    }
+
+    .proc-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+      color: var(--text);
+    }
+
+    .proc-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    .proc-price {
+      font-size: 0.75rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .proc-arrow {
+      position: absolute;
+      bottom: 2.4rem;
+      right: 2.4rem;
+      width: 32px; height: 32px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      transition: border-color 0.3s, color 0.3s, transform 0.3s;
+    }
+    .proc-card:hover .proc-arrow {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translate(2px, -2px);
+    }
+
+    /* ── WHY US ── */
+    #why {
+      padding: 8rem 0;
+      background: var(--secondary);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      margin-top: 4rem;
+    }
+
+    .why-visual {
+      position: relative;
+      height: 500px;
+    }
+
+    .why-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      position: absolute;
+    }
+    .why-panel-main {
+      width: 280px; height: 360px;
+      top: 0; left: 0;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      background: linear-gradient(160deg, #0d1018, #050709);
+      overflow: hidden;
+    }
+    .why-panel-main::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 60%;
+      background: radial-gradient(ellipse 70% 60% at 50% 30%, rgba(195,155,80,0.06) 0%, transparent 70%);
+    }
+    .why-panel-main-content { position: relative; z-index: 1; }
+    .why-panel-main-content h3 {
+      font-family: var(--font-cormo);
+      font-size: 2.8rem;
+      color: var(--gold-light);
+      font-weight: 300;
+      line-height: 1;
+    }
+    .why-panel-main-content p {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    .why-panel-badge {
+      width: 180px;
+      bottom: 2rem; right: 0;
+      text-align: center;
+      background: var(--gold-pale);
+      border-color: var(--border-hover);
+    }
+    .why-panel-badge .big { font-family: var(--font-cormo); font-size: 2rem; color: var(--gold-light); display: block; }
+    .why-panel-badge .small { font-size: 0.68rem; color: var(--text-dim); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+
+    .why-features { display: flex; flex-direction: column; gap: 0; }
+    .why-feat {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.8rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .why-feat:first-child { border-top: 1px solid var(--border); }
+    .feat-icon {
+      width: 36px; height: 36px; min-width: 36px;
+      border: 1px solid var(--border-hover);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      font-size: 0.9rem;
+      margin-top: 3px;
+    }
+    .feat-body h4 {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .feat-body p {
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ── PROCESS ── */
+    #process {
+      padding: 8rem 0;
+      background: var(--primary);
+    }
+
+    .process-header { text-align: center; margin-bottom: 5rem; }
+    .process-header .sec-eyebrow { justify-content: center; }
+    .process-header .sec-eyebrow::before { display: none; }
+    .process-header .sec-title { font-size: 2.5rem; }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 42px;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim) 20%, var(--gold-dim) 80%, transparent);
+    }
+
+    .process-step { padding: 0 2rem; text-align: center; }
+
+    .step-circle {
+      width: 84px; height: 84px;
+      border: 1px solid var(--border-hover);
+      border-radius: 50%;
+      margin: 0 auto 2rem;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--surface);
+      position: relative;
+      z-index: 1;
+    }
+    .step-circle-inner {
+      width: 52px; height: 52px;
+      border: 1px solid rgba(195,155,80,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-num-label {
+      font-family: var(--font-cormo);
+      font-size: 1.4rem;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .step-title {
+      font-family: var(--font-serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+
+    .step-desc {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .step-time {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-top: 1rem;
+      padding: 4px 10px;
+      border: 1px solid rgba(195,155,80,0.2);
+    }
+
+    /* ── GALLERY ── */
+    #gallery {
+      padding: 8rem 0;
+      background: var(--secondary);
+    }
+
+    .gallery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: 280px 280px;
+      gap: 3px;
+    }
+
+    .gal-item {
+      background: var(--surface);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .gal-item:nth-child(1) { grid-column: span 5; }
+    .gal-item:nth-child(2) { grid-column: span 4; }
+    .gal-item:nth-child(3) { grid-column: span 3; }
+    .gal-item:nth-child(4) { grid-column: span 3; }
+    .gal-item:nth-child(5) { grid-column: span 5; }
+    .gal-item:nth-child(6) { grid-column: span 4; }
+
+    .gal-bg {
+      position: absolute; inset: 0;
+      transition: transform 0.5s ease;
+    }
+    .gal-item:hover .gal-bg { transform: scale(1.04); }
+
+    /* Placeholder gradients as stand-ins for before/after photos */
+    .gal-item:nth-child(1) .gal-bg { background: linear-gradient(135deg, #0d1018 0%, #151c24 100%); }
+    .gal-item:nth-child(2) .gal-bg { background: linear-gradient(135deg, #111519 0%, #0a0d12 100%); }
+    .gal-item:nth-child(3) .gal-bg { background: linear-gradient(135deg, #0e1115 0%, #141a22 100%); }
+    .gal-item:nth-child(4) .gal-bg { background: linear-gradient(135deg, #131820 0%, #0d1018 100%); }
+    .gal-item:nth-child(5) .gal-bg { background: linear-gradient(135deg, #0a0d12 0%, #111519 100%); }
+    .gal-item:nth-child(6) .gal-bg { background: linear-gradient(135deg, #141a22 0%, #0e1115 100%); }
+
+    .gal-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(5,7,9,0.8) 100%);
+    }
+
+    .gal-label {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 1.2rem;
+      right: 1.2rem;
+    }
+    .gal-before-after {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 0.4rem;
+    }
+    .gal-tag {
+      font-size: 0.62rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      font-weight: 600;
+    }
+    .tag-before { background: rgba(255,255,255,0.1); color: var(--text-muted); }
+    .tag-after { background: var(--gold); color: var(--primary); }
+
+    .gal-case {
+      font-family: var(--font-serif);
+      font-size: 0.88rem;
+      color: var(--text);
+    }
+
+    /* Decorative shimmer icon in gallery item */
+    .gal-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px; height: 60px;
+      border: 1px solid var(--border-hover);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(195,155,80,0.3);
+      font-size: 1.5rem;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      padding: 8rem 0;
+      background: var(--primary);
+    }
+
+    .testi-header { text-align: center; margin-bottom: 4rem; }
+    .testi-header .sec-eyebrow { justify-content: center; }
+    .testi-header .sec-eyebrow::before { display: none; }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+
+    .testi-card {
+      background: var(--primary);
+      padding: 2.8rem 2.4rem;
+      transition: background 0.3s;
+    }
+    .testi-card:hover { background: #080b10; }
+
+    .testi-quote {
+      font-family: var(--font-cormo);
+      font-size: 3rem;
+      color: var(--gold);
+      line-height: 0.8;
+      margin-bottom: 1.2rem;
+      opacity: 0.5;
+    }
+
+    .testi-text {
+      font-family: var(--font-cormo);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .testi-footer {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .testi-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--gold-pale);
+      border: 1px solid var(--border-hover);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      color: var(--gold);
+    }
+
+    .testi-name { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+    .testi-loc { font-size: 0.75rem; color: var(--text-dim); margin-top: 2px; }
+    .testi-stars { color: var(--gold); font-size: 0.75rem; letter-spacing: 2px; margin-left: auto; }
+
+    /* ── ANALYSIS CTA ── */
+    #analysis {
+      padding: 0;
+      background: var(--secondary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .analysis-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .analysis-left {
+      padding: 7rem 4rem 7rem 5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .analysis-left::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--gold-dim) 40%, var(--gold-dim) 60%, transparent);
+    }
+
+    .analysis-right {
+      padding: 5rem 4rem 5rem 5rem;
+    }
+
+    .analysis-form { display: flex; flex-direction: column; gap: 1rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-field label {
+      font-size: 0.68rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 300;
+      padding: 0.85rem 1rem;
+      outline: none;
+      transition: border-color 0.25s;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: var(--text-dim); }
+
+    .form-field select { color: var(--text-muted); }
+    .form-field select option { background: var(--secondary); }
+
+    .form-field textarea { resize: none; }
+
+    .form-submit {
+      background: var(--gold);
+      color: var(--primary);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s;
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover { background: var(--gold-light); }
+
+    .form-note {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .contact-details {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 32px; height: 32px; min-width: 32px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold);
+      font-size: 0.85rem;
+      margin-top: 2px;
+    }
+
+    .contact-label { font-size: 0.68rem; color: var(--text-dim); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px; }
+    .contact-value { font-size: 0.9rem; color: var(--text-muted); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #030507;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .footer-main {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem 3rem;
+      display: grid;
+      grid-template-columns: 2.5fr 1fr 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .footer-brand-logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      letter-spacing: 3px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .footer-brand-logo span { color: var(--gold); }
+
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+      max-width: 260px;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+    }
+    .social-btn {
+      width: 34px; height: 34px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-dim);
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+    .footer-col h5 {
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.4rem;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+
+    .footer-col ul li a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 300;
+      transition: color 0.25s;
+    }
+    .footer-col ul li a:hover { color: var(--gold-light); }
+
+    .footer-bottom {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 1.5rem 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+
+    .footer-bottom a {
+      color: var(--gold-dim);
+      text-decoration: none;
+      font-size: 0.78rem;
+      transition: color 0.25s;
+    }
+    .footer-bottom a:hover { color: var(--gold-light); }
+
+    /* ── PAGE ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-up {
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+    }
+
+    .hero-left > * { opacity: 0; animation: fadeUp 0.8s ease forwards; }
+    .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-left > *:nth-child(2) { animation-delay: 0.25s; }
+    .hero-left > *:nth-child(3) { animation-delay: 0.4s; }
+    .hero-left > *:nth-child(4) { animation-delay: 0.55s; }
+    .hero-left > *:nth-child(5) { animation-delay: 0.7s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { height: 400px; }
+      .hero-left { padding: 6rem 2rem 4rem; }
+      .hero-title { font-size: 3rem; }
+      .procs-grid { grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .why-visual { height: 240px; margin-bottom: 2rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gal-item { grid-column: span 1 !important; height: 220px; }
+      .analysis-inner { grid-template-columns: 1fr; }
+      .analysis-left::after { display: none; }
+      .footer-main { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 3rem; }
+      .process-steps::before { display: none; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-wrap { padding: 0 1rem; }
+      nav { gap: 1rem; }
+      nav a:not(.nav-cta) { display: none; }
+      .hero-title { font-size: 2.2rem; }
+      .procs-grid { grid-template-columns: 1fr; }
+      .procs-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-main { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">TURKMED<span>.</span></a>
+    <nav>
+      <a href="#procedures">Procedures</a>
+      <a href="#gallery">Results Gallery</a>
+      <a href="#process">Our Process</a>
+      <a href="about.html">About Us</a>
+      <a href="#analysis" class="nav-cta">Free Scalp Analysis</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span>Nairobi's Elite Hair Restoration</span>
+    </div>
+
+    <h1 class="hero-title">
+      Precision Craft.<br>
+      <em>Permanent</em>
+      <strong>Results.</strong>
+    </h1>
+
+    <p class="hero-sub">
+      TurkMed Nairobi unites Turkish surgical mastery with world-class clinical standards — delivering natural, undetectable hair restoration to discerning clients across East Africa.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#analysis" class="btn-gold">Book Free Analysis</a>
+      <a href="#procedures" class="btn-ghost">Explore Procedures</a>
+    </div>
+
+    <div class="hero-trust">
+      <div class="trust-item">
+        <div class="trust-num">3,200+</div>
+        <div class="trust-label">Procedures Done</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">99%</div>
+        <div class="trust-label">Graft Survival</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">14</div>
+        <div class="trust-label">Years Excellence</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-lines">
+        <div class="hero-line"></div>
+        <div class="hero-line"></div>
+        <div class="hero-line"></div>
+      </div>
+      <div class="hero-geo">
+        <div class="geo-silhouette"></div>
+        <div class="geo-ring geo-ring-1"><div class="geo-dot"></div></div>
+        <div class="geo-ring geo-ring-2"></div>
+      </div>
+    </div>
+
+    <div class="hero-badge">
+      <span class="hero-badge-num">4.9</span>
+      <div class="hero-badge-label">Google Rating</div>
+      <div style="color:var(--gold); font-size:0.7rem; letter-spacing:2px; margin-top:6px;">★★★★★</div>
+    </div>
+
+    <div class="hero-badge-2">
+      <div>
+        <div class="star-rating">★★★★★</div>
+        <div class="rating-num">ISO Certified</div>
+        <div class="rating-sub">Surgical Facility</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MARQUEE ── -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <!-- duplicated for seamless loop -->
+    <div class="marquee-item">FUE Hair Transplant <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Sapphire FUE <span class="marquee-dot"></span></div>
+    <div class="marquee-item">DHI Direct Implant <span class="marquee-dot"></span></div>
+    <div class="marquee-item">PRP Therapy <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Beard Restoration <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Scalp Micropigmentation <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Free Scalp Analysis <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Nairobi, Kenya <span class="marquee-dot"></span></div>
+    <div class="marquee-item">FUE Hair Transplant <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Sapphire FUE <span class="marquee-dot"></span></div>
+    <div class="marquee-item">DHI Direct Implant <span class="marquee-dot"></span></div>
+    <div class="marquee-item">PRP Therapy <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Beard Restoration <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Scalp Micropigmentation <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Free Scalp Analysis <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Nairobi, Kenya <span class="marquee-dot"></span></div>
+  </div>
+</div>
+
+<!-- ── STATS ── -->
+<div class="stats-bar">
+  <div class="stat-cell">
+    <div class="stat-n">3,200+</div>
+    <div class="stat-l">Procedures Completed</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-n">99%</div>
+    <div class="stat-l">Graft Survival Rate</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-n">14 Yrs</div>
+    <div class="stat-l">Clinical Experience</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-n">6</div>
+    <div class="stat-l">Board-Certified Surgeons</div>
+  </div>
+</div>
+
+<!-- ── PROCEDURES ── -->
+<section id="procedures">
+  <div class="section-wrap">
+    <div class="procs-header">
+      <div>
+        <div class="sec-eyebrow"><span>Treatments</span></div>
+        <h2 class="sec-title">Surgical &amp; <em>Non-Surgical</em><br>Procedures</h2>
+      </div>
+      <a href="about.html" class="btn-ghost" style="white-space:nowrap;">View All Procedures &rarr;</a>
+    </div>
+
+    <div class="procs-grid">
+
+      <div class="proc-card">
+        <div class="proc-num">01</div>
+        <div class="proc-icon">◈</div>
+        <h3 class="proc-title">Sapphire FUE</h3>
+        <p class="proc-desc">Our flagship procedure. Individual follicular units extracted with micro sapphire-tipped punches — zero linear scarring, faster healing, and undetectably natural density.</p>
+        <div class="proc-price">From KES 90,000</div>
+        <div class="proc-arrow">→</div>
+      </div>
+
+      <div class="proc-card">
+        <div class="proc-num">02</div>
+        <div class="proc-icon">⊕</div>
+        <h3 class="proc-title">DHI Direct Implant</h3>
+        <p class="proc-desc">Choi implanter pen technology for simultaneous extraction and placement. Maximum graft survival, precise angle control, and superior hair direction matching.</p>
+        <div class="proc-price">From KES 100,000</div>
+        <div class="proc-arrow">→</div>
+      </div>
+
+      <div class="proc-card">
+        <div class="proc-num">03</div>
+        <div class="proc-icon">◎</div>
+        <h3 class="proc-title">PRP Therapy</h3>
+        <p class="proc-desc">Platelet-Rich Plasma injections activate dormant follicles, accelerate post-procedure healing, and provide measurable density improvement with zero downtime.</p>
+        <div class="proc-price">From KES 18,000</div>
+        <div class="proc-arrow">→</div>
+      </div>
+
+      <div class="proc-card">
+        <div class="proc-num">04</div>
+        <div class="proc-icon">⌘</div>
+        <h3 class="proc-title">FUT Strip Method</h3>
+        <p class="proc-desc">Ideal for high-volume restoration. A precision strip from the donor zone yields maximum grafts for extensive coverage — suitable for advanced Norwood grades.</p>
+        <div class="proc-price">From KES 65,000</div>
+        <div class="proc-arrow">→</div>
+      </div>
+
+      <div class="proc-card">
+        <div class="proc-num">05</div>
+        <div class="proc-icon">◉</div>
+        <h3 class="proc-title">Beard &amp; Moustache</h3>
+        <p class="proc-desc">Rebuild beard density, fill patches, or create defined facial contours using grafts precisely matched to natural texture, direction and coarseness.</p>
+        <div class="proc-price">From KES 60,000</div>
+        <div class="proc-arrow">→</div>
+      </div>
+
+      <div class="proc-card">
+        <div class="proc-num">06</div>
+        <div class="proc-icon">◇</div>
+        <h3 class="proc-title">Scalp Micropigmentation</h3>
+        <p class="proc-desc">Non-surgical follicular replication using precision pigment deposits. Creates the look of a full shaved head or adds density illusion between transplant sessions.</p>
+        <div class="proc-price">From KES 25,000</div>
+        <div class="proc-arrow">→</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY US ── -->
+<section id="why">
+  <div class="section-wrap">
+    <div class="why-grid">
+
+      <div class="why-visual">
+        <div class="why-panel why-panel-main">
+          <div class="why-panel-main-content">
+            <h3>Turkish<br>Precision</h3>
+            <p>Nairobi's only Turkish-certified clinic</p>
+          </div>
+        </div>
+        <div class="why-panel why-panel-badge">
+          <span class="big">ISO</span>
+          <div class="small">Certified Facility</div>
+        </div>
+        <div style="position:absolute; bottom:0; left:0; right:2rem; height:1px; background:linear-gradient(90deg, var(--gold-dim), transparent);"></div>
+      </div>
+
+      <div>
+        <div class="sec-eyebrow"><span>Why TurkMed</span></div>
+        <h2 class="sec-title" style="margin-bottom:2.5rem;">The Standard Others<br><em>Aspire To</em></h2>
+
+        <div class="why-features">
+          <div class="why-feat">
+            <div class="feat-icon">◈</div>
+            <div class="feat-body">
+              <h4>Micro Sapphire Extraction</h4>
+              <p>Our sapphire-tipped instruments create microchannels 40% finer than standard steel punches — dramatically reducing trauma, accelerating healing and preserving follicular integrity.</p>
+            </div>
+          </div>
+          <div class="why-feat">
+            <div class="feat-icon">⊕</div>
+            <div class="feat-body">
+              <h4>Non-Compromised Graft Preservation</h4>
+              <p>Grafts are stored in HypoThermosol solution and implanted within strict time windows. Our 99% survival rate is the highest in East Africa.</p>
+            </div>
+          </div>
+          <div class="why-feat">
+            <div class="feat-icon">◎</div>
+            <div class="feat-body">
+              <h4>Localised Aftercare Protocol</h4>
+              <p>Dedicated post-procedure support via WhatsApp, in-clinic reviews at 1 week, 1 month, 3 months and 12 months — designed for Nairobi's climate and lifestyle.</p>
+            </div>
+          </div>
+          <div class="why-feat">
+            <div class="feat-icon">◇</div>
+            <div class="feat-body">
+              <h4>Artistic Hairline Design</h4>
+              <p>Every hairline is hand-mapped by our lead surgeon accounting for facial symmetry, age-appropriate recession, and ethnic hair characteristics — no two are identical.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section id="process">
+  <div class="section-wrap">
+    <div class="process-header">
+      <div class="sec-eyebrow"><span>Your Journey</span></div>
+      <h2 class="sec-title">From Consultation to <em>Full Growth</em></h2>
+    </div>
+
+    <div class="process-steps">
+
+      <div class="process-step">
+        <div class="step-circle">
+          <div class="step-circle-inner">
+            <span class="step-num-label">01</span>
+          </div>
+        </div>
+        <h4 class="step-title">Free Scalp Analysis</h4>
+        <p class="step-desc">Complimentary trichoscopy assessment. Our surgeon evaluates donor density, hair loss classification and builds your personalised restoration plan.</p>
+        <span class="step-time">Day 0</span>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">
+          <div class="step-circle-inner">
+            <span class="step-num-label">02</span>
+          </div>
+        </div>
+        <h4 class="step-title">Procedure Day</h4>
+        <p class="step-desc">Local anaesthesia, precision graft harvesting and placement in a single session. Most procedures take 6–8 hours in our ISO-certified theatre.</p>
+        <span class="step-time">Procedure Day</span>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">
+          <div class="step-circle-inner">
+            <span class="step-num-label">03</span>
+          </div>
+        </div>
+        <h4 class="step-title">Recovery &amp; Care</h4>
+        <p class="step-desc">Guided wash protocol, medicated shampoo kit and 24/7 WhatsApp support. Most clients return to work within 3–5 days. Redness resolves by day 10.</p>
+        <span class="step-time">Weeks 1–4</span>
+      </div>
+
+      <div class="process-step">
+        <div class="step-circle">
+          <div class="step-circle-inner">
+            <span class="step-num-label">04</span>
+          </div>
+        </div>
+        <h4 class="step-title">Full Results</h4>
+        <p class="step-desc">Transplanted hairs shed at week 3 — this is normal. New growth appears from month 3. Full, permanent density is achieved by month 12–14.</p>
+        <span class="step-time">Month 12+</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY ── -->
+<section id="gallery">
+  <div class="section-wrap">
+    <div class="gallery-header">
+      <div>
+        <div class="sec-eyebrow"><span>Results Gallery</span></div>
+        <h2 class="sec-title">Real Clients.<br><em>Permanent</em> Transformations.</h2>
+      </div>
+      <a href="about.html" class="btn-ghost" style="white-space:nowrap;">View All Results →</a>
+    </div>
+  </div>
+
+  <div class="gallery-grid" style="max-width:1320px; margin:0 auto; padding:0 2.5rem;">
+    <div class="gal-item">
+      <div class="gal-bg"></div>
+      <div class="gal-icon">◈</div>
+      <div class="gal-overlay"></div>
+      <div class="gal-label">
+        <div class="gal-before-after"><span class="gal-tag tag-before">Before</span><span class="gal-tag tag-after">After</span></div>
+        <div class="gal-case">FUE · 3,200 Grafts · 12mo</div>
+      </div>
+    </div>
+    <div class="gal-item">
+      <div class="gal-bg"></div>
+      <div class="gal-icon">◎</div>
+      <div class="gal-overlay"></div>
+      <div class="gal-label">
+        <div class="gal-before-after"><span class="gal-tag tag-before">Before</span><span class="gal-tag tag-after">After</span></div>
+        <div class="gal-case">Sapphire FUE · 2,800 Grafts</div>
+      </div>
+    </div>
+    <div class="gal-item">
+      <div class="gal-bg"></div>
+      <div class="gal-icon">⊕</div>
+      <div class="gal-overlay"></div>
+      <div class="gal-label">
+        <div class="gal-before-after"><span class="gal-tag tag-before">Before</span><span class="gal-tag tag-after">After</span></div>
+        <div class="gal-case">DHI · Crown Restoration</div>
+      </div>
+    </div>
+    <div class="gal-item">
+      <div class="gal-bg"></div>
+      <div class="gal-icon">◇</div>
+      <div class="gal-overlay"></div>
+      <div class="gal-label">
+        <div class="gal-before-after"><span class="gal-tag tag-before">Before</span><span class="gal-tag tag-after">After</span></div>
+        <div class="gal-case">Beard Transplant · 1,400 Grafts</div>
+      </div>
+    </div>
+    <div class="gal-item">
+      <div class="gal-bg"></div>
+      <div class="gal-icon">◉</div>
+      <div class="gal-overlay"></div>
+      <div class="gal-label">
+        <div class="gal-before-after"><span class="gal-tag tag-before">Before</span><span class="gal-tag tag-after">After</span></div>
+        <div class="gal-case">FUT · Advanced Loss · 4,100 Grafts</div>
+      </div>
+    </div>
+    <div class="gal-item">
+      <div class="gal-bg"></div>
+      <div class="gal-icon">⌘</div>
+      <div class="gal-overlay"></div>
+      <div class="gal-label">
+        <div class="gal-before-after"><span class="gal-tag tag-before">Before</span><span class="gal-tag tag-after">After</span></div>
+        <div class="gal-case">SMP · Full Scalp Coverage</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials">
+  <div class="section-wrap">
+    <div class="testi-header">
+      <div class="sec-eyebrow"><span>Client Stories</span></div>
+      <h2 class="sec-title">Heard From <em>Our Clients</em></h2>
+    </div>
+
+    <div class="testi-grid">
+
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">I researched clinics across three countries before choosing TurkMed Nairobi. The surgical precision, the consultation depth, and the results — genuinely indistinguishable from natural hair.</p>
+        <div class="testi-footer">
+          <div class="testi-avatar">JM</div>
+          <div>
+            <div class="testi-name">James M.</div>
+            <div class="testi-loc">Westlands, Nairobi</div>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Twelve months on and I still catch myself surprised in the mirror. The team designed a hairline that looks completely age-appropriate. The aftercare WhatsApp support was exceptional.</p>
+        <div class="testi-footer">
+          <div class="testi-avatar">DK</div>
+          <div>
+            <div class="testi-name">David K.</div>
+            <div class="testi-loc">Karen, Nairobi</div>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">World-class results without flying to Istanbul. The Sapphire FUE was painless, recovery was faster than I expected, and 3,000 grafts settled perfectly. Cannot recommend highly enough.</p>
+        <div class="testi-footer">
+          <div class="testi-avatar">SO</div>
+          <div>
+            <div class="testi-name">Samuel O.</div>
+            <div class="testi-loc">Kilimani, Nairobi</div>
+          </div>
+          <div class="testi-stars">★★★★★</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CONSULTATION CTA ── -->
+<section id="analysis">
+  <div class="analysis-inner" style="max-width:1320px; margin:0 auto;">
+
+    <div class="analysis-left">
+      <div class="sec-eyebrow"><span>Free Consultation</span></div>
+      <h2 class="sec-title" style="font-size:2.6rem;">Begin Your<br><em>Transformation</em><br>Today</h2>
+      <p class="sec-sub" style="margin-top:1rem;">Our free scalp analysis is a comprehensive, no-obligation session. Our lead surgeon personally reviews your donor zone, classifies your hair loss, and maps a bespoke treatment plan.</p>
+
+      <div class="contact-details">
+        <div class="contact-item">
+          <div class="contact-icon">◎</div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value">ABC Place, Waiyaki Way, Westlands, Nairobi</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">◈</div>
+          <div>
+            <div class="contact-label">WhatsApp &amp; Call</div>
+            <div class="contact-value">+254 700 123 456</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">◇</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">consult@turkmednairobi.co.ke</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">⊕</div>
+          <div>
+            <div class="contact-label">Clinic Hours</div>
+            <div class="contact-value">Mon–Sat: 8:00am – 6:00pm</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="analysis-right">
+      <div class="analysis-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Full Name</label>
+            <input type="text" placeholder="Your full name">
+          </div>
+          <div class="form-field">
+            <label>Phone / WhatsApp</label>
+            <input type="tel" placeholder="+254 700 000 000">
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@example.com">
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Procedure Interest</label>
+            <select>
+              <option value="">Select a procedure</option>
+              <option>Sapphire FUE</option>
+              <option>DHI Direct Implant</option>
+              <option>FUT Strip Method</option>
+              <option>PRP Therapy</option>
+              <option>Beard Transplant</option>
+              <option>Scalp Micropigmentation</option>
+              <option>General Consultation</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Hair Loss Stage</label>
+            <select>
+              <option value="">Norwood scale</option>
+              <option>Stage 1–2 (Early)</option>
+              <option>Stage 3 (Moderate)</option>
+              <option>Stage 4–5 (Significant)</option>
+              <option>Stage 6–7 (Advanced)</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Your Concerns (Optional)</label>
+          <textarea rows="3" placeholder="Describe your hair loss history, concerns, or questions..."></textarea>
+        </div>
+        <button type="button" class="form-submit">Request Free Scalp Analysis →</button>
+        <p class="form-note">Your information is completely confidential. Our team responds within 2 hours during clinic hours. No obligation, no pressure.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="footer-brand-logo">TURKMED<span>.</span></div>
+      <p class="footer-tagline">Nairobi's most trusted hair restoration clinic — uniting Turkish surgical mastery with East African clinical excellence since 2011.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="Instagram">IG</a>
+        <a href="#" class="social-btn" aria-label="Facebook">FB</a>
+        <a href="#" class="social-btn" aria-label="YouTube">YT</a>
+        <a href="#" class="social-btn" aria-label="WhatsApp">WA</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h5>Procedures</h5>
+      <ul>
+        <li><a href="#">Sapphire FUE</a></li>
+        <li><a href="#">DHI Implant</a></li>
+        <li><a href="#">FUT Method</a></li>
+        <li><a href="#">PRP Therapy</a></li>
+        <li><a href="#">Beard Transplant</a></li>
+        <li><a href="#">Scalp Micropig.</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>The Clinic</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="#">Our Surgeons</a></li>
+        <li><a href="#gallery">Results Gallery</a></li>
+        <li><a href="#">Financing Options</a></li>
+        <li><a href="#">Patient FAQs</a></li>
+        <li><a href="#">Medical Tourism</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#analysis">Book Analysis</a></li>
+        <li><a href="#">Westlands Clinic</a></li>
+        <li><a href="#">WhatsApp: +254 700 123 456</a></li>
+        <li><a href="#">consult@turkmednairobi.co.ke</a></li>
+        <li><a href="#">Mon–Sat: 8am – 6pm</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 TurkMed Nairobi. All rights reserved. · ISO Certified Surgical Facility</p>
+    <a href="about.html">About Us &rarr;</a>
+  </div>
+</footer>
+
+</body>
+</html>
