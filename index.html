@@ -192,4 +192,626 @@
         .blog-tabs { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 15px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 40px; }
         .blog-tabs::-webkit-scrollbar { height: 4px; }
         .blog-tabs::-webkit-scrollbar-thumb { background: var(--border-subtle); border-radius: 2px; }
-        .
+        .tab-btn { background: var(--silver-gray); border: 1px solid var(--border-subtle); color: var(--text-dark); padding: 10px 20px; font-size: 12px; font-weight: 700; font-family: 'Montserrat', sans-serif; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: var(--transition-hq); }
+        .tab-btn.active, .tab-btn:hover { background: var(--primary-navy); color: #fff; border-color: var(--primary-navy); }
+        .blog-content-viewport { background: var(--bg-clean-white); border: 1px solid var(--border-subtle); padding: 45px; border-radius: 6px; }
+        .blog-article { display: none; }
+        .blog-article.active { display: block; }
+        .blog-article h3 { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--primary-navy); margin-bottom: 20px; border-left: 4px solid var(--accent-gold); padding-left: 15px; }
+        .blog-article h4 { font-family: 'Montserrat', sans-serif; font-size: 18px; color: var(--primary-navy); margin: 30px 0 10px; font-weight: 700; }
+        .blog-article p { color: var(--text-muted); font-size: 15px; margin-bottom: 18px; text-align: justify; }
+
+        /* ================================================
+           9. FAQ SYSTEM COMPONENT (20 ACCORDIONS MATRIX)
+           ================================================
+        */
+        .faq-wrapper { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .faq-column { display: flex; flex-direction: column; gap: 15px; }
+        .faq-item { background: var(--bg-clean-white); border: 1px solid var(--border-subtle); border-radius: 4px; transition: var(--transition-hq); }
+        .faq-question { padding: 22px 25px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 14px; color: var(--primary-navy); font-family: 'Montserrat', sans-serif; }
+        .faq-answer { padding: 0 25px; max-height: 0; overflow: hidden; transition: var(--transition-hq); color: var(--text-muted); font-size: 13.5px; }
+        .faq-item.active { border-color: var(--accent-gold); box-shadow: 0 10px 25px rgba(0,0,0,0.02); }
+        .faq-item.active .faq-answer { padding: 0 25px 22px; max-height: 350px; }
+        .faq-item.active .faq-question { color: var(--accent-gold); }
+
+        /* ================================================
+           10. ULTRA GLOBAL CORPORATE FOOTER
+           ================================================
+        */
+        .footer-ultra { background: var(--primary-navy); padding: 100px 5% 40px; color: #fff; border-top: 4px solid var(--accent-gold); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; max-width: 1400px; margin: 0 auto; }
+        .footer-col h5 { font-family: 'Montserrat', sans-serif; color: #fff; margin-bottom: 25px; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .footer-col p { color: #94a3b8; font-size: 14px; line-height: 1.8; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #94a3b8; text-decoration: none; font-size: 14px; transition: var(--transition-hq); }
+        .footer-links a:hover { color: var(--accent-gold); padding-left: 4px; }
+        
+        .wa-float { position: fixed; bottom: 40px; right: 40px; z-index: 10000; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 15px 35px rgba(37, 211, 102, 0.35); transition: var(--transition-hq); text-decoration: none; }
+        .wa-float:hover { transform: scale(1.1) rotate(10deg); }
+
+        /* RESPONSIVE LAYOUT CLEANUP DEGRADATIONS */
+        @media (max-width: 1024px) {
+            .faq-wrapper { grid-template-columns: 1fr; }
+            .doc-card { flex-direction: column; }
+            .doc-img, .doc-info { width: 100%; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+        @media (max-width: 768px) {
+            .nav-menu { display: flex !important; gap: 15px; overflow-x: auto; width: 100vw; padding: 5px 20px 10px; justify-content: flex-start; -webkit-overflow-scrolling: touch; margin-top: 10px; }
+            .nav-menu::-webkit-scrollbar { display: none; }
+            .nav-container { flex-direction: column; align-items: flex-start; }
+            .header-main { padding: 10px 0; }
+            .trust-badge-row { gap: 15px; margin-top: -20px; }
+            .trust-badge-card { width: 100%; }
+            .estimator-box { padding: 30px 20px; }
+            .blog-content-viewport { padding: 25px; }
+            .split-slider-container { height: 220px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-main">
+        <div class="nav-container">
+            <a href="#hero" class="logo-text">TURK<span>MED</span> NAIROBI</a>
+            <ul class="nav-menu">
+                <li><a href="#about">The Journey</a></li>
+                <li><a href="#services">Clinical Services</a></li>
+                <li><a href="#results">Results Gallery</a></li> 
+                <li><a href="#estimator">Graft Estimator</a></li>
+                <li><a href="#knowledge">Clinical Guides</a></li>
+                <li><a href="#faq">Expert FAQ</a></li>
+                <li><a href="https://wa.me/254726618187" class="nav-cta">Free Scalp Analysis</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero-premium" id="hero">
+        <video autoplay muted loop playsinline class="hero-video-bg">
+            <source src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da375747a1dcb30d9306450b32f627a3c3d0c&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="subtitle animate__animated animate__fadeIn">Turkish Expertise • Natural Results • Now In Nairobi</span>
+            <h1 class="animate__animated animate__fadeInUp">PRECISION WITHOUT LIMITS</h1>
+            <p class="animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">Experience world-class Turkish hair restoration mastery. We deliver advanced, minimally invasive micro-grafting techniques tailored engineered for optimal hairframe density, lifetime longevity, and absolute structural density.</p>
+            <div class="hero-actions animate__animated animate__fadeInUp" style="animation-delay: 0.4s;">
+                <a href="#estimator" class="btn-gold">Launch Graft Assessment</a>
+                <a href="https://wa.me/254726618187" class="btn-white-outline" target="_blank"><i class="fab fa-whatsapp" style="margin-right: 8px;"></i>Secure Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust-badge-row">
+        <div class="trust-badge-card reveal">
+            <i class="fas fa-certificate"></i>
+            <div>
+                <h6>Turkish Specialists</h6>
+                <p>Direct Istanbul Protocols</p>
+            </div>
+        </div>
+        <div class="trust-badge-card reveal" style="transition-delay: 0.1s;">
+            <i class="fas fa-gem"></i>
+            <div>
+                <h6>Sapphire Engineering</h6>
+                <p>30% Smaller Micro-Incisions</p>
+            </div>
+        </div>
+        <div class="trust-badge-card reveal" style="transition-delay: 0.2s;">
+            <i class="fas fa-shield-alt"></i>
+            <div>
+                <h6>Lifetime Guarantee</h6>
+                <p>Certified Follicular Survival</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="about">
+        <div style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 320px;" class="reveal">
+                <h4 style="color: var(--accent-gold); font-weight:700; letter-spacing:2px; font-size:13px; text-transform:uppercase; margin-bottom:10px;">PREMIER MEDICAL FACILITY</h4>
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; line-height: 1.2; margin-bottom: 25px; color: var(--primary-navy);">The 5-Star Patient Journey In Parklands</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">At TurkMed Nairobi, your path to full restoration is managed as an elite executive medical experience. Located on the 2nd Floor of the architectural masterclass <strong>Valley View Office Park</strong> along City Park Drive, our state-of-the-art diagnostic surgery suites provide private luxury spaces paired with the gold-standard frameworks of Turkish surgical science.</p>
+                <div style="margin-top: 30px;">
+                    <div style="margin-bottom: 20px; display:flex; gap:15px; align-items:flex-start;">
+                        <span style="background:var(--silver-gray); color:var(--accent-gold); font-weight:800; padding:5px 12px; border-radius:4px; border:1px solid var(--border-subtle);">01</span>
+                        <p style="font-size:14.5px; color:var(--text-dark);"><strong style="color:var(--primary-navy);">AI Density Analysis:</strong> Digital scalp microscopic mappings precisely chart hair loss vectors and donor follicular supply matrix reserves before surgical extraction commits.</p>
+                    </div>
+                    <div style="margin-bottom: 20px; display:flex; gap:15px; align-items:flex-start;">
+                        <span style="background:var(--silver-gray); color:var(--accent-gold); font-weight:800; padding:5px 12px; border-radius:4px; border:1px solid var(--border-subtle);">02</span>
+                        <p style="font-size:14.5px; color:var(--text-dark);"><strong style="color:var(--primary-navy);">Comfort Pressure Systems:</strong> We employ needle-free localized pressure subdermal delivery methods to isolate operative pain triggers safely during prep cycles.</p>
+                    </div>
+                    <div style="margin-bottom: 20px; display:flex; gap:15px; align-items:flex-start;">
+                        <span style="background:var(--silver-gray); color:var(--accent-gold); font-weight:800; padding:5px 12px; border-radius:4px; border:1px solid var(--border-subtle);">03</span>
+                        <p style="font-size:14.5px; color:var(--text-dark);"><strong style="color:var(--primary-navy);">VIP Post-Op Rest Suites:</strong> Conclude your comprehensive procedural shift with specialized clinical recovery catering and direct continuous post-op recovery assistance packs.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="flex: 1; min-width: 320px; text-align: center;" class="reveal">
+                <img src="valley-view-building.jpg" style="width: 100%; max-width: 550px; border-radius: 8px; box-shadow: -15px 15px 0 var(--accent-gold); border: 1px solid var(--border-subtle);" alt="TurkMed Valley View Office Park Facility Infrastructure">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-silver" id="services">
+        <div style="text-align: center; margin-bottom: 80px;">
+            <h4 style="color: var(--accent-gold); letter-spacing: 4px; font-weight:700; font-size:12px; text-transform:uppercase;">WORLD-CLASS TREATMENT PROTOCOLS</h4>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 45px; color: var(--primary-navy); margin-top: 10px;">Engineered Micro-Grafting Architectures</h2>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 15px auto 0; font-size: 15px;">Explore our highly focused range of advanced surgical hair restoration procedures delivered directly under rigorous Turkish medical safeguards.</p>
+        </div>
+        <div class="grid-3">
+            <div class="service-block reveal">
+                <i class="fas fa-gem"></i>
+                <h3>Sapphire FUE Hair Transplant</h3>
+                <p>By transitioning from standard steel surgical blades to pure V-shaped gemstone sapphire crystalline structures, our teams make channel entry parameters 30% more micro-refined.</p>
+                <ul>
+                    <li>72-Hour Rapid Healing Windows</li>
+                    <li>Zero Long-Term Linear Scarring Marks</li>
+                    <li>Ultra-High Density Levels (Up to 80 Grafts/cm²)</li>
+                </ul>
+            </div>
+            <div class="service-block reveal">
+                <i class="fas fa-pen-fancy"></i>
+                <h3>DHI (Direct Hair Implantation)</h3>
+                <p>Utilizing patented specialized mechanical Choi Implanter Pens, follicles are extracted and systematically positioned directly into target sites within one motion shift sequence.</p>
+                <ul>
+                    <li>No General Scalp Shaving Required</li>
+                    <li>Perfect Isolation for Female Hairlines</li>
+                    <li>Minimal Graft Exposure Out of the Scalp Matrix</li>
+                </ul>
+            </div>
+            <div class="service-block reveal">
+                <i class="fas fa-arrows-spin"></i>
+                <h3>Afro-Textured 4C Precision Focus</h3>
+                <p>Curly hair structures demand extensive alternative curved punch vectors beneath the dermal line layer to keep the fundamental roots shielded from harmful structural transections.</p>
+                <ul>
+                    <li>Patented Specialized Curved Isolation Punches</li>
+                    <li>Subterranean Angled Follicular Depth Mapping</li>
+                    <li>Natural Hairline Fluid Realignment Paths</li>
+                </ul>
+            </div>
+            <div class="service-block reveal">
+                <i class="fas fa-user-tie"></i>
+                <h3>Beard & Mustache Restoration</h3>
+                <p>Re-establish patches and design continuous dense contours across facial profiles by repositioning genetically stable donor grafts into highly aesthetic localized areas.</p>
+                <ul>
+                    <li>Single-Follicle Precision Matching Layouts</li>
+                    <li>Perfect Anatomical Exit Angle Matching Guides</li>
+                    <li>Permanent Thickness Gains Across Cheeks</li>
+                </ul>
+            </div>
+            <div class="service-block reveal">
+                <i class="fas fa-eye"></i>
+                <h3>Eyebrow Micro-Graft Restorations</h3>
+                <p>Designed for individuals facing thinning or trauma marks, our micro-graft eyebrows replicate natural framing paths with extreme delicacy and density control.</p>
+                <ul>
+                    <li>Strict Single Hair Core Selection Matrices</li>
+                    <li>Flat Anatomical Lateral Alignment Parameters</li>
+                    <li>Custom Framing Layout Realignment Designs</li>
+                </ul>
+            </div>
+            <div class="service-block reveal">
+                <i class="fas fa-syringe"></i>
+                <h3>PRP & Stem Cell Growth Therapies</h3>
+                <p>Harness localized high-concentration autologous plasma formulations to inject biological nourishment vectors into compromised, shedding follicular vascular arrays.</p>
+                <ul>
+                    <li>Rich Autologous Growth Factor Introductions</li>
+                    <li>Accelerated Pre-Post Surgical Cellular Support</li>
+                    <li>Powerful Preventive Structural Volumizing Drives</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="results">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h4 style="color: var(--accent-gold); letter-spacing: 4px; font-weight:700; font-size:12px; text-transform:uppercase;">VERIFIABLE CLINICAL DOCUMENTATION</h4>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; color: var(--primary-navy); margin-top: 10px;">Nairobi Patient Progress Gallery</h2>
+            <p style="color: var(--text-muted); max-width: 750px; margin: 15px auto 0; font-size: 15px;">Every case file highlights authentic clinical hair framing milestones recorded systematically at our surgical center in Nairobi, showing genuine transition metrics.</p>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-card reveal">
+                <div class="split-slider-container">
+                    <div class="split-side"><span class="split-label label-after">After (12 Months)</span><img src="result1.jpg" alt="Post-Operative Sapphire FUE Crown Growth Yield Coverage"></div>
+                    <div class="split-side"><span class="split-label label-before">Before Treatment</span><img src="result1_before.jpg" alt="Severe Frontal Recession Balding Stage Norwood Pattern"></div>
+                </div>
+                <div class="gallery-details">
+                    <h5>3,200 Grafts FUE – Frontal Re-Framing Case</h5>
+                    <p><strong>Clinical Strategy:</strong> Targeted restoration across a Norwood Type III balance zone. Implemented custom Sapphire micro-incisions to coordinate with the patient's frontal growth vectors, deploying 3,200 individual high-integrity grafts. Result achieves full density closing the receded zones.</p>
+                </div>
+            </div>
+            
+            <div class="gallery-card reveal" style="transition-delay: 0.1s;">
+                <div class="split-slider-container">
+                    <div class="split-side"><span class="split-label label-after">After (10 Months)</span><img src="result3.jpeg" alt="Afro Hairline Density Recovery High Survival Profile"></div>
+                    <div class="split-side"><span class="split-label label-before">Before Treatment</span><img src="result3_before.jpg" alt="Diffuse Thinning Across Crown on Textured Scalp"></div>
+                </div>
+                <div class="gallery-details">
+                    <h5>3,850 Grafts – Curly Afro Matrix Restoration</h5>
+                    <p><strong>Clinical Strategy:</strong> Addressed severe hair loss on a 4C curly hair matrix. Due to the high tissue demands exceeding safe single-day parameters, a specialized multi-session approach was used to properly protect the surrounding donor vascularity. Result displays thick, safe coverage yields.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-silver" id="estimator">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h4 style="color: var(--accent-gold); letter-spacing: 4px; font-weight:700; font-size:12px; text-transform:uppercase;">PRE-CLINICAL ASSESSMENT DIAGNOSTICS</h4>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; color: var(--primary-navy); margin-top: 10px;">Interactive Graft & Session Engine</h2>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 15px auto 0; font-size: 15px;">Slide the indicator matrix below to estimate your operational boundaries, processing session durations, and exact budget targets determined by strict Turkish safety limits.</p>
+        </div>
+
+        <div class="estimator-box reveal">
+            <h5 style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight:700; color: var(--primary-navy); text-transform:uppercase; letter-spacing:1px;">Select Estimated Loss Severity Threshold:</h5>
+            <input type="range" min="1" max="5" value="3" class="estimator-range" id="graftRange">
+            
+            <div class="estimator-output">
+                <div class="output-block">
+                    <span>Target Volume Matrix</span>
+                    <b id="graftCount">3,500 Grafts Bracket</b>
+                </div>
+                <div class="output-block">
+                    <span>Surgical Allocation Window</span>
+                    <b id="durationText">1-Day Session Shift</b>
+                </div>
+                <div class="output-block">
+                    <span>Clinical Pricing Strategy</span>
+                    <b id="priceText" style="color: var(--accent-gold);">$1,100 USD (Fixed Rate)</b>
+                </div>
+            </div>
+            <div style="margin-top: 35px; padding-top: 25px; border-top: 1px solid var(--border-subtle); text-align: center;">
+                <a href="https://wa.me/254726618187" class="btn-gold" style="display: inline-block;">Lock In Digital Price Estimate</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="doctor-showcase" id="doctors">
+        <div class="doc-card reveal">
+            <div class="doc-img">
+                <img src="dr ahmetr.jpeg" alt="Dr. Ahmet Başkaya Chief Restorative Surgeon TurkMed Nairobi Clinic">
+            </div>
+            <div class="doc-info">
+                <h4>CHIEF OPERATING SURGEON</h4>
+                <h2>Dr. Ahmet Başkaya</h2>
+                <p>Dr. Ahmet Başkaya brings over 12 years of clinical hair restoration experience from premier surgical centers in Istanbul directly to Nairobi. Internationally renowned for his development of the "Featherline" hairline integration framework, he specializes in managing complex Sapphire FUE interventions and intricate Afro-textured follicular extractions with microscopic accuracy.</p>
+                <div class="doc-qualifications">
+                    <span class="q-badge">ISTANBUL CERTIFIED SPECIALIST</span>
+                    <span class="q-badge">SAPPHIRE FELLOWSHIP MEDICAL MEMBER</span>
+                    <span class="q-badge">ISHRS COMPLIANT EXPERT</span>
+                    <span class="q-badge">12+ YEARS SURGICAL TENURE</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="knowledge">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h4 style="color: var(--accent-gold); letter-spacing: 4px; font-weight:700; font-size:12px; text-transform:uppercase;">CLINICAL KNOWLEDGE BASE & SEARCH ENGINE</h4>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; color: var(--primary-navy); margin-top: 10px;">The Advanced Medical Resource Hub</h2>
+            <p style="color: var(--text-muted); max-width: 750px; margin: 15px auto 0; font-size: 15px;">Review comprehensive, medically referenced articles detailing hair loss methodologies, recovery progression lines, and financial comparisons.</p>
+        </div>
+
+        <div class="blog-container">
+            <div class="blog-tabs">
+                <button class="tab-btn active" onclick="switchArticle(0)">1. Cost Guide (2026)</button>
+                <button class="tab-btn" onclick="switchArticle(1)">2. Turkey vs Kenya Matrix</button>
+                <button class="tab-btn" onclick="switchArticle(2)">3. Graft Volume Logic</button>
+                <button class="tab-btn" onclick="switchArticle(3)">4. Sapphire vs FUE</button>
+                <button class="tab-btn" onclick="switchArticle(4)">5. 10 Hair Loss Triggers</button>
+                <button class="tab-btn" onclick="switchArticle(5)">6. Age Thresholds</button>
+                <button class="tab-btn" onclick="switchArticle(6)">7. Female Patterns</button>
+                <button class="tab-btn" onclick="switchArticle(7)">8. Recovery Phases</button>
+                <button class="tab-btn" onclick="switchArticle(8)">9. Procedural Steps</button>
+                <button class="tab-btn" onclick="switchArticle(9)">10. Natural Prevention</button>
+            </div>
+
+            <div class="blog-content-viewport">
+                <article class="blog-article active">
+                    <h3>Hair Transplant Cost in Kenya (Comprehensive 2026 Guide)</h3>
+                    <p>Navigating the real financial costs of hair restoration in East Africa requires understanding the differences between low-grade commercial packages and advanced clinical safety frameworks. In 2026, standard market estimates across Nairobi vary widely based on graft requirements, technology tiers, and doctor availability. At TurkMed Nairobi, we maintain clear, flat-bracket pricing structures to remove hidden fee risks for patients.</p>
+                    <h4>Understanding Bracket Boundaries</h4>
+                    <p>Clinical treatments requiring up to 3,500 total grafts are delivered at a fixed package rate of $1,100 USD. This comprehensive tier includes specialized medical setup costs, high-precision Sapphire tool preparation, localized discomfort block management, and aftercare guidance support kits. When extensive, severe baldness demands higher graft counts exceeding 3,500, treatment changes to a specialized multi-session protocol to preserve donor area health and protect long-term cell survival yields.</p>
+                </article>
+
+                <article class="blog-article">
+                    <h3>Turkey vs Kenya Hair Transplant: Comprehensive Comparative Matrix</h3>
+                    <p>Historically, flying to Istanbul was the only way to access high-quality hair restoration. However, when calculating total real travel expenses—including extended international flights, hotel bookings, language translators, and the risk of traveling long distances shortly after a delicate medical procedure—the true logistical impact can grow significantly.</p>
+                    <h4>The Onshore Medical Advantage</h4>
+                    <p>By bringing direct Turkish surgical protocols and equipment directly to Valley View Office Park in Parklands, TurkMed Nairobi removes these travel challenges. Patients receive identical clinical results from Turkish-certified specialists locally in Nairobi. This nearby configuration also ensures easy access to real, on-site medical check-ups throughout the critical 12-month post-operative recovery cycle.</p>
+                </article>
+
+                <article class="blog-article">
+                    <h3>How Many Hair Grafts Do You Truly Require? The Mathematical Allocation Logic</h3>
+                    <p>Determining your target graft count relies on clear mathematical space calculations, rather than random visual guesswork. Clinical experts evaluate hair restoration areas using the global Norwood Balding Scale, calculating the total square centimeters of hair loss alongside the patient's remaining donor hair density reserves at the back and sides of the head.</p>
+                    <h4>Anatomical Density Scaling</h4>
+                    <p>A natural-looking hairline requires a minimum distribution density of 45 to 55 follicular units per square centimeter ($cm^2$). Applying this formula, minor frontal receded recession areas generally require between 1,500 and 2,500 total grafts. Larger, advanced balding patterns extending across the crown and mid-scalp regions will scale upward, requiring 3,500 to over 5,000 grafts to establish proper density balances.</p>
+                </article>
+
+                <article class="blog-article">
+                    <h3>FUE vs Sapphire FUE: The Technical Crystalline Breakthrough Explained</h3>
+                    <p>The transition from standard Follicular Unit Extraction (FUE) to Sapphire FUE marks a major leap forward in surgical precision. Standard FUE methods utilize industrial steel micro-blades to open slits in the skin. Over the course of thousands of surgical incisions, steel edges experience minor structural wear, which can cause micro-tearing in surrounding tissue matrix lines.</p>
+                    <h4>The Gemstone Crystalline Advantage</h4>
+                    <p>In contrast, Sapphire FUE utilizes custom single-crystal gemstone blades ground to incredibly sharp, smooth V-shaped profiles. These refined gemstone edges slice effortlessly through skin tissue layers without creating rough microscopic tears. This extreme precision keeps local bleeding to a minimum, reduces recovery times to just 72 hours, and allows clinicians to place grafts closely together for exceptional final density results.</p>
+                </article>
+
+                <article class="blog-article">
+                    <h3>10 Primary Causes of Hair Loss in Men: Clinical Diagnostic Criteria</h3>
+                    <p>Hair loss in men stems from a variety of genetic, physiological, and environmental factors. Identifying the underlying cause is essential for creating an effective treatment plan. The most frequent cause is Androgenetic Alopecia, or male pattern baldness, which is driven by an inherited sensitivity to Dihydrotestosterone (DHT). This hormone binds to hair follicles, causing them to shrink over time until they stop producing viable hair shafts entirely.</p>
+                    <h4>Secondary Physiological Factors</h4>
+                    <p>Beyond genetics, hair loss can be triggered by prolonged psychological stress, which pushes hair roots into a premature resting state known as Telogen Effluvium. Nutritional deficiencies—particularly low iron, vitamin D, and essential protein levels—can also weaken the hair production cycle. Other key factors include chronic scalp inflammation, autoimmune issues, sudden hormonal shifts, poor vascular circulation, and harsh chemical styling treatments.</p>
+                </article>
+
+                <article class="blog-article">
+                    <h3>The Strategic Age Threshold: When Is the Ideal Time for Surgery?</h3>
+                    <p>While hair loss can cause distress at any stage of life, performing a surgical hair transplant too early can lead to long-term placement challenges. In young patients under the age of 25, hair loss patterns are often still actively developing. If a new hairline is surgically placed while natural hair behind it continues to recede, patients can develop an isolated, unnatural look over time.</p>
+                    <h4>Stabilization and Long-Term Planning</h4>
+                    <p>Surgical hair restoration is most effective when hair loss patterns have begun to stabilize, typically around or after the age of 25. For younger patients, clinical teams focus on non-surgical therapies, such as PRP treatments and medical management, to protect existing hair density. This careful approach ensures that when a transplant is performed, the surrounding natural hair remains stable for a balanced, lifelong result.</p>
+                </article>
+
+                <article class="blog-article">
+                    <h3>Can Women Safely Benefit from Hair Transplant Surgery?</h3>
+                    <p>Yes, women can absolutely undergo successful hair transplant surgery, though female hair loss patterns differ significantly from male patterns. While men typically experience receding hairlines or localized bald spots, female hair loss usually presents as diffuse thinning across the mid-scalp and vertex regions, while the frontal hairline often remains intact.</p>
+                    <h4>The DHI No-Shave Protocol</h4>
+                    <p>To avoid the need for shaving the entire head, clinicians utilize the advanced Direct Hair Implantation (DHI) technique for female patients. Using specialized Choi Implanter Pens, specialists can carefully place new grafts directly between existing hair strands. This approach protects your current hair density, keeps the procedure completely discreet, and delivers excellent volume restoration with minimal social downtime.</p>
+                </article>
+
+                <article class="blog-article">
+                    <h3>The 12-Month Recovery Timeline: What to Expect Post-Operatively</h3>
+                    <p>Understanding the hair transplant recovery journey is essential for keeping patient expectations aligned with natural biological healing cycles. The restoration process is a gradual transition that requires patience over a full 12-to-15-month period.</p>
+                    <h4>From Initial Healing to Final Growth</h4>
+                    <p>During the first 3 to 5 days, minor swelling and small skin scabs will form around the newly placed micro-channels. By day 10, these initial scabs naturally shed away during gentle washing cycles. Between weeks 3 and 6, patients experience a normal phase called "shock shedding," where transplanted hair shafts fall out as the underlying roots transition into a resting state. New, permanent hair growth begins around month 4, with structural density and coverage reaching its full, mature result at the 12-month mark.</p>
+                </article>
+
+                <article class="blog-article">
+                    <h3>Step-by-Step Inside the Operating Room: The Surgical Workflow</h3>
+                    <p>A hair transplant procedure is a highly organized, single-day outpatient surgery that takes between 6 and 8 hours to complete. The process begins with a precise baseline planning consultation, where the primary physician marks out the target hairline structure directly on the scalp.</p>
+                    <h4>Execution and Preservation</h4>
+                    <p>Once localized comfort anesthesia is comfortably applied, the extraction phase begins. Individual follicular units are carefully harvested from the back of the head using ultra-thin micromechanical punches. These extracted grafts are immediately placed into specialized, chilled holding solutions to keep the cells nourished and viable. Finally, using high-precision Sapphire gemstone blades, the surgeon opens micro-channels at precise natural angles before gently positioning each individual graft into place.</p>
+                </article>
+
+                <article class="blog-article">
+                    <h3>Preventive Scalp Therapies: Supporting Your Hair Matrix Naturally</h3>
+                    <p>Maintaining long-term hair volume relies on supporting the metabolic health of active scalp tissue. While advanced surgery is the only way to restore hair to completely bald areas, early-stage thinning can often be managed through focused non-surgical treatments.</p>
+                    <h4>Vascular Nutrition and Care</h4>
+                    <p>To support hair health naturally, focus on boosting blood flow to the scalp and ensuring your body has the right building blocks for hair production. Regular scalp massage helps stimulate local circulation, delivering oxygen and key nutrients directly to active hair roots. Combining these routines with targeted platelet-rich plasma (PRP) therapies helps protect vulnerable follicles, extends the active growth phase, and builds a strong foundation for thick, healthy hair.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-silver" id="faq">
+        <div style="text-align: center; margin-bottom: 70px;">
+            <h4 style="color: var(--accent-gold); letter-spacing: 4px; font-weight:700; font-size:12px; text-transform:uppercase;">EXPERT VERIFIED RESPONSES</h4>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; color: var(--primary-navy); margin-top: 10px;">The Medical Expert FAQ</h2>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 15px auto 0; font-size: 15px;">Review authoritative, definitive medical answers to the top 20 questions regarding surgical hair restoration protocols.</p>
+        </div>
+
+        <div class="faq-wrapper">
+            <div class="faq-column">
+                <div class="faq-item">
+                    <div class="faq-question">1. Does a hair transplant procedure hurt? <span>+</span></div>
+                    <div class="faq-answer">The procedure is virtually pain-free. We apply advanced localized comfort pressure systems before extraction begins to thoroughly numb the scalp, ensuring you feel no sharp pain during the session.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">2. How long does the entire surgical procedure take? <span>+</span></div>
+                    <div class="faq-answer">A typical session takes between 6 and 8 hours. This timeframe includes careful preparation, follicle extraction, a lunch break, and high-density channel placement.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">3. When will I begin to see the final visual results? <span>+</span></div>
+                    <div class="faq-answer">Initial hair growth begins around the 4-month mark. You will see significant coverage improvements by month 8, with final density and mature texture fully establishing at 12 to 15 months.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">4. Are the results of a Sapphire FUE transplant permanent? <span>+</span></div>
+                    <div class="faq-answer">Yes, the results are permanent. Extracted hair follicles are harvested from the secure donor zone at the back of the head, which is genetically resistant to the thinning effects of DHT.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">5. How many total grafts will I need for my hair loss? <span>+</span></div>
+                    <div class="faq-answer">Graft needs depend on your specific hair loss pattern. Minor recession usually requires 1,500 to 2,500 grafts, while advanced thinning across the crown can require 3,500 to 5,000 total units.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">6. What is the real difference between steel and Sapphire blades? <span>+</span></div>
+                    <div class="faq-answer">Sapphire blades are crafted from smooth, ultra-sharp single crystals that create clean, micro-refined incisions. This precision significantly reduces bleeding and accelerates healing compared to standard steel blades.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">7. Will my transplanted hair look completely natural? <span>+</span></div>
+                    <div class="faq-answer">Absolutely. Our specialists carefully place every single graft to align perfectly with your natural hair exit angles, growth directions, and personal facial features.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">8. Can a hair transplant address advanced crown baldness? <span>+</span></div>
+                    <div class="faq-answer">Yes, crown restorations are highly effective, though they often require high graft volumes and specialized whorl-pattern placement to achieve a natural, full look.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">9. What exactly is a follicle transection risk? <span>+</span></div>
+                    <div class="faq-answer">Transection occurs if an extraction punch accidentally cuts or damages the root structure. We use premium, ultra-thin curved punches to ensure hair roots are kept completely safe and intact.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">10. Am I a suitable candidate for a hair transplant? <span>+</span></div>
+                    <div class="faq-answer">Ideal candidates have stabilized hair loss patterns paired with a healthy, dense donor hair supply at the back and sides of the head to facilitate the restoration.</div>
+                </div>
+            </div>
+
+            <div class="faq-column">
+                <div class="faq-item">
+                    <div class="faq-question">11. What is the standard recovery timeline? <span>+</span></div>
+                    <div class="faq-answer">Most patients return to light office work within 3 to 5 days. For strenuous physical labor or heavy gym exercise, we recommend waiting 14 days to let the scalp fully heal.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">12. Can women safely undergo a hair transplant? <span>+</span></div>
+                    <div class="faq-answer">Yes. Using advanced DHI no-shave techniques, we can easily restore hair volume for female patients by placing new grafts directly between existing hair strands without shaving the head.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">13. What is "shock shedding" after a procedure? <span>+</span></div>
+                    <div class="faq-answer">Shock shedding is a completely normal part of the process. Between weeks 3 and 6, temporary hair shafts fall out as the roots enter a temporary resting phase before growing permanent new hair.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">14. Why is your single-session graft cap set at 3,500? <span>+</span></div>
+                    <div class="faq-answer">We limit single-day extractions to 3,500 grafts to ensure maximum cell survival rates, protect donor area health, and avoid placing excessive healing stress on the scalp.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">15. How does a 2-day multi-session procedure work? <span>+</span></div>
+                    <div class="faq-answer">For advanced hair loss, the procedure is divided over two consecutive days. This structured approach allows us to safely harvest large graft volumes while giving your skin essential time to heal.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">16. What is included in your premium aftercare kit? <span>+</span></div>
+                    <div class="faq-answer">Our post-op kit contains specialized medical shampoos, soothing lotions, detailed washing guides, custom foam neck pillows, and a course of protective clinical medications.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">17. How soon after surgery can I wash my hair normally? <span>+</span></div>
+                    <div class="faq-answer">You will begin a gentle, specialized washing routine on day 3 using our aftercare products. You can return to your regular, normal showering habits after 14 days.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">18. Are there flexible payment options in Nairobi? <span>+</span></div>
+                    <div class="faq-answer">Yes, we provide flexible local payment pathways and partner with trusted financial institutions to help make your treatment journey smooth and manageable.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">19. Can body hair be used as a donor source? <span>+</span></div>
+                    <div class="faq-answer">Yes, if scalp donor hair is limited, we can harvest alternative grafts from beard or chest areas to supply extra density where it's needed most.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">20. Where is your Nairobi clinic located? <span>+</span></div>
+                    <div class="faq-answer">Our modern facility is located on the 2nd Floor of Valley View Office Park, along City Park Drive in the Parklands medical district of Nairobi, Kenya.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-ultra">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo-text" style="color:#fff; margin-bottom: 20px;">TURK<span>MED</span> NAIROBI</div>
+                <p>Setting the gold standard for clinical hair restoration across East Africa. Through our direct collaboration with certified Turkish surgical teams, we bring world-class hair transplant precision directly to patients in Nairobi.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Clinical Services</h5>
+                <ul class="footer-links">
+                    <li><a href="#services">Sapphire FUE Hair Transplant</a></li>
+                    <li><a href="#services">DHI Unshaven Optimization</a></li>
+                    <li><a href="#services">Beard & Mustache Realignment</a></li>
+                    <li><a href="#services">Eyebrow Restoration Design</a></li>
+                    <li><a href="#services">PRP Stem Cell Blood Therapy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Legal & Compliance</h5>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Our Center</a></li>
+                    <li><a href="#knowledge">Clinical Knowledge Base</a></li>
+                    <li><a href="privacy.html">Privacy Policy Statement</a></li>
+                    <li><a href="terms.html">Terms & Conditions Framework</a></li>
+                    <li><a href="cookie.html">Cookie Tracking Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contact Facility</h5>
+                <p style="color:#cbd5e1;">
+                    <strong>Valley View Office Park</strong><br>
+                    2nd Floor, City Park Drive, Parklands<br>
+                    Nairobi, Kenya<br><br>
+                    <i class="fas fa-phone" style="color:var(--accent-gold); margin-right:8px;"></i>+254 726 618 187<br>
+                    <i class="fas fa-envelope" style="color:var(--accent-gold); margin-right:8px;"></i>info@turkmed.co.ke
+                </p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 12px; color: #94a3b8;">
+            &copy; 2026 TurkMed Nairobi Clinic. All surgical hair restoration procedures are performed exclusively by licensed medical specialists. All rights reserved.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/254726618187" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Interactive Accordion System Implementation
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                const isCurrentlyActive = parent.classList.contains('active');
+                
+                // Collapse open accordions cleanly
+                document.querySelectorAll('.faq-item').forEach(child => child.classList.remove('active'));
+                
+                if (!isCurrentlyActive) {
+                    parent.classList.add('active');
+                }
+            });
+        });
+
+        // Article Hub Navigation Engine
+        function switchArticle(index) {
+            const articles = document.querySelectorAll('.blog-article');
+            const tabs = document.querySelectorAll('.tab-btn');
+            
+            articles.forEach(art => art.classList.remove('active'));
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            articles[index].classList.add('active');
+            tabs[index].classList.add('active');
+        }
+
+        // Scroll Performance UI Reveal Engine
+        const revealElements = document.querySelectorAll('.reveal');
+        function checkReveal() {
+            const triggerBottom = window.innerHeight * 0.9;
+            revealElements.forEach(el => {
+                const elTop = el.getBoundingClientRect().top;
+                if (elTop < triggerBottom) {
+                    el.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('load', checkReveal);
+
+        // Advanced Pricing Logic Realignment Engine
+        const rangeSlider = document.getElementById('graftRange');
+        const graftCount = document.getElementById('graftCount');
+        const durationText = document.getElementById('durationText');
+        const priceText = document.getElementById('priceText');
+
+        if (rangeSlider) {
+            rangeSlider.addEventListener('input', (e) => {
+                const level = parseInt(e.target.value);
+                let grafts = "3,500 Grafts Bracket";
+                let session = "1-Day Session Shift";
+                let cost = "$1,100 USD (Fixed Rate)";
+
+                if (level === 1) {
+                    grafts = "1,200 - 1,800 Grafts Bracket";
+                    session = "1-Day Session Shift";
+                    cost = "$1,100 USD (Fixed Rate)";
+                } else if (level === 2) {
+                    grafts = "2,000 - 2,800 Grafts Bracket";
+                    session = "1-Day Session Shift";
+                    cost = "$1,100 USD (Fixed Rate)";
+                } else if (level === 3) {
+                    grafts = "3,000 - 3,500 Grafts Bracket";
+                    session = "1-Day Session Shift";
+                    cost = "$1,100 USD (Fixed Rate)";
+                } else if (level === 4) {
+                    grafts = "3,600 - 4,500 Grafts Matrix";
+                    session = "2-Day Multi-Session Strategy";
+                    cost = "Requires 2-Session Architecture";
+                } else if (level === 5) {
+                    grafts = "4,600 - 5,000+ Mega Grafts Matrix";
+                    session = "2-Day Multi-Session Strategy";
+                    cost = "Requires 2-Session Architecture";
+                }
+
+                graftCount.innerText = grafts;
+                durationText.innerText = session;
+                priceText.innerText = cost;
+                
+                // Shift styling to point out multi-session differences visually
+                if (level >= 4) {
+                    priceText.style.color = "#040d21";
+                } else {
+                    priceText.style.color = "#c5a059";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
