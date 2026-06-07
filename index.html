@@ -3,487 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Turk Med Nairobi | Turkish Expertise Hair Transplant Clinic Kenya</title>
-    <meta name="description" content="Experience premium Turkish hair transplant expertise right in Parklands, Nairobi. Advanced Sapphire FUE & DHI micro-grafting techniques tailored for natural results.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>TurkMed Nairobi | International Center for Hair Restoration Kenya</title>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9863464747964215" crossorigin="anonymous"></script>
+   
+    <meta name="description" content="TurkMed Nairobi combines premium Turkish surgical mastery with Kenyan hospitality at Valley View Office Park, Parklands. Specialized in Sapphire FUE, DHI, and Afro-textured 4C hair transplants.">
+    <meta name="keywords" content="Hair Transplant Kenya, Hair Transplant Nairobi, Turkish Hair Transplant Kenya, FUE Hair Transplant Kenya, Sapphire FUE Kenya, Hair Restoration Kenya, Hair Loss Treatment Nairobi, PRP Hair Treatment Kenya, Beard Transplant Kenya, Eyebrow Transplant Kenya">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <style>
-        /* BRAND COMPLIANT DESIGN SYSTEM VARIABLES */
+        /* ================================================
+           1. MASTER DESIGN SYSTEM (CLEAN LUXURY WHITE INTERFACE)
+           ================================================
+        */
         :root {
-            --primary-navy: #040d21;
-            --secondary-dark: #02050a;
-            --medical-white: #ffffff;
-            --silver-gray: #f1f5f9;
-            --text-muted: #94a3b8;
-            --accent-gold: #c5a059;
-            --border-light: rgba(255, 255, 255, 0.08);
-            --font-display: 'Playfair Display', serif;
-            --font-sans: 'Poppins', sans-serif;
+            --primary-navy: #040d21;      /* Luxury Deep Navy Blue */
+            --bg-clean-white: #ffffff;    /* Primary Luxury Interface Base */
+            --silver-gray: #f8fafc;       /* Clean Light Gray Section Backgrounds */
+            --accent-gold: #c5a059;       /* Turkish Premium Gold Accent */
+            --text-dark: #0f172a;         /* Deep Rich Text for Maximum Readability */
+            --text-muted: #475569;        /* Medium Subtext Layer */
+            --border-subtle: #e2e8f0;     /* Soft Division Contours */
+            --transition-hq: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        /* RESET & GENERAL TYPOGRAPHY LAYOUT RULES */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-color: var(--secondary-dark);
-            color: var(--medical-white);
-            font-family: var(--font-sans);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        h1, h2, h3, h4, h5 {
-            font-weight: 600;
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background: var(--bg-clean-white); 
+            color: var(--text-dark); 
+            line-height: 1.75; 
+            overflow-x: hidden; 
         }
 
-        /* HEADER & NAVIGATION BRAND STRUCTURE */
-        header {
-            background: rgba(4, 13, 33, 0.98);
-            border-bottom: 1px solid var(--border-light);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo-container h1 {
-            font-family: var(--font-display);
-            font-size: 24px;
-            color: var(--medical-white);
-            letter-spacing: 1px;
-        }
-        .logo-container span {
-            color: var(--accent-gold);
-        }
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        nav a:hover, nav a.active {
-            color: var(--accent-gold);
-        }
+        /* UTILITY LAYOUT CONFIGURATIONS */
+        .section-padding { padding: 120px 5%; max-width: 1400px; margin: 0 auto; }
+        .bg-silver { background: var(--silver-gray); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+        .reveal { opacity: 0; transform: translateY(25px); transition: var(--transition-hq); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* LUXURY HERO SECTION GRAPHICS & FRAMING */
-        .hero-viewport {
-            position: relative;
-            background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-dark) 100%);
-            padding: 120px 5% 100px 5%;
-            text-align: center;
-            border-bottom: 1px solid var(--border-light);
+        /* ================================================
+           2. NAVIGATION FRAMEWORK (SINGLE LINE STRUCTURAL LAYOUT)
+           ================================================
+        */
+        .header-main {
+            position: fixed; top: 0; width: 100%; z-index: 9999;
+            background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-subtle); padding: 15px 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.02);
         }
-        .hero-viewport h2 {
-            font-family: var(--font-display);
-            font-size: 52px;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: var(--medical-white);
+        .nav-container { 
+            max-width: 1400px; margin: 0 auto; padding: 0 5%; 
+            display: flex; justify-content: space-between; align-items: center; 
         }
-        .hero-viewport p {
-            font-size: 16px;
-            color: var(--text-muted);
-            max-width: 800px;
-            margin: 0 auto 35px auto;
+        .logo-text { 
+            font-family: 'Montserrat', sans-serif; font-size: 22px; font-weight: 800; 
+            color: var(--primary-navy); letter-spacing: 1.5px; text-decoration: none;
         }
-        .cta-group {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+        .logo-text span { color: var(--accent-gold); }
+        
+        .nav-menu { display: flex; list-style: none; gap: 24px; align-items: center; }
+        .nav-menu li { white-space: nowrap; }
+        .nav-menu a { 
+            text-decoration: none; color: var(--text-dark); font-family: 'Montserrat', sans-serif;
+            font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition-hq);
         }
-        .btn-premium {
-            background: var(--accent-gold);
-            color: var(--secondary-dark);
-            padding: 14px 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: transform 0.2s ease, background 0.3s ease;
+        .nav-menu a:hover { color: var(--accent-gold); }
+        .nav-cta { 
+            background: var(--accent-gold) !important; color: #fff !important; 
+            padding: 11px 22px !important; border-radius: 4px; font-size: 11px !important; box-shadow: 0 4px 15px rgba(197,160,89,0.2);
         }
-        .btn-premium:hover {
-            background: #b38f4b;
-            transform: translateY(-2px);
-        }
-        .btn-outline {
-            background: transparent;
-            color: var(--medical-white);
-            border: 1px solid var(--border-light);
-            padding: 14px 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-radius: 4px;
-            transition: background 0.3s ease;
-        }
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
+        .nav-cta:hover { background: var(--primary-navy) !important; color: #fff !important; }
 
-        /* INTERACTIVE GRAFT ESTIMATOR SLIDER BLOCK */
-        .interactive-calculator-box {
-            max-width: 750px;
-            margin: 60px auto 0 auto;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-light);
-            border-radius: 6px;
-            padding: 40px;
-            text-align: left;
-        }
-        .calculator-header h3 {
-            font-family: var(--font-display);
-            font-size: 24px;
-            color: var(--medical-white);
-            margin-bottom: 8px;
-        }
-        .calculator-header p {
-            font-size: 13.5px;
-            color: var(--text-muted);
-            margin-bottom: 25px;
-        }
-        .slider-wrapper {
-            margin: 30px 0;
-        }
-        .graft-slider {
-            width: 100%;
-            -webkit-appearance: none;
-            appearance: none;
-            height: 6px;
-            border-radius: 3px;
-            background: rgba(255, 255, 255, 0.1);
-            outline: none;
-        }
-        .graft-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background: var(--accent-gold);
-            cursor: pointer;
-            transition: transform 0.1s ease;
-        }
-        .graft-slider::-webkit-slider-thumb:hover {
-            transform: scale(1.2);
-        }
-        .metric-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 30px;
-            border-top: 1px solid var(--border-light);
-            padding-top: 25px;
-        }
-        .metric-item {
-            text-align: center;
-        }
-        .metric-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            margin-bottom: 5px;
-        }
-        .metric-value {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--accent-gold);
-        }
-
-        /* ADSENSE CONTENT QUALITY VERIFIABLE GRID */
-        .adsense-gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 35px;
-            max-width: 1250px;
-            margin: 0 auto;
-            padding: 0 25px;
-            box-sizing: border-box;
-        }
-        .adsense-gallery-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-light);
-            border-radius: 4px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        .adsense-gallery-imgbox {
-            width: 100%;
-            height: 320px;
-            overflow: hidden;
-            background: #000;
-        }
-        .adsense-gallery-imgbox img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center center;
-            display: block;
-        }
-        .adsense-gallery-info {
-            padding: 30px;
-            background: #04080f;
-            border-top: 1px solid var(--border-light);
-            flex-grow: 1;
-        }
-        .adsense-gallery-info h5 {
-            font-family: var(--font-display);
-            font-size: 22px;
-            color: var(--medical-white);
-            margin: 0 0 5px 0;
-        }
-        .price-badge {
-            display: inline-block;
-            color: var(--accent-gold);
-            font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-        .clinical-text {
-            font-size: 13.5px;
-            color: var(--text-muted);
-            margin-bottom: 15px;
-            line-height: 1.65;
-        }
-        .clinical-text strong {
-            color: #e2e8f0;
-        }
-
-        /* FOOTER BRAND & POLICY ARCHITECTURE */
-        footer {
+        /* ================================================
+           3. PREMIUM HERO FRAMEWORK & VIDEO OVERLAYS
+           ================================================
+        */
+        .hero-premium {
+            min-height: 95vh; position: relative; overflow: hidden;
+            display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 5% 60px;
             background: var(--primary-navy);
-            border-top: 1px solid var(--border-light);
-            padding: 60px 5% 30px 5%;
-            margin-top: 90px;
         }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1250px;
-            margin: 0 auto;
+        .hero-video-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; opacity: 0.22;
         }
-        .footer-column h6 {
-            color: var(--medical-white);
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 60%, var(--primary-navy)), radial-gradient(circle, transparent, var(--primary-navy)); z-index: 2; }
+        .hero-content { position: relative; z-index: 3; max-width: 900px; }
+        .hero-content .subtitle { 
+            color: var(--accent-gold); font-family: 'Montserrat', sans-serif; font-weight: 700;
+            letter-spacing: 6px; font-size: 14px; margin-bottom: 25px; display: block; text-transform: uppercase;
         }
-        .footer-column p {
-            color: var(--text-muted);
-            font-size: 13.5px;
-            line-height: 1.6;
+        .hero-content h1 { 
+            font-family: 'Playfair Display', serif; font-size: clamp(32px, 6vw, 68px); 
+            line-height: 1.15; margin-bottom: 25px; font-weight: 700; color: #fff;
         }
-        .footer-links {
-            list-style: none;
+        .hero-content p { color: #cbd5e1; font-size: 17px; max-width: 720px; margin: 0 auto 40px; }
+        
+        .hero-actions { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .btn-gold { background: var(--accent-gold); color: #fff; padding: 16px 36px; text-decoration: none; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; border: none; cursor: pointer; transition: var(--transition-hq); }
+        .btn-gold:hover { background: #fff; color: var(--primary-navy); transform: translateY(-2px); }
+        .btn-white-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.2); padding: 14px 34px; text-decoration: none; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; transition: var(--transition-hq); }
+        .btn-white-outline:hover { background: rgba(255,255,255,0.08); border-color: #fff; }
+
+        /* TRUST BADGE MATRIX SECTION */
+        .trust-badge-row {
+            display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: -50px; position: relative; z-index: 10; padding: 0 5%; max-width: 1400px; margin-left: auto; margin-right: auto;
         }
-        .footer-links li {
-            margin-bottom: 10px;
+        .trust-badge-card {
+            background: var(--bg-clean-white); border: 1px solid var(--border-subtle); padding: 30px 35px; display: flex; align-items: center; gap: 20px; width: 360px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); border-radius: 6px;
         }
-        .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 13.5px;
-            transition: color 0.3s ease;
+        .trust-badge-card i { color: var(--accent-gold); font-size: 32px; }
+        .trust-badge-card h6 { font-family: 'Montserrat', sans-serif; font-size: 15px; color: var(--primary-navy); font-weight: 700; }
+        .trust-badge-card p { font-size: 13px; color: var(--text-muted); }
+
+        /* ================================================
+           4. CLINICAL SERVICES GRID (HIGH CONTENT DENSITY)
+           ================================================
+        */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 40px; }
+        .service-block {
+            background: var(--bg-clean-white); border: 1px solid var(--border-subtle);
+            padding: 50px 40px; border-radius: 6px; position: relative; overflow: hidden;
+            transition: var(--transition-hq); box-shadow: 0 4px 20px rgba(0,0,0,0.01);
         }
-        .footer-links a:hover {
-            color: var(--accent-gold);
+        .service-block:hover { 
+            border-color: var(--accent-gold); transform: translateY(-5px); 
+            box-shadow: 0 20px 40px rgba(4,13,33,0.05);
         }
-        .footer-bottom {
-            max-width: 1250px;
-            margin: 40px auto 0 auto;
-            border-top: 1px solid var(--border-light);
-            padding-top: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        .footer-bottom p {
-            font-size: 12px;
-            color: var(--text-muted);
-        }
+        .service-block i { font-size: 44px; color: var(--accent-gold); margin-bottom: 25px; display: block; }
+        .service-block h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 15px; color: var(--primary-navy); }
+        .service-block p { color: var(--text-muted); font-size: 14.5px; margin-bottom: 20px; }
+        .service-block ul { list-style: none; color: var(--text-dark); font-size: 13.5px; font-weight: 500; border-top: 1px solid var(--border-subtle); padding-top: 20px; }
+        .service-block ul li { margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+        .service-block ul li::before { content: '✓'; color: var(--accent-gold); font-weight: 700; }
 
-        /* RESPONSIVE LAYOUT CLEANUP BREAKPOINTS */
-        @media (max-width: 768px) {
-            .hero-viewport h2 { font-size: 36px; }
-            .adsense-gallery-grid { grid-template-columns: 1fr; gap: 25px; }
-            .adsense-gallery-imgbox { height: 220px; }
-            .metric-grid { grid-template-columns: 1fr; gap: 20px; }
-            nav { display: none; } /* Simplified for structural clarity */
-        }
-    </style>
-</head>
-<body>
+        /* ================================================
+           5. INTERACTIVE BEFORE/AFTER RESTORATION GALLERY
+           ================================================
+        */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; margin-top: 50px; }
+        .gallery-card { background: var(--bg-clean-white); border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+        .split-slider-container { display: flex; width: 100%; position: relative; background: #000; height: 300px; }
+        .split-side { width: 50%; position: relative; height: 100%; overflow: hidden; }
+        .split-side img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .split-label { position: absolute; top: 15px; background: rgba(4,13,33,0.85); color: #fff; font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700; padding: 4px 10px; letter-spacing: 1px; text-transform: uppercase; border-radius: 2px; }
+        .label-before { right: 15px; border-right: 3px solid var(--accent-gold); }
+        .label-after { left: 15px; border-left: 3px solid var(--accent-gold); }
+        .gallery-details { padding: 30px; border-top: 1px solid var(--border-subtle); }
+        .gallery-details h5 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--primary-navy); margin-bottom: 8px; }
+        .gallery-details p { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; }
 
-    <header>
-        <div class="logo-container">
-            <h1>TURK<span>MED</span> NAIROBI</h1>
-        </div>
-        <nav>
-            <a href="#hero" class="active">Home</a>
-            <a href="#transformations">Patient Results</a>
-            <a href="#calculator">Graft Estimator</a>
-            <a href="#protocols">Clinical Guidelines</a>
-        </nav>
-    </header>
+        /* ================================================
+           6. ESTIMATOR ENGINE (PRICING & SESSION LOGIC)
+           ================================================
+        */
+        .estimator-box { max-width: 850px; margin: 0 auto; background: var(--bg-clean-white); border: 1px solid var(--border-subtle); padding: 50px; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.03); text-align: left; }
+        .estimator-range { width: 100%; margin: 35px 0; -webkit-appearance: none; background: #f1f5f9; height: 8px; border-radius: 4px; outline: none; }
+        .estimator-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 24px; height: 24px; background: var(--accent-gold); cursor: pointer; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.1s ease; }
+        .estimator-range::-webkit-slider-thumb:hover { transform: scale(1.15); }
+        .estimator-output { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; border-top: 1px solid var(--border-subtle); padding-top: 35px; margin-top: 20px; }
+        .output-block span { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); display: block; margin-bottom: 5px; font-weight: 600; }
+        .output-block b { font-size: 24px; color: var(--primary-navy); font-family: 'Montserrat', sans-serif; font-weight: 700; }
 
-    <section class="hero-viewport" id="hero">
-        <h2>Restore Your Hair.<br>Restore Your Confidence.</h2>
-        <p>Experience world-class Turkish hair transplant expertise right here in Nairobi, Kenya. Our medical clinic coordinates advanced Sapphire FUE micro-grafting restorations tailored carefully for high survival yields, safe follicular spacing, and completely natural hairframes.</p>
-        <div class="cta-group">
-            <a href="#calculator" class="btn-premium">Analyze Your Grafts</a>
-            <a href="https://wa.me/254700000000" class="btn-outline" target="_blank">WhatsApp Specialist</a>
-        </div>
+        /* ================================================
+           7. SURGEON PORTFOLIO FRAMEWORK
+           ================================================
+        */
+        .doctor-showcase { background: var(--silver-gray); border-top: 1px solid var(--border-subtle); padding: 120px 5%; }
+        .doc-card { display: flex; background: var(--bg-clean-white); border: 1px solid var(--border-subtle); border-radius: 12px; overflow: hidden; max-width: 1100px; margin: 0 auto; box-shadow: 0 15px 40px rgba(0,0,0,0.02); }
+        .doc-img { width: 45%; min-height: 500px; }
+        .doc-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .doc-info { width: 55%; padding: 60px; display: flex; flex-direction: column; justify-content: center; }
+        .doc-info h4 { color: var(--accent-gold); font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; font-size: 13px; font-weight: 700; }
+        .doc-info h2 { font-family: 'Playfair Display', serif; font-size: 38px; margin-bottom: 20px; color: var(--primary-navy); }
+        .doc-info p { color: var(--text-muted); font-size: 15px; margin-bottom: 30px; }
+        .doc-qualifications { display: flex; gap: 12px; flex-wrap: wrap; }
+        .q-badge { background: var(--silver-gray); padding: 8px 16px; border-radius: 4px; font-size: 11px; font-weight: 700; font-family: 'Montserrat', sans-serif; border: 1px solid var(--border-subtle); color: var(--primary-navy); letter-spacing: 0.5px; }
 
-        <div class="interactive-calculator-box" id="calculator">
-            <div class="calculator-header">
-                <h3>Digital Graft & Session Estimator</h3>
-                <p>Adjust the tracking slider below to map your estimated baldness matrix area. Our software breaks down operational requirements based on clinical donor caps and session limitations.</p>
-            </div>
-            
-            <div class="slider-wrapper">
-                <input type="range" min="1000" max="5000" value="2500" step="50" class="graft-slider" id="graftRange">
-            </div>
-
-            <div class="metric-grid">
-                <div class="metric-item">
-                    <div class="metric-label">Estimated Allocation</div>
-                    <div class="metric-value"><span id="graftValue">2500</span> Grafts</div>
-                </div>
-                <div class="metric-item">
-                    <div class="metric-label">Required Protocol</div>
-                    <div class="metric-value" id="sessionValue">1 Single Session</div>
-                </div>
-                <div class="metric-item">
-                    <div class="metric-label">Estimated Fees</div>
-                    <div class="metric-value" id="costValue">$1,100 USD</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="transformations" style="background: #02050a; padding: 90px 0; border-bottom: 1px solid var(--border-light);">
-        <div style="text-align: center; margin-bottom: 50px; padding: 0 20px;">
-            <h4 style="color: var(--accent-gold); letter-spacing: 5px; font-size: 13px; margin-bottom: 10px; text-transform: uppercase;">VERIFIABLE OUTCOMES</h4>
-            <h2 style="font-family: var(--font-display); font-size: 42px; color: var(--medical-white); margin: 0; margin-bottom: 15px;">Nairobi Patient Results</h2>
-            <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto; font-size: 15px; line-height: 1.6;">Explore our authentic, verified before-and-after cases of clinical micro-grafting restorations performed locally in Nairobi. All treatment strategies are planned strictly based on calculated donor density balances and follicular unit longevity.</p>
-        </div>
-
-        <div class="adsense-gallery-grid">
-            
-            <div class="adsense-gallery-card">
-                <div class="adsense-gallery-imgbox">
-                    <img src="result1.jpg" alt="Female Hairline Redesign Single Session Nairobi">
-                </div>
-                <div class="adsense-gallery-info">
-                    <h5>3,200 Grafts – Single Session Procedure</h5>
-                    <p class="price-badge">Fixed Bracket Rate: $1,100 USD</p>
-                    <p class="clinical-text">
-                        <strong>Clinical Summary:</strong> This patient case presents structural micro-graft optimization targeting frontal recession lines. Utilizing advanced Sapphire FUE extraction, 3,200 individual follicular units were safely harvested from the dense occipital donor zone and re-implanted without compromising surrounding tissue vascularity.
-                    </p>
-                    <p class="clinical-text">
-                        <strong>Session Criteria:</strong> Our medical framework restricts maximum safe single-session yields to 3,500 grafts to guarantee a 98% survival rate of tissue. Any restoration plan fitting within this window is delivered at a flat single-session execution rate of $1,100 USD, covering complete operative sets.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="adsense-gallery-card">
-                <div class="adsense-gallery-imgbox">
-                    <img src="result3.jpeg" alt="Male Afro Precision 2 Sessions Nairobi">
-                </div>
-                <div class="adsense-gallery-info">
-                    <h5>3,850 Grafts – Comprehensive 2-Session Strategy</h5>
-                    <p class="price-badge">Multi-Session Protocol Required</p>
-                    <p class="clinical-text">
-                        <strong>Clinical Summary:</strong> This case highlights an extensive Norwood Scale class transformation utilizing specialized extraction and implantation angle parameters tailored explicitly for tight, curly 4C hair matrices. A total allocation of 3,850 grafts was required to establish uniform coverage density across both the frontal hairline and vertex fields.
-                    </p>
-                    <p class="clinical-text">
-                        <strong>Session Criteria:</strong> To prevent donor area over-harvesting or thermal shock to the surrounding scalp tissue, <strong>any clinical treatment requiring more than 3,500 total grafts is strictly split into a 2-session procedure</strong>. This multi-staged approach gives the skin space to fully vascularize and heal, maximizing long-term coverage yields safely.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-        <div style="max-width: 1200px; margin: 60px auto 0 auto; padding: 0 25px; box-sizing: border-box;" id="protocols">
-            <div style="background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border-light); padding: 35px; border-radius: 4px;">
-                <h3 style="font-family: var(--font-display); color: var(--medical-white); font-size: 22px; margin-top: 0; margin-bottom: 15px; border-bottom: 1px solid rgba(197, 160, 89, 0.2); padding-bottom: 10px;">Our Structural Micro-Graft Allocation Protocols</h3>
-                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-bottom: 15px;">
-                    At TurkMed Nairobi, our pricing structures and session frameworks are designed around rigorous clinical safety parameters rather than commercial estimates. When using our digital estimation metrics, a single-session allocation window is strictly mapped up to a cap of 3,500 individual units. A flat operation fee of $1,100 applies to this procedure bracket.
-                </p>
-                <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7; margin: 0;">
-                    If your physical evaluation reveals severe or progressive baldness patterns demanding more than 3,500 grafts, our surgical guidelines will transition your treatment into a structured 2-session procedure. This division guarantees proper donor area regeneration, blocks the risk of permanent patchy hair thinning, and coordinates placement alongside your natural follicular exit angles.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-column">
-                <h6>TurkMed Nairobi</h6>
-                <p>Bringing international Turkish hair restoration standards, specialized medical tools, and elite graft survival protocols directly to patients across East Africa.</p>
-            </div>
-            <div class="footer-column">
-                <h6>Our Address</h6>
-                <p>Parklands Medical District<br>Nairobi, Kenya<br>Inquiries: info@turkmed.co.ke</p>
-            </div>
-            <div class="footer-column">
-                <h6>Legal Framework</h6>
-                <ul class="footer-links">
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms & Conditions</a></li>
-                    <li><a href="cookie.html">Cookie Configuration</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 TurkMed Nairobi. All Rights Reserved. Clinical operations follow international micro-grafting safety guidelines.</p>
-        </div>
-    </footer>
-
-    <script>
-        const slider = document.getElementById('graftRange');
-        const graftValue = document.getElementById('graftValue');
-        const sessionValue = document.getElementById('sessionValue');
-        const costValue = document.getElementById('costValue');
-
-        slider.addEventListener('input', function() {
-            const grafts = parseInt(this.value);
-            graftValue.textContent = grafts.toLocaleString();
-
-            if (grafts <= 3500) {
-                sessionValue.textContent = "1 Single Session";
-                costValue.textContent = "$1,100 USD";
-                costValue.style.color = "#c5a059";
-            } else {
-                sessionValue.textContent = "2-Session Procedure";
-                costValue.textContent = "Multi-Session Architecture Needed";
-                costValue.style.color = "#e2e8f0";
-            }
-        });
-    </script>
-</body>
-</html>
+        /* ================================================
+           8. CORE BLOG SYSTEM SECTION (SEO TEXT INJECTIONS)
+           ================================================
+        */
+        .blog-container { max-width: 1200px; margin: 50px auto 0; }
+        .blog-tabs { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 15px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 40px; }
+        .blog-tabs::-webkit-scrollbar { height: 4px; }
+        .blog-tabs::-webkit-scrollbar-thumb { background: var(--border-subtle); border-radius: 2px; }
+        .
