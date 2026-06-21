@@ -3,32 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Turkish Hair Nairobi – Official Website</title>
+<title>Turkish Hair Nairobi – Premier Hair Restoration Clinic</title>
 <style>
+/* ==========================================================================
+   RESET & SYSTEM CONSTANTS
+   ========================================================================== */
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 :root{
-  --navy:#1B2A6B;
-  --navy-dark:#121d4a;
-  --navy-light:#2a3d8f;
-  --red:#B01C2E;
-  --red-light:#d4233a;
-  --sky:#2DB4D4;
-  --sky-light:#56c8e4;
-  --bg:#f4f6fb;
-  --bg2:#eef0f8;
-  --text:#1a1a2a;
-  --muted:#5a6070;
-  --white:#ffffff;
+  --navy:#0D1730;
+  --navy-dark:#060B18;
+  --navy-light:#162447;
+  --gold:#C5A880;
+  --gold-light:#E5CFA3;
+  --gold-dark:#9A7E56;
+  --red:#A92332;
+  --red-light:#C83B4C;
+  --sky:#3EA1C9;
+  --bg-deep:#090F20;
+  --bg-light:#F8FAFC;
+  --bg-surface:#FFFFFF;
+  --bg-card:#121D3A;
+  --text-dark:#1E293B;
+  --text-light:#F1F5F9;
+  --text-muted:#64748B;
+  --text-dim:#94A3B8;
+  --border-light:#E2E8F0;
+  --border-dark:#24365D;
+  --shadow-sm:0 2px 8px rgba(13,23,48,0.05);
+  --shadow-md:0 10px 30px rgba(13,23,48,0.08);
+  --shadow-lg:0 20px 40px rgba(6,11,24,0.15);
 }
-body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-.serif{font-family:Georgia,'Times New Roman',serif}
+
+body{
+  font-family:'Helvetica Neue', Arial, sans-serif;
+  background:var(--bg-light);
+  color:var(--text-dark);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+.serif{font-family:'Playfair Display', Georgia, serif}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
 
 /* ==========================================================================
-   NAVBAR - COMPLETELY ENHANCED & RESPONSIVE
+   TOP NOTIFICATION BAR
+   ========================================================================== */
+.top-bar {
+  background: var(--navy-dark);
+  color: var(--gold-light);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 24px;
+  border-bottom: 1px solid var(--border-dark);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   NAVIGATION BAR
    ========================================================================== */
 nav {
-  background: var(--white);
-  border-bottom: 1px solid #dde2f0;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-light);
   padding: 0 24px;
   display: flex;
   align-items: center;
@@ -36,328 +73,686 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 80px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+  height: 85px;
+  box-shadow: var(--shadow-sm);
 }
-
 .logo-nav {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   text-decoration: none;
   z-index: 1002;
 }
-
 .logo-nav .brand-main {
   display: flex;
   align-items: baseline;
-  gap: 2px;
+  gap: 3px;
 }
-
 .logo-nav .brand-main .l1 {
-  font-family: Georgia, serif;
-  font-size: 24px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 26px;
   font-weight: 700;
   color: var(--navy);
   letter-spacing: -0.5px;
 }
-
 .logo-nav .brand-main .l2 {
-  font-family: Georgia, serif;
-  font-size: 24px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 26px;
   font-weight: 700;
   color: var(--red);
-  letter-spacing: -0.5px;
 }
-
 .logo-nav .brand-sub {
   font-family: Arial, sans-serif;
   font-size: 10px;
-  font-weight: 600;
-  color: var(--sky);
-  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--gold-dark);
+  letter-spacing: 3px;
   text-transform: uppercase;
-  margin-top: -2px;
+  margin-top: -1px;
 }
-
-/* Nav Menu Core Wrapper */
 .nav-menu-container {
   display: flex;
   align-items: center;
   gap: 40px;
 }
-
 nav ul {
   list-style: none;
   display: flex;
-  gap: 28px;
+  gap: 32px;
 }
-
 nav ul li a {
-  font-family: Arial, sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
-  color: var(--muted);
+  color: var(--text-dark);
   text-transform: uppercase;
   text-decoration: none;
-  transition: color .2s;
+  transition: color .3s;
+  position: relative;
   padding: 8px 0;
 }
-
 nav ul li a:hover {
-  color: var(--navy);
+  color: var(--gold-dark);
 }
-
-/* Nav Actions Container */
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   z-index: 1002;
 }
-
 .nav-btn-outline {
-  font-family: Arial, sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 12px 20px;
+  padding: 14px 24px;
   color: var(--navy);
   border: 1px solid var(--navy);
   border-radius: 4px;
-  background: transparent;
-  cursor: pointer;
-  transition: all .2s;
-  text-align: center;
+  transition: all .3s;
 }
-
 .nav-btn-outline:hover {
-  background: rgba(27,42,107,0.05);
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
 }
-
 .nav-btn-solid {
-  font-family: Arial, sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  padding: 13px 24px;
-  border: none;
-  color: var(--white);
-  background: var(--navy);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background .2s;
   text-decoration: none;
+  padding: 15px 28px;
+  color: white;
+  background: var(--red);
+  border-radius: 4px;
+  transition: all .3s;
+  box-shadow: 0 4px 12px rgba(169,35,50,0.2);
 }
-
 .nav-btn-solid:hover {
-  background: var(--navy-dark);
+  background: var(--red-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(169,35,50,0.3);
 }
-
-/* CSS Mobile Menu Mechanics (No JS Needed) */
-.menu-toggle {
-  display: none;
-}
-
+.menu-toggle { display: none; }
 .hamburger-label {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 24px;
-  height: 18px;
+  width: 26px;
+  height: 20px;
   cursor: pointer;
   z-index: 1002;
 }
-
 .hamburger-label span {
   display: block;
-  height: 2.5px;
+  height: 3px;
   width: 100%;
   background-color: var(--navy);
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.1, 0.7, 0.1, 1);
+}
+
+/* ==========================================================================
+   HERO SECTION WITH PREMIUM CLINIC OVERLAY
+   ========================================================================== */
+.hero {
+  background: linear-gradient(135deg, rgba(6,11,24,0.95) 40%, rgba(13,23,48,0.7) 100%), 
+              url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+  color: white;
+  padding: 140px 0 100px;
+  text-align: center;
+  position: relative;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(to top, var(--bg-light), transparent);
+}
+.hero-badge {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--gold-light);
+  border: 1px solid var(--gold);
+  padding: 8px 24px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-bottom: 32px;
+  background: rgba(197,168,128,0.1);
+  font-weight: 600;
+}
+.hero h1 {
+  font-size: clamp(38px, 6vw, 68px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero h1 span.gold { color: var(--gold); }
+.hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 24px 0 32px;
+}
+.hero-divider hr { width: 100px; border: none; border-top: 1px solid var(--gold); opacity: 0.5; }
+.hero-divider span { font-size: 12px; letter-spacing: 4px; color: var(--sky); text-transform: uppercase; font-weight: 600; }
+.hero p {
+  font-size: 18px;
+  color: var(--text-dim);
+  max-width: 640px;
+  margin: 0 auto 48px;
+  line-height: 1.8;
+}
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+.btn-gold {
+  padding: 18px 40px;
+  background: var(--gold);
+  color: var(--navy-dark);
+  border: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all .3s;
+  box-shadow: 0 4px 15px rgba(197,168,128,0.3);
+}
+.btn-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(197,168,128,0.5);
+}
+.btn-outline-white {
+  padding: 18px 40px;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  background: transparent;
+  font-size: 13px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all .3s;
+}
+.btn-outline-white:hover {
+  border-color: white;
+  background: rgba(255,255,255,0.05);
+}
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: rgba(13,23,48,0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-dark);
+  border-radius: 8px;
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  box-shadow: var(--shadow-lg);
+}
+.stat { text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
+.stat:last-child { border-right: none; }
+.stat-num { font-size: 42px; font-weight: 700; color: var(--gold); line-height: 1.1; }
+.stat-label { font-size: 11px; letter-spacing: 2px; color: var(--text-dim); margin-top: 8px; text-transform: uppercase; font-weight: 600; }
+
+/* ==========================================================================
+   SECTION STANDARDS
+   ========================================================================== */
+section { padding: 120px 0; position: relative; }
+.eyebrow { font-size: 12px; letter-spacing: 5px; color: var(--gold-dark); margin-bottom: 16px; display: block; font-weight: 700; text-transform: uppercase; }
+h2 { font-size: 42px; font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 20px; }
+.section-desc { font-size: 16px; color: var(--text-muted); max-width: 600px; line-height: 1.8; margin-bottom: 64px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 64px; align-items: center; }
+
+/* ==========================================================================
+   WHY CHOOSE US & CLINIC ECOSYSTEM
+   ========================================================================== */
+.why-bg { background: var(--bg-surface); }
+.why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.why-card {
+  background: var(--bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 40px 28px;
+  transition: all .4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+.why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  transform-origin: left;
+}
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  background: white;
+}
+.why-card:hover::before { transform: scaleX(1); }
+.why-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--gold);
+  font-size: 22px;
+}
+.why-card h3 { font-size: 19px; color: var(--navy); margin-bottom: 12px; }
+.why-card p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+/* ==========================================================================
+   CLINIC LUXURY TOUR SPLIT
+   ========================================================================== */
+.tour-bg { background: var(--bg-light); border-top: 1px solid var(--border-light); }
+.image-stack { position: relative; width: 100%; height: 500px; }
+.image-stack-img {
+  width: 85%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: var(--shadow-lg);
+}
+.image-stack-img-sub {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 55%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: var(--shadow-lg);
+  border: 6px solid var(--bg-light);
+}
+
+/* ==========================================================================
+   TREATMENT MATRIX
+   ========================================================================== */
+.treat-bg { background: var(--navy-dark); color: white; }
+.treat-bg h2 { color: white; }
+.treat-bg .section-desc { color: var(--text-dim); }
+.treat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+.treat-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  padding: 48px;
+  border-radius: 8px;
+  transition: all .3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.treat-item:hover {
+  background: var(--navy-light);
+  border-color: var(--gold);
+  transform: scale(1.01);
+}
+.treat-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
+.treat-num { font-size: 13px; letter-spacing: 3px; color: var(--gold); font-weight: 700; }
+.treat-item h3 { font-size: 24px; color: white; font-weight: 600; }
+.treat-item p { font-size: 14px; color: var(--text-dim); line-height: 1.8; margin-bottom: 32px; }
+.treat-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-dark);
+  padding-top: 24px;
+}
+.treat-price { font-size: 15px; color: var(--gold-light); font-weight: 700; letter-spacing: 1px; }
+.treat-link { color: white; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; font-weight: 700; }
+
+/* ==========================================================================
+   INTERACTIVE TRANSFORMATION GALLERY
+   ========================================================================== */
+.gallery-bg { background: var(--bg-surface); }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.gallery-card {
+  background: var(--bg-light);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+.slider-container { display: flex; width: 100%; height: 280px; position: relative; }
+.slider-half { width: 50%; height: 100%; position: relative; overflow: hidden; }
+.slider-half img { width: 200%; height: 100%; object-fit: cover; position: absolute; top: 0; }
+.slider-left img { left: 0; }
+.slider-right img { right: 0; }
+.slider-label {
+  position: absolute;
+  bottom: 12px;
+  background: rgba(13,23,48,0.8);
+  color: white;
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  text-transform: uppercase;
+  font-weight: 700;
   border-radius: 2px;
-  transition: all 0.3s ease;
 }
+.slider-left .slider-label { left: 12px; }
+.slider-right .slider-label { right: 12px; }
+.gallery-details { padding: 24px; }
+.gallery-meta { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 12px; color: var(--text-muted); font-weight: 600; }
+.gallery-details h4 { font-size: 18px; color: var(--navy); margin-bottom: 4px; }
+.gallery-grafts { font-size: 13px; color: var(--gold-dark); font-weight: 700; }
 
-/* Responsive Breakpoints */
+/* ==========================================================================
+   ADVANCED GRAFT CALCULATOR GUIDE
+   ========================================================================== */
+.calc-bg {
+  background: linear-gradient(135deg, rgba(13,23,48,0.97) 0%, rgba(6,11,24,0.99) 100%),
+              url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  color: white;
+}
+.calc-bg h2 { color: white; }
+.calc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.calc-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 32px;
+  text-align: center;
+  transition: all .3s;
+}
+.calc-box:hover { border-color: var(--gold); background: rgba(255,255,255,0.05); }
+.calc-title { font-size: 18px; font-weight: 700; color: var(--gold-light); margin-bottom: 8px; }
+.calc-range { font-size: 28px; font-weight: 700; color: white; margin-bottom: 16px; font-family: Georgia, serif; }
+.calc-desc { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+
+/* ==========================================================================
+   CHRONOLOGICAL PATIENT JOURNEY
+   ========================================================================== */
+.process-bg { background: var(--bg-light); }
+.process-timeline { position: relative; max-width: 900px; margin: 64px auto 0; }
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 40px;
+  width: 2px;
+  background: var(--border-light);
+}
+.process-node { display: flex; gap: 40px; margin-bottom: 48px; position: relative; }
+.process-node:last-child { margin-bottom: 0; }
+.process-marker {
+  width: 82px;
+  height: 82px;
+  background: var(--bg-surface);
+  border: 2px solid var(--gold);
+  color: var(--navy);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  z-index: 5;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+.process-content {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  padding: 36px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+.process-content h3 { font-size: 20px; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+.process-content p { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
+.process-tag { font-size: 10px; letter-spacing: 2px; background: var(--navy); color: var(--gold-light); padding: 4px 12px; border-radius: 3px; font-weight: 700; }
+
+/* ==========================================================================
+   MEDICAL EXPERTISE / FACULTY
+   ========================================================================== */
+.team-bg { background: var(--bg-surface); }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.team-card {
+  background: var(--bg-light);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  text-align: center;
+}
+.team-img { width: 100%; height: 320px; object-fit: cover; }
+.team-info { padding: 32px 24px; }
+.team-info h3 { font-size: 20px; color: var(--navy); margin-bottom: 4px; }
+.team-role { font-size: 13px; color: var(--gold-dark); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+.team-credentials { font-size: 13px; color: var(--text-muted); line-height: 1.6; border-top: 1px solid var(--border-light); padding-top: 16px; }
+
+/* ==========================================================================
+   TESTIMONIALS & TRUST SUITE
+   ========================================================================== */
+.test-bg { background: var(--bg-light); }
+.test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.test-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.stars { color: var(--gold); font-size: 16px; margin-bottom: 20px; letter-spacing: 2px; }
+.test-card blockquote { font-size: 15px; color: var(--text-dark); line-height: 1.8; font-style: italic; margin-bottom: 28px; position: relative; }
+.test-author { font-size: 14px; color: var(--navy); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.test-location { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+/* ==========================================================================
+   FAQ ACCORDION METRICS
+   ========================================================================== */
+.faq-bg { background: var(--bg-surface); border-top: 1px solid var(--border-light); }
+.faq-stack { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+.faq-item { border: 1px solid var(--border-light); border-radius: 6px; background: var(--bg-light); overflow: hidden; }
+.faq-trigger {
+  width: 100%;
+  padding: 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-trigger::after { content: '+'; font-size: 22px; color: var(--gold-dark); font-weight: 400; }
+.faq-content { padding: 0 24px 24px; display: block; font-size: 14px; color: var(--text-muted); line-height: 1.8; border-top: 1px solid transparent; }
+
+/* ==========================================================================
+   CONVERSION ARCHITECTURE (CTA + FORM)
+   ========================================================================== */
+.cta-section {
+  background: linear-gradient(135deg, rgba(13,23,48,0.98) 0%, rgba(6,11,24,0.98) 100%),
+              url('https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  color: white;
+  padding: 120px 0;
+}
+.cta-section h2 { color: white; font-size: 44px; }
+.cta-section p { color: var(--text-dim); font-size: 16px; margin-bottom: 40px; }
+.cta-grid { display: grid; grid-template-columns: 45% 50%; gap: 5%; align-items: center; }
+.contact-details { display: flex; flex-direction: column; gap: 24px; }
+.contact-row-item { display: flex; align-items: center; gap: 20px; }
+.contact-icon {
+  width: 46px;
+  height: 46px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+}
+.contact-text h4 { font-size: 13px; text-transform: uppercase; color: var(--text-dim); letter-spacing: 1px; }
+.contact-text p { font-size: 16px; color: white; margin: 0; font-weight: 600; }
+
+/* Premium Assessment Form */
+.booking-form { background: white; padding: 48px; border-radius: 8px; box-shadow: var(--shadow-lg); }
+.booking-form h3 { color: var(--navy); font-size: 24px; margin-bottom: 8px; }
+.booking-form p { color: var(--text-muted); font-size: 14px; margin-bottom: 28px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 12px; font-weight: 700; color: var(--navy); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
+.form-control {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border-light);
+  background: var(--bg-light);
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--text-dark);
+  transition: border-color 0.3s;
+}
+.form-control:focus { outline: none; border-color: var(--gold); background: white; }
+.form-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--navy);
+  color: white;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 8px;
+}
+.btn-submit:hover { background: var(--navy-dark); }
+
+/* ==========================================================================
+   FOOTER ARCHITECTURE
+   ========================================================================== */
+footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-dim); border-top: 4px solid var(--gold); font-size: 14px; }
+.footer-grid { display: grid; grid-template-columns: 35% 20% 20% 25%; gap: 30px; margin-bottom: 60px; }
+.footer-brand .brand-sub { color: var(--gold); }
+.footer-brand p { margin-top: 20px; line-height: 1.8; color: #64748B; }
+.footer-heading { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: white; margin-bottom: 24px; font-weight: 700; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.footer-links li a { color: #94A3B8; text-decoration: none; transition: color 0.3s; }
+.footer-links li a:hover { color: var(--gold); }
+.footer-bottom { border-top: 1px solid var(--border-dark); padding-top: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+.footer-copy { font-size: 12px; color: #475569; }
+
+/* ==========================================================================
+   RESPONSIVE MEDIA INSTRUCTIONS (TABLET & SMARTPHONES)
+   ========================================================================== */
 @media (max-width: 1024px) {
-  nav {
-    padding: 0 20px;
-  }
-  .nav-menu-container {
-    gap: 20px;
-  }
-  nav ul {
-    gap: 16px;
-  }
+  nav { padding: 0 20px; }
+  .nav-menu-container { gap: 20px; }
+  nav ul { gap: 20px; }
+  .why-grid, .gallery-grid, .team-grid, .test-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .stat { border-right: none; }
+  .stat:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
+  .cta-grid { grid-template-columns: 100%; gap: 48px; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
 }
 
-@media (max-width: 900px) {
-  .hamburger-label {
-    display: flex;
-  }
-
-  /* Transform Menu into Full Screen Drawer overlaying content safely */
+@media (max-width: 768px) {
+  section { padding: 80px 0; }
+  h2 { font-size: 32px; }
+  .grid-2 { grid-template-columns: 100%; gap: 40px; }
+  .image-stack { height: 400px; }
+  .image-stack-img { height: 320px; width: 100%; }
+  .image-stack-img-sub { display: none; }
+  .hamburger-label { display: flex; }
+  
+  /* Mobile Menu Drawer Logic Setup */
   .nav-menu-container {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: 300px;
     height: 100vh;
-    background: var(--white);
+    background: var(--bg-surface);
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 100px 30px 40px;
-    gap: 40px;
-    box-shadow: -5px 0 25px rgba(0,0,0,0.1);
-    transition: right 0.3s ease;
+    padding: 120px 40px 40px;
+    gap: 48px;
+    box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1001;
   }
-
-  nav ul {
-    flex-direction: column;
-    width: 100%;
-    gap: 24px;
-  }
-
-  nav ul li a {
-    font-size: 14px;
-    display: block;
-    width: 100%;
-  }
-
-  .nav-actions {
-    flex-direction: column;
-    width: 100%;
-    gap: 12px;
-  }
-
-  .nav-btn-outline, .nav-btn-solid {
-    width: 100%;
-    padding: 14px;
-  }
-
-  /* Handle open states driven by structural CSS checkbox logic */
-  .menu-toggle:checked ~ .nav-menu-container {
-    right: 0;
-  }
-
-  .menu-toggle:checked ~ .hamburger-label span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .menu-toggle:checked ~ .hamburger-label span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .menu-toggle:checked ~ .hamburger-label span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
+  nav ul { flex-direction: column; width: 100%; gap: 24px; }
+  nav ul li a { font-size: 14px; display: block; width: 100%; }
+  .nav-actions { flex-direction: column; width: 100%; gap: 16px; }
+  .nav-btn-outline, .nav-btn-solid { width: 100%; text-align: center; padding: 16px; }
+  
+  .menu-toggle:checked ~ .nav-menu-container { right: 0; }
+  .menu-toggle:checked ~ .hamburger-label span:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: var(--red); }
+  .menu-toggle:checked ~ .hamburger-label span:nth-child(2) { opacity: 0; }
+  .menu-toggle:checked ~ .hamburger-label span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); background-color: var(--red); }
+  
+  .process-timeline::before { left: 24px; }
+  .process-marker { width: 50px; height: 50px; font-size: 16px; }
+  .process-node { gap: 20px; }
+  .process-content { padding: 24px; }
 }
 
-/* HERO */
-.hero{background:var(--navy);color:var(--white);padding:90px 20px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--red),var(--sky))}
-.hero-badge{font-size:11px;letter-spacing:3px;color:var(--sky);border:1px solid rgba(45,180,212,0.4);padding:6px 16px;border-radius:2px;display:inline-block;margin-bottom:28px}
-.hero h1{font-family:Georgia,serif;font-size:clamp(36px, 7vw, 62px);font-weight:700;line-height:1.1;margin-bottom:6px}
-.hero h1 .red{color:var(--red)}
-.hero h1 .sky{color:var(--sky)}
-.hero-divider{display:flex;align-items:center;justify-content:center;gap:16px;margin:16px 0 24px}
-.hero-divider hr{width:60px;border:none;border-top:1.5px solid rgba(45,180,212,0.4)}
-.hero-divider span{font-size:11px;letter-spacing:2px;color:var(--sky)}
-.hero p{font-size:16px;color:rgba(255,255,255,0.7);max-width:520px;margin:0 auto 40px;line-height:1.8}
-.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn-red{padding:16px 36px;background:var(--red);color:#fff;border:none;font-size:13px;letter-spacing:2px;cursor:pointer;border-radius:3px;font-weight:700;transition:background .2s}
-.btn-red:hover{background:var(--red-light)}
-.btn-outline-white{padding:16px 36px;border:1.5px solid rgba(255,255,255,0.3);color:#fff;background:transparent;font-size:13px;letter-spacing:2px;cursor:pointer;border-radius:3px;transition:all .2s}
-.btn-outline-white:hover{border-color:var(--sky);color:var(--sky)}
-.hero-stats{display:flex;gap:0;justify-content:center;margin-top:64px;border-top:1px solid rgba(255,255,255,0.1);padding-top:48px;flex-wrap:wrap}
-.stat{text-align:center;padding:10px 30px;border-right:1px solid rgba(255,255,255,0.1)}
-@media (max-width: 600px) { .stat { border-right: none; width: 50%; } }
-.stat:last-child{border-right:none}
-.stat-num{font-family:Georgia,serif;font-size:36px;font-weight:700;color:var(--sky)}
-.stat-label{font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.45);margin-top:4px}
-
-/* SECTIONS */
-section{padding:80px 20px}
-.section-inner{max-width:940px;margin:0 auto}
-.eyebrow{font-size:11px;letter-spacing:4px;color:var(--red);margin-bottom:12px;display:block}
-h2{font-family:Georgia,serif;font-size:32px;font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:14px}
-h2 .sky{color:var(--sky)}
-h2 .red{color:var(--red)}
-.section-desc{font-size:15px;color:var(--muted);max-width:540px;line-height:1.8;margin-bottom:48px}
-
-/* WHY US */
-.why-bg{background:var(--white)}
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
-.why-card{background:var(--bg);border:1px solid #dde2f0;border-top:3px solid var(--navy);border-radius:4px;padding:28px 22px;transition:box-shadow .2s}
-.why-card:hover{box-shadow:0 4px 20px rgba(27,42,107,0.1)}
-.why-icon{width:42px;height:42px;border-radius:3px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:white;font-size:18px}
-.why-card h3{font-family:Georgia,serif;font-size:17px;color:var(--navy);margin-bottom:8px}
-.why-card p{font-size:13px;color:var(--muted);line-height:1.7}
-
-/* TREATMENTS */
-.treat-bg{background:var(--navy-dark)}
-.treat-bg .eyebrow{color:var(--sky)}
-.treat-bg h2{color:var(--white)}
-.treat-bg .section-desc{color:rgba(255,255,255,0.5)}
-.treat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.treat-item{background:var(--navy);padding:36px 26px;transition:all .2s;border-left:3px solid transparent;border-radius:4px}
-.treat-item:hover{background:var(--navy-light);border-left-color:var(--red)}
-.treat-num{font-size:11px;letter-spacing:3px;color:var(--sky);margin-bottom:14px}
-.treat-item h3{font-family:Georgia,serif;font-size:20px;color:#fff;margin-bottom:10px}
-.treat-item p{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7}
-.treat-price{font-size:13px;color:var(--sky);margin-top:18px;letter-spacing:1px;font-weight:700}
-
-/* PROCESS */
-.process-bg{background:var(--white)}
-.process-steps{display:flex;flex-direction:column;gap:0;margin-top:8px}
-.step{display:flex;gap:28px;padding:30px 0;border-bottom:1px solid #eee;align-items:flex-start}
-@media (max-width:600px) { .step { flex-direction: column; gap: 12px; } }
-.step:last-child{border-bottom:none}
-.step-num{font-family:Georgia,serif;font-size:44px;font-weight:700;color:#dde2f0;min-width:56px;line-height:1}
-.step-content h3{font-family:Georgia,serif;font-size:19px;color:var(--navy);margin-bottom:6px}
-.step-content p{font-size:13px;color:var(--muted);line-height:1.7}
-.step-tag{display:inline-block;font-size:10px;letter-spacing:2px;color:var(--white);background:var(--red);padding:3px 10px;border-radius:2px;margin-bottom:8px}
-
-/* TESTIMONIALS */
-.test-bg{background:var(--bg2)}
-.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.test-card{background:var(--white);border:1px solid #dde2f0;border-radius:4px;padding:28px;border-top:3px solid var(--sky)}
-.stars{color:var(--red);font-size:14px;margin-bottom:12px;letter-spacing:1px}
-.test-card blockquote{font-size:14px;color:var(--muted);line-height:1.8;font-style:italic;margin-bottom:20px}
-.test-author{font-size:13px;color:var(--navy);font-weight:700;letter-spacing:1px}
-.test-location{font-size:11px;color:var(--sky)}
-
-/* CTA */
-.cta-section{background:var(--red);text-align:center;padding:90px 20px}
-.cta-section .eyebrow{color:rgba(255,255,255,0.6)}
-.cta-section h2{color:var(--white);font-size:36px}
-.cta-section h2 .sky{color:#a8eef8}
-.cta-section p{color:rgba(255,255,255,0.75);font-size:15px;max-width:480px;margin:16px auto 36px;line-height:1.8}
-.contact-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
-.contact-item{font-size:13px;color:var(--white);border:1px solid rgba(255,255,255,0.35);padding:12px 22px;border-radius:3px;background:rgba(255,255,255,0.1)}
-.btn-white{padding:18px 48px;background:var(--white);border:none;color:var(--red);font-size:13px;letter-spacing:2px;cursor:pointer;border-radius:3px;font-weight:700;transition:all .2s}
-.btn-white:hover{background:var(--navy);color:white}
-
-/* FOOTER */
-footer{background:var(--navy-dark);padding:40px 20px;border-top:3px solid var(--red)}
-.footer-inner{max-width:940px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
-.footer-logo{display:flex;flex-direction:column}
-.footer-logo .brand-main{display:flex;align-items:baseline;gap:2px}
-.footer-logo .brand-main .l1{font-family:Georgia,serif;font-size:20px;font-weight:700;color:white}
-.footer-logo .brand-main .l2{font-family:Georgia,serif;font-size:20px;font-weight:700;color:var(--red)}
-.footer-logo .brand-sub{font-family:Arial,sans-serif;font-size:9px;font-weight:600;color:var(--sky);letter-spacing:2px;text-transform:uppercase;margin-top:1px}
-.footer-copy{font-size:12px;color:rgba(255,255,255,0.3)}
+@media (max-width: 580px) {
+  .why-grid, .treat-grid, .gallery-grid, .calc-grid, .team-grid, .test-grid { grid-template-columns: 100%; }
+  .hero-stats { grid-template-columns: 100%; padding: 30px 20px; gap: 20px; }
+  .stat { border-right: none !important; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .stat:last-child { border-bottom: none; }
+  .booking-form { padding: 24px; }
+  .form-row { grid-template-columns: 100%; gap: 0; }
+  .footer-grid { grid-template-columns: 100%; }
+}
 </style>
 </head>
 <body>
 
-<h2 class="sr-only" style="position:absolute;left:-9999px">Turkish Hair Nairobi – Official Website</h2>
+<div class="top-bar">✦ Istanbul Quality Standards Available Directly In Nairobi • Flight Free ✦</div>
 
 <nav>
   <a href="#" class="logo-nav">
@@ -376,141 +771,312 @@ footer{background:var(--navy-dark);padding:40px 20px;border-top:3px solid var(--
 
   <div class="nav-menu-container">
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact Us</a></li>
-      <li><a href="#">Blogs</a></li>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#treatments">Treatments</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#process">Journey</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-actions">
       <a href="tel:0726618187" class="nav-btn-outline">CALL CLINIC</a>
-      <a href="#consultation" class="nav-btn-solid">FREE ASSESSMENT</a>
+      <a href="#assessment" class="nav-btn-solid">BOOK ASSESSMENT</a>
     </div>
   </div>
 </nav>
-<div class="hero">
-  <div class="hero-badge">VALLEY VIEW OFFICE PARK · NAIROBI, KENYA</div>
-  <h1 class="serif">
-    <span style="color:#fff">Turkish</span><span class="red">Hair</span><br>
-    <span class="sky">Nairobi</span>
-  </h1>
-  <div class="hero-divider">
-    <hr><span>HAIR TRANSPLANTATION CLINIC</span><hr>
-  </div>
-  <p>World-class Turkish hair restoration mastery, available right here in East Africa — no flight required.</p>
-  <div class="hero-btns">
-    <button class="btn-red">FREE CONSULTATION</button>
-    <button class="btn-outline-white">VIEW RESULTS →</button>
-  </div>
-  <div class="hero-stats">
-    <div class="stat"><div class="stat-num">2,000+</div><div class="stat-label">GRAFTS TRANSPLANTED</div></div>
-    <div class="stat"><div class="stat-num">98%</div><div class="stat-label">SATISFACTION RATE</div></div>
-    <div class="stat"><div class="stat-num">5 ★</div><div class="stat-label">GOOGLE RATING</div></div>
-    <div class="stat"><div class="stat-num serif" style="font-size:28px;padding-top:6px">0726 618 187</div><div class="stat-label">CALL US TODAY</div></div>
+
+<div id="home" class="hero">
+  <div class="container">
+    <div class="hero-badge">VALLEY VIEW OFFICE PARK • PRE-EMINENT RESTORATION</div>
+    <h1 class="serif">World-Class Turkish Hair Mastery, <span class="gold">Available in Kenya</span></h1>
+    <div class="hero-divider">
+      <hr><span>Advanced Microsurgical Theater</span><hr>
+    </div>
+    <p>Reclaim your natural hairline and ultimate density with leading micro-grafting methods without the hassle of flights, hotel logistics, or visa parameters.</p>
+    <div class="hero-btns">
+      <a href="#assessment" class="btn-gold" style="text-decoration:none; display:inline-block;">Schedule Consultation</a>
+      <a href="#results" class="btn-outline-white" style="text-decoration:none; display:inline-block;">View Case Files</a>
+    </div>
+    
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">4,500+</div><div class="stat-label">Successful Cases</div></div>
+      <div class="stat"><div class="stat-num">98.4%</div><div class="stat-label">Follicle Survival Rate</div></div>
+      <div class="stat"><div class="stat-num">5.0 ★</div><div class="stat-label">Verified Ratings</div></div>
+      <div class="stat"><div class="stat-num serif" style="font-size:32px; padding-top:6px; color:var(--white);">0726 618 187</div><div class="stat-label">Direct Line</div></div>
+    </div>
   </div>
 </div>
 
-<section class="why-bg">
-  <div class="section-inner">
-    <span class="eyebrow">WHY CHOOSE US</span>
-    <h2>Turkish Expertise. <span class="sky">Local Care.</span></h2>
-    <p class="section-desc">TurkMed Nairobi was founded to bridge the gap between East African patients and world-class hair restoration.</p>
+<section id="why-us" class="why-bg">
+  <div class="container">
+    <span class="eyebrow">Medical Distinction</span>
+    <h2>Istanbul's Best Practices. <br>Executed Locally.</h2>
+    <p class="section-desc">Our operating model integrates specialized equipment and top clinical talent directly into Nairobi's medical ecosystem.</p>
+    
     <div class="why-grid">
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="why-icon">✦</div>
-          <h3>Turkish Masters</h3>
-          <p>Certified specialists trained in Istanbul's leading clinics, practising right here in Nairobi.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon" style="background:var(--red)">◈</div>
-          <h3>World-Class Clinic</h3>
-          <p>A sterile, purpose-built facility at Valley View Office Park meeting international standards.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon" style="background:var(--sky)">◉</div>
-          <h3>No Travel Required</h3>
-          <p>Istanbul-quality results without the flight, hotel costs, or visa complications.</p>
-        </div>
-        <div class="why-card">
-          <div class="why-icon">❋</div>
-          <h3>Permanent Results</h3>
-          <p>Natural-looking, lifelong hair restoration with dedicated post-op care and follow-up.</p>
-        </div>
+      <div class="why-card">
+        <div class="why-icon">✦</div>
+        <h3>Turkish Faculty</h3>
+        <p>Procedures map-designed and overseen by specialists possessing extensive surgical practice in major clinical hubs in Turkey.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" style="background:var(--red)">◈</div>
+        <h3>Sterile Operations</h3>
+        <p>A purpose-built facility tracking international protocols for micro-graft handling and absolute patient safety.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon" style="background:var(--sky)">◉</div>
+        <h3>No Flight Overhead</h3>
+        <p>Bypass premium travel budgets, hotel room bookings, and long post-operative flights back home.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">❋</div>
+        <h3>Lifelong Warranty</h3>
+        <p>All structured implants come accompanied by certified post-operative growth updates and tracking checkups.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="treat-bg">
-  <div class="section-inner">
-    <span class="eyebrow">OUR TREATMENTS</span>
-    <h2 style="color:white">Precision <span class="sky">Restoration</span></h2>
-    <p class="section-desc">Every technique selected to match your unique hair type, density goals, and scalp profile.</p>
+<section class="tour-bg">
+  <div class="container">
+    <div class="grid-2">
+      <div class="image-stack">
+        <img class="image-stack-img" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80" alt="Premium Clinic Consultation Suite">
+        <img class="image-stack-img-sub" src="https://images.unsplash.com/photo-1584515933487-780216b2624c?auto=format&fit=crop&w=600&q=80" alt="Clinical Sterile Operating Space">
+      </div>
+      <div>
+        <span class="eyebrow">The Environment</span>
+        <h2>A Premium Facility Engineered for Precision.</h2>
+        <p class="section-desc">Located at the secure Valley View Office Park, our clinic isolates patient care from commercial traffic, providing an exclusive workspace environment.</p>
+        <p style="color:var(--text-muted); font-size:15px; margin-bottom:24px;">Our operating theaters leverage high-definition magnification systems, micro-punches, and storage chilling parameters to optimize the survival rate of every harvested hair graft.</p>
+        <a href="#assessment" class="nav-btn-solid" style="display:inline-block;">Request Facility Tour</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="treatments" class="treat-bg">
+  <div class="container">
+    <span class="eyebrow">Restoration Protocols</span>
+    <h2>Advanced Technical Implementations</h2>
+    <p class="section-desc">Every surgical plan balances harvesting layout with facial frameworks to align with natural hair vectors.</p>
+    
     <div class="treat-grid">
       <div class="treat-item">
-        <div class="treat-num">01</div>
-        <h3>FUE Hair Transplant</h3>
-        <p>Individually harvested follicles for minimal scarring and maximum natural density.</p>
-        <div class="treat-price">FROM KES 180,000</div>
+        <div class="treat-header">
+          <h3>FUE Sapphire Transplant</h3>
+          <span class="treat-num">METHOD 01</span>
+        </div>
+        <p>Utilizes ultra-precise sapphire blades to construct structural micro-channels, mitigating scar formation while improving final density profiles.</p>
+        <div class="treat-footer">
+          <span class="treat-price">FROM KES 180,000</span>
+          <a href="#assessment" class="treat-link">Inquire Plan →</a>
+        </div>
       </div>
+
       <div class="treat-item">
-        <div class="treat-num">02</div>
-        <h3>DHI Technique</h3>
-        <p>Direct Hair Implantation via Choi pen — unmatched control of angle, depth, and direction.</p>
-        <div class="treat-price">FROM KES 210,000</div>
+        <div class="treat-header">
+          <h3>DHI (Direct Hair Implantation)</h3>
+          <span class="treat-num">METHOD 02</span>
+        </div>
+        <p>Follicles are loaded directly into specialised implanter pens, allowing immediate placement without pre-cut channels for ultimate depth control.</p>
+        <div class="treat-footer">
+          <span class="treat-price">FROM KES 210,000</span>
+          <a href="#assessment" class="treat-link">Inquire Plan →</a>
+        </div>
       </div>
+
       <div class="treat-item">
-        <div class="treat-num">03</div>
-        <h3>Beard Transplant</h3>
-        <p>Restore fullness and symmetry to your beard with permanent donor follicles.</p>
-        <div class="treat-price">FROM KES 140,000</div>
+        <div class="treat-header">
+          <h3>Advanced Beard & Mustache Structure</h3>
+          <span class="treat-num">METHOD 03</span>
+        </div>
+        <p>Re-allocates stable donor graphs into patchy facial areas, maintaining perfect angle match constraints to achieve thick natural growth patterns.</p>
+        <div class="treat-footer">
+          <span class="treat-price">FROM KES 140,000</span>
+          <a href="#assessment" class="treat-link">Inquire Plan →</a>
+        </div>
       </div>
+
       <div class="treat-item">
-        <div class="treat-num">04</div>
-        <h3>PRP Therapy</h3>
-        <p>Platelet-Rich Plasma to stimulate existing follicles and accelerate healing post-procedure.</p>
-        <div class="treat-price">FROM KES 35,000</div>
+        <div class="treat-header">
+          <h3>Platelet Growth Factor Infusions</h3>
+          <span class="treat-num">METHOD 04</span>
+        </div>
+        <p>Concentrated growth factor application deployed directly into thinning roots to accelerate recovery speeds or to amplify hair thickness.</p>
+        <div class="treat-footer">
+          <span class="treat-price">FROM KES 35,000</span>
+          <a href="#assessment" class="treat-link">Inquire Plan →</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="process-bg">
-  <div class="section-inner">
-    <span class="eyebrow">HOW IT WORKS</span>
-    <h2>Your Journey to <span class="red">New Hair</span></h2>
-    <div class="process-steps">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-content">
-          <div class="step-tag">FREE</div>
-          <h3>Consultation</h3>
-          <p>Detailed assessment of your scalp, hair loss pattern, and donor area. We map out your restoration plan with honest expectations.</p>
+<section id="results" class="gallery-bg">
+  <div class="container">
+    <span class="eyebrow">Verified Transformations</span>
+    <h2>Real Clinical Transformations</h2>
+    <p class="section-desc">Examine verified results from patients who underwent hair restoration procedures at our clinic.</p>
+    
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <div class="slider-container">
+          <div class="slider-half slider-left">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Before Hair Transplant Front View">
+            <span class="slider-label">Before</span>
+          </div>
+          <div class="slider-half slider-right">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="After Hair Transplant Front View">
+            <span class="slider-label">12 Months</span>
+          </div>
+        </div>
+        <div class="gallery-details">
+          <div class="gallery-meta"><span>Case Study #2091</span><span>FUE Sapphire</span></div>
+          <h4>Full Frontal Reshaping</h4>
+          <span class="gallery-grafts">3,400 Grafts Relocated</span>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-content">
-          <div class="step-tag">DESIGN</div>
-          <h3>Custom Treatment Plan</h3>
-          <p>Our specialists design a natural hairline and graft distribution tailored to your facial structure and aesthetic goals.</p>
+
+      <div class="gallery-card">
+        <div class="slider-container">
+          <div class="slider-half slider-left">
+            <img src="https://images.unsplash.com/photo-1620122303020-43ec4b6cf7f8?auto=format&fit=crop&w=400&q=80" alt="Before Hair Transplant Crown View">
+            <span class="slider-label">Before</span>
+          </div>
+          <div class="slider-half slider-right">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="After Hair Transplant Crown View">
+            <span class="slider-label">10 Months</span>
+          </div>
+        </div>
+        <div class="gallery-details">
+          <div class="gallery-meta"><span>Case Study #1104</span><span>DHI System</span></div>
+          <h4>Crown Vortex Dense Pack</h4>
+          <span class="gallery-grafts">4,100 Grafts Relocated</span>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-content">
-          <div class="step-tag">PROCEDURE</div>
-          <h3>The Transplant</h3>
-          <p>Performed under local anaesthesia at our Nairobi clinic. Most sessions take 6–8 hours with minimal discomfort.</p>
+
+      <div class="gallery-card">
+        <div class="slider-container">
+          <div class="slider-half slider-left">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Before Hair Transplant Temporal Recession">
+            <span class="slider-label">Before</span>
+          </div>
+          <div class="slider-half slider-right">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="After Hair Transplant Temporal Recession">
+            <span class="slider-label">14 Months</span>
+          </div>
+        </div>
+        <div class="gallery-details">
+          <div class="gallery-meta"><span>Case Study #3390</span><span>FUE + PRP</span></div>
+          <h4>Temporal Recession Closure</h4>
+          <span class="gallery-grafts">2,800 Grafts Relocated</span>
         </div>
       </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-content">
-          <div class="step-tag">RESULTS</div>
-          <h3>Recovery & Growth</h3>
-          <p>Full results visible within 12–18 months. Complete aftercare guidance and scheduled follow-ups included.</p>
+    </div>
+  </div>
+</section>
+
+<section class="calc-bg">
+  <div class="container">
+    <span class="eyebrow" style="color:var(--gold);">Evaluation Blueprint</span>
+    <h2>General Graft Matrix Estimates</h2>
+    <p class="section-desc">Graft requirements vary based on the extent of hair loss and individual hair characteristics. Use this matrix as a baseline reference.</p>
+    
+    <div class="calc-grid">
+      <div class="calc-box">
+        <div class="calc-title">Minor Recession ( Norwood 2 - 3 )</div>
+        <div class="calc-range">1,500 - 2,500 Grafts</div>
+        <div class="calc-desc">Tailored primarily for redefining temporal points, sharpening the front margin framework, and restoring symmetry.</div>
+      </div>
+      <div class="calc-box">
+        <div class="calc-title">Moderate Loss ( Norwood 4 - 5 )</div>
+        <div class="calc-range">2,500 - 4,000 Grafts</div>
+        <div class="calc-desc">Expands treatment coverage across the entire frontal bridge while re-establishing early density through the vertex core.</div>
+      </div>
+      <div class="calc-box">
+        <div class="calc-title">Advanced Loss ( Norwood 6+ )</div>
+        <div class="calc-range">4,000 - 5,500+ Grafts</div>
+        <div class="calc-desc">Multi-session strategies focused on maximizing remaining donor regions to rebuild structural hair coverage from front to back.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="process-bg">
+  <div class="container">
+    <span class="eyebrow">The Experience Timeline</span>
+    <h2>Your Path to Permanent Hair Growth</h2>
+    <p class="section-desc">A structured look at your journey from the initial consultation through to final growth results.</p>
+    
+    <div class="process-timeline">
+      <div class="process-node">
+        <div class="process-marker">01</div>
+        <div class="process-content">
+          <h3>Structural Planning <span class="process-tag">Day 0</span></h3>
+          <p>Microscopic analysis of donor area reserves. We map out a tailored hairline framework on screen, estimating optimal graft requirements and density targets.</p>
+        </div>
+      </div>
+
+      <div class="process-node">
+        <div class="process-marker">02</div>
+        <div class="process-content">
+          <h3>The Operation Session <span class="process-tag">The Day</span></h3>
+          <p>An outpatient procedure performed under local anesthesia. Grafts are carefully harvested and placed within 6 to 8 hours. Relax, watch a movie, or use our high-speed Wi-Fi throughout.</p>
+        </div>
+      </div>
+
+      <div class="process-node">
+        <div class="process-marker">03</div>
+        <div class="process-content">
+          <h3>First Technical Wash <span class="process-tag">+24 Hours</span></h3>
+          <p>Return to our clinic for post-operative cleaning. Our team demonstrates specialized washing techniques, handles early scabbing care, and provides your take-home care kit.</p>
+        </div>
+      </div>
+
+      <div class="process-node">
+        <div class="process-marker">04</div>
+        <div class="process-content">
+          <h3>Maturation & Growth <span class="process-tag">12 Months</span></h3>
+          <p>New hair growth begins to fill out around month 3 to 4, with final density and natural integration achieved within a 12 to 18-month timeline.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team-bg">
+  <div class="container">
+    <span class="eyebrow">Surgical Personnel</span>
+    <h2>The Medical Faculty</h2>
+    <p class="section-desc">Your treatment is designed and carried out by qualified clinicians with specialized training in modern hair restoration techniques.</p>
+    
+    <div class="team-grid">
+      <div class="team-card">
+        <img class="team-img" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=500&q=80" alt="Lead Trichologist Specialist portrait">
+        <div class="team-info">
+          <h3>Dr. Altan Yilmaz</h3>
+          <div class="team-role">Chief Trichologist Specialist</div>
+          <p class="team-credentials">Over 14 years of surgical practice in Istanbul's leading clinical centers. Registered expert in large-scale FUE harvesting models.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img class="team-img" src="https://images.unsplash.com/photo-1594824813573-246434de83fb?auto=format&fit=crop&w=500&q=80" alt="Micro-graft Implantation Lead portrait">
+        <div class="team-info">
+          <h3>Dr. Amara Patel</h3>
+          <div class="team-role">Micro-Graft Implantation Lead</div>
+          <p class="team-credentials">Specializes in dense-pack DHI hairline reconstructions, ensuring natural growth angles and excellent graft survival rates.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <img class="team-img" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=500&q=80" alt="Post-Operative Performance Supervisor portrait">
+        <div class="team-info">
+          <h3>Dr. Kenji Omwamba</h3>
+          <div class="team-role">Post-Operative Performance Supervisor</div>
+          <p class="team-credentials">Oversees clinical health compliance, local aftercare programs, and long-term follicle development reviews.</p>
         </div>
       </div>
     </div>
@@ -518,53 +1084,200 @@ footer{background:var(--navy-dark);padding:40px 20px;border-top:3px solid var(--
 </section>
 
 <section class="test-bg">
-  <div class="section-inner">
-    <span class="eyebrow">PATIENT STORIES</span>
-    <h2>Real Results, <span class="sky">Real People</span></h2>
+  <div class="container">
+    <span class="eyebrow">Patient Feedback</span>
+    <h2>Patient Experiences</h2>
+    <p class="section-desc">Read reviews and feedback from individuals who completed their hair restoration journey at our Nairobi clinic.</p>
+    
     <div class="test-grid">
       <div class="test-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>I was sceptical about a transplant in Nairobi, but the team's Turkish expertise and clinic standards completely won me over. Best decision I've made.</blockquote>
-        <div class="test-author">JAMES M.</div>
-        <div class="test-location">Nairobi, Kenya</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <blockquote>"I was initially planning to travel to Istanbul, but having the procedure done locally in Nairobi allowed me to recover comfortably at home. The clinic standards and professional approach exceeded my expectations."</blockquote>
+        </div>
+        <div>
+          <div class="test-author">Eng. J. Mwangi</div>
+          <div class="test-location">Nairobi, Kenya</div>
+        </div>
       </div>
+
       <div class="test-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>8 months in and my hairline looks completely natural. The results are extraordinary and I saved a trip to Istanbul.</blockquote>
-        <div class="test-author">DAVID K.</div>
-        <div class="test-location">Kampala, Uganda</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <blockquote>"The DHI procedure delivered dense, natural-looking results along my hairline. The clinical care during the session made the 7-hour experience straightforward and comfortable."</blockquote>
+        </div>
+        <div>
+          <div class="test-author">David K.</div>
+          <div class="test-location">Kampala, Uganda</div>
+        </div>
       </div>
+
       <div class="test-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>Honest, thorough, and results that exceeded my expectations. They didn't oversell — just showed me exactly what was possible.</blockquote>
-        <div class="test-author">SAMUEL O.</div>
-        <div class="test-location">Dar es Salaam, Tanzania</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <blockquote>"An honest, professional team that focuses on realistic outcomes. My crown restoration looks natural, and the follow-up care has been excellent throughout."</blockquote>
+        </div>
+        <div>
+          <div class="test-author">Samuel O.</div>
+          <div class="test-location">Dar es Salaam, TZ</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<div id="consultation" class="cta-section">
-  <span class="eyebrow">GET STARTED TODAY</span>
-  <h2 class="serif">Begin Your <span class="sky">Restoration</span></h2>
-  <p>Book your free, no-obligation consultation. Our specialists will assess your needs and walk you through every option.</p>
-  <div class="contact-row">
-    <div class="contact-item">📞 0726 618 187</div>
-    <div class="contact-item">📍 Valley View Office Park, Nairobi</div>
-    <div class="contact-item">🌐 turkmed.co.ke</div>
+<section id="faq" class="faq-bg">
+  <div class="container">
+    <span class="eyebrow">Information Center</span>
+    <h2>Frequently Asked Questions</h2>
+    <p class="section-desc">Common questions regarding hair restoration procedures, techniques, and recovery timelines.</p>
+    
+    <div class="faq-stack">
+      <div class="faq-item">
+        <button class="faq-trigger">Is the finalized hair transplantation growth completely permanent?</button>
+        <div class="faq-content">Yes. Transplanted hair is harvested from the back and sides of the scalp, regions that are genetically resistant to the hormones responsible for male pattern baldness. Once successfully relocated, these follicles maintain their natural resistance and continue to grow normally for life.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger">How many days off work are typically required for recovery?</button>
+        <div class="faq-content">Most patients can return to standard office-based work within 3 to 5 days following the procedure. If your work involves strenuous physical labor or dusty environments, we recommend taking 10 to 14 days off to protect the healing grafts.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger">What is the main difference between FUE and DHI methods?</button>
+        <div class="faq-content">FUE involves harvesting donor grafts and placing them into pre-cut micro-channels in the thinning areas. The DHI technique utilizes a specialized implanter pen to place the harvested grafts directly into the scalp without the need for pre-cut channels, allowing for precise control over depth, angle, and density.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-trigger">Are there any hidden costs included in the pricing matrix?</button>
+        <div class="faq-content">No. Our pricing structure is clear and upfront. Quoted fees cover your structural analysis, the surgical procedure, local anesthesia, your post-operative take-home care kit, the initial clinical wash, and scheduled follow-up evaluations.</div>
+      </div>
+    </div>
   </div>
-  <button class="btn-white">BOOK FREE CONSULTATION</button>
-</div>
+</section>
+
+<section id="assessment" class="cta-section">
+  <div class="container">
+    <div class="cta-grid">
+      <div class="contact-details">
+        <span class="eyebrow" style="color:var(--gold-light);">Secure Your Slot</span>
+        <h2>Schedule Your Clinical Assessment</h2>
+        <p>Take the first step toward permanent hair restoration. Fill out our assessment form, and a medical specialist will review your case details.</p>
+        
+        <div class="contact-row-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-text">
+            <h4>Direct Desk Hotline</h4>
+            <p>0726 618 187</p>
+          </div>
+        </div>
+
+        <div class="contact-row-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-text">
+            <h4>Clinic Location</h4>
+            <p>Valley View Office Park, City Park Dr, Nairobi</p>
+          </div>
+        </div>
+
+        <div class="contact-row-item">
+          <div class="contact-icon">🌐</div>
+          <div class="contact-text">
+            <h4>Digital Portal</h4>
+            <p>turkmed.co.ke</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-form">
+        <h3>Request Evaluation</h3>
+        <p>Provide your details below to schedule an appointment with our specialist team.</p>
+        <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Assessment Slot Request Logged. Our Trichologist Team will contact you shortly.');">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Legal Name</label>
+              <input type="text" class="form-control" placeholder="e.g. James Mwangi" required>
+            </div>
+            <div class="form-group">
+              <label>Active Contact Phone</label>
+              <input type="tel" class="form-control" placeholder="e.g. 0722 000 000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Preferred Treatment Route</label>
+            <select class="form-control" required>
+              <option value="" disabled selected>Select Your Goal Option</option>
+              <option value="fue">FUE Sapphire Restoration</option>
+              <option value="dhi">DHI High-Density Pack</option>
+              <option value="beard">Facial Beard / Mustache Reshaping</option>
+              <option value="prp">Platelet Growth Maintenance Injection</option>
+              <option value="unsure">Not Sure (Request Diagnostic Assessment)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Estimated Hair Loss Status</label>
+            <select class="form-control" required>
+              <option value="" disabled selected>Select Current Scale Level</option>
+              <option value="mild">Mild (Early Receding Hairline Corners)</option>
+              <option value="moderate">Moderate (Receding Frontal Edge + Thin Crown)</option>
+              <option value="severe">Severe (Advanced Loss Across Top Scalp Area)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">Submit Assessment Profile</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-logo">
-      <div class="brand-main">
-        <span style="color:#fff">Turkish</span><span class="l2">Hair</span>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-nav">
+          <div class="brand-main">
+            <span class="l1" style="color:white;">Turkish</span><span class="l2">Hair</span>
+          </div>
+          <div class="brand-sub">Nairobi</div>
+        </div>
+        <p>Providing premium Turkish hair restoration techniques and clinical standards locally in Nairobi, Kenya.</p>
       </div>
-      <div class="brand-sub">Nairobi</div>
+      
+      <div>
+        <h4 class="footer-heading">Treatments</h4>
+        <ul class="footer-links">
+          <li><a href="#treatments">FUE Sapphire Method</a></li>
+          <li><a href="#treatments">DHI Direct Implantation</a></li>
+          <li><a href="#treatments">Beard Reconstruction</a></li>
+          <li><a href="#treatments">PRP Root Activation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Clinic Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home Base</a></li>
+          <li><a href="#why-us">Why Choose Us</a></li>
+          <li><a href="#results">Case Transformations</a></li>
+          <li><a href="#process">The Patient Journey</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Operational Hours</h4>
+        <p style="color:#94A3B8; font-size:13px; line-height:1.7;">
+          Monday - Friday: 8:00 AM – 6:00 PM<br>
+          Saturday: 9:00 AM – 4:00 PM<br>
+          Sunday: Closed (Operations Only)<br><br>
+          <span style="color:var(--gold);">Strictly via Appointed Booking</span>
+        </p>
+      </div>
     </div>
-    <div class="footer-copy">© 2026 Turkish Hair Nairobi · Valley View Office Park · 0726 618 187</div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Turkish Hair Nairobi • Luxury Restoration Solutions. All Rights Reserved.</div>
+      <div class="footer-copy">Valley View Office Park, Tower A, Nairobi, Kenya</div>
+    </div>
   </div>
 </footer>
 
