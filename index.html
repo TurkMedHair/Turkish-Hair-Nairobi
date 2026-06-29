@@ -748,6 +748,17 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
   .form-row { grid-template-columns: 100%; gap: 0; }
   .footer-grid { grid-template-columns: 100%; }
 }
+   .logo-image-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+.nav-logo-img {
+    height: 50px; /* Adjust this to make it look perfect on your menu bar */
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
 </style>
 </head>
 <body>
@@ -755,13 +766,9 @@ footer { background: var(--navy-dark); padding: 80px 0 40px; color: var(--text-d
 <div class="top-bar">✦ Istanbul Quality Standards Available Directly In Nairobi • Flight Free ✦</div>
 
 <nav>
-  <a href="#" class="logo-nav">
-    <div class="brand-main">
-      <span class="l1">Turkish</span><span class="l2">Hair</span>
-    </div>
-    <div class="brand-sub">Nairobi</div>
-  </a>
-
+<a href="#" class="logo-image-link">
+    <img src="logo.jpeg" alt="Turkish Hair Nairobi" class="nav-logo-img">
+</a>
   <input type="checkbox" id="menu-toggle" class="menu-toggle">
   <label for="menu-toggle" class="hamburger-label">
     <span></span>
