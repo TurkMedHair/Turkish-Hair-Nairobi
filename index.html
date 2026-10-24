@@ -133,10 +133,12 @@
       <!-- Desktop Links -->
       <div class="hidden lg:flex items-center gap-8">
         <a href="#why-us" class="text-xs font-bold uppercase tracking-wider text-navy hover:text-gold transition">Why Us</a>
+        <a href="#environment" class="text-xs font-bold uppercase tracking-wider text-navy hover:text-gold transition">Facility</a>
         <a href="#treatments" class="text-xs font-bold uppercase tracking-wider text-navy hover:text-gold transition">Treatments</a>
         <a href="#calculator" class="text-xs font-bold uppercase tracking-wider text-navy hover:text-gold transition">Graft Calculator</a>
         <a href="#results" class="text-xs font-bold uppercase tracking-wider text-navy hover:text-gold transition">Case Files</a>
         <a href="#journey" class="text-xs font-bold uppercase tracking-wider text-navy hover:text-gold transition">Journey</a>
+        <a href="#team" class="text-xs font-bold uppercase tracking-wider text-navy hover:text-gold transition">Faculty</a>
         <a href="#faq" class="text-xs font-bold uppercase tracking-wider text-navy hover:text-gold transition">FAQ</a>
       </div>
 
@@ -166,10 +168,12 @@
       </div>
       <div class="flex flex-col gap-5 py-8 text-base font-bold uppercase tracking-wider">
         <a href="#why-us" class="mobile-link hover:text-gold">Why Us</a>
+        <a href="#environment" class="mobile-link hover:text-gold">Facility</a>
         <a href="#treatments" class="mobile-link hover:text-gold">Treatments</a>
         <a href="#calculator" class="mobile-link hover:text-gold">Graft Calculator</a>
         <a href="#results" class="mobile-link hover:text-gold">Case Files</a>
         <a href="#journey" class="mobile-link hover:text-gold">Journey</a>
+        <a href="#team" class="mobile-link hover:text-gold">Faculty</a>
         <a href="#faq" class="mobile-link hover:text-gold">FAQ</a>
       </div>
       <div class="mt-auto flex flex-col gap-3">
@@ -279,6 +283,50 @@
           <h3 class="text-lg font-bold text-navy mb-2">Local Aftercare Follow-up</h3>
           <p class="text-sm text-slate-600 leading-relaxed">Continuous clinical checkups, hair washing sessions, and PRP root activation right here in Parklands.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE ENVIRONMENT / FACILITY -->
+  <section id="environment" class="py-20 bg-slate-100 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        
+        <!-- Image Card -->
+        <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-white">
+          <img src="Dr. Ahmed with patient_2.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80';" alt="Dr. Ahmed with Patient in Nairobi Clinic Facility" class="w-full h-auto object-cover object-center">
+        </div>
+
+        <!-- Text Content -->
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-widest text-gold block mb-2">THE ENVIRONMENT</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy font-serif mb-6 leading-tight">
+            A Premium Nairobi Facility Engineered for Precision
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 font-medium">
+            Located at Valley View Office Park, Tower B in Parklands, our facility provides a sterile, discreet, and exclusive environment designed for maximum patient comfort.
+          </p>
+
+          <div class="space-y-3 mb-8">
+            <div class="flex items-start gap-2 text-sm text-slate-700 font-bold">
+              <span class="text-gold font-extrabold">✓</span>
+              <span>High-definition surgical magnification systems</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700 font-bold">
+              <span class="text-gold font-extrabold">✓</span>
+              <span>Temperature-regulated graft storage incubation</span>
+            </div>
+            <div class="flex items-start gap-2 text-sm text-slate-700 font-bold">
+              <span class="text-gold font-extrabold">✓</span>
+              <span>Direct post-operative follow-up suites in Parklands</span>
+            </div>
+          </div>
+
+          <a href="#assessment" class="inline-block px-8 py-4 bg-navy text-white text-xs font-extrabold uppercase tracking-widest rounded-lg hover:bg-slate-800 transition-colors shadow-md">
+            REQUEST FACILITY CONSULTATION
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -628,7 +676,7 @@
   </section>
 
  <!-- MEDICAL FACULTY / TEAM -->
-  <section class="py-20 bg-white">
+  <section id="team" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
@@ -892,6 +940,7 @@
         <h4 class="text-white font-bold uppercase tracking-wider mb-4">Navigation</h4>
         <ul class="space-y-2">
           <li><a href="#why-us" class="hover:text-gold transition">Why Choose Us</a></li>
+          <li><a href="#environment" class="hover:text-gold transition">Facility</a></li>
           <li><a href="#calculator" class="hover:text-gold transition">Graft Calculator</a></li>
           <li><a href="#results" class="hover:text-gold transition">Clinical Case Files</a></li>
           <li><a href="#journey" class="hover:text-gold transition">Patient Journey</a></li>
@@ -931,7 +980,7 @@
       const mobileMenu = document.getElementById('mobileMenu');
       const mobileLinks = document.querySelectorAll('.mobile-link');
 
-      mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn?.addEventListener('click', () => {
         mobileMenu.classList.remove('hidden');
         mobileMenu.classList.add('flex');
       });
@@ -941,7 +990,7 @@
         mobileMenu.classList.remove('flex');
       };
 
-      closeMenuBtn.addEventListener('click', closeMenu);
+      closeMenuBtn?.addEventListener('click', closeMenu);
       mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
 
       // 2. Interactive Graft Calculator Logic
@@ -970,6 +1019,7 @@
       ];
 
       function calculateGrafts() {
+        if (!slider || !norwoodDisplay || !graftResult || !techResult || !timeResult) return;
         const stage = parseInt(slider.value);
         norwoodDisplay.textContent = stageLabels[stage - 1];
 
@@ -990,7 +1040,7 @@
             b.classList.remove('border-gold/40', 'bg-gold/20', 'text-gold-light');
             b.classList.add('border-white/10', 'bg-navy', 'text-slate-300');
           });
-          btn.classList.removeClass('border-white/10', 'bg-navy', 'text-slate-300');
+          btn.classList.remove('border-white/10', 'bg-navy', 'text-slate-300');
           btn.classList.add('border-gold/40', 'bg-gold/20', 'text-gold-light');
 
           currentArea = btn.getAttribute('data-area');
@@ -998,12 +1048,7 @@
         });
       });
 
-      slider.addEventListener('input', calculateGrafts);
-
-      // Helper classList polyfills
-      DOMTokenList.prototype.removeClass = function(...tokens) {
-        tokens.forEach(token => this.remove(token));
-      };
+      slider?.addEventListener('input', calculateGrafts);
 
       // 3. Gallery Filter Tabs
       const filterBtns = document.querySelectorAll('.gallery-filter-btn');
@@ -1015,7 +1060,7 @@
             b.classList.remove('bg-navy', 'text-white', 'border-navy');
             b.classList.add('bg-slate-50', 'text-slate-700', 'border-slate-200');
           });
-          btn.classList.removeClass('bg-slate-50', 'text-slate-700', 'border-slate-200');
+          btn.classList.remove('bg-slate-50', 'text-slate-700', 'border-slate-200');
           btn.classList.add('bg-navy', 'text-white', 'border-navy');
 
           const filter = btn.getAttribute('data-filter');
@@ -1051,7 +1096,7 @@
         });
       });
 
-      faqSearch.addEventListener('input', (e) => {
+      faqSearch?.addEventListener('input', (e) => {
         const query = e.target.value.toLowerCase();
         faqItems.forEach(item => {
           const text = item.textContent.toLowerCase();
@@ -1064,13 +1109,13 @@
       const imagePreview = document.getElementById('imagePreview');
       const previewImg = document.getElementById('previewImg');
 
-      scalpPhoto.addEventListener('change', (e) => {
+      scalpPhoto?.addEventListener('change', (e) => {
         const file = e.target.files[0];
         if (file) {
           const reader = new FileReader();
           reader.onload = (evt) => {
-            previewImg.src = evt.target.result;
-            imagePreview.classList.remove('hidden');
+            if (previewImg) previewImg.src = evt.target.result;
+            imagePreview?.classList.remove('hidden');
           };
           reader.readAsDataURL(file);
         }
@@ -1080,7 +1125,7 @@
       const form = document.getElementById('consultationForm');
       const whatsappDirectBtn = document.getElementById('whatsappDirectBtn');
 
-      form.addEventListener('submit', (e) => {
+      form?.addEventListener('submit', (e) => {
         e.preventDefault();
         const name = document.getElementById('clientName').value;
         const phone = document.getElementById('clientPhone').value;
@@ -1088,10 +1133,10 @@
 
         alert(`Thank you, ${name}! Your consultation request for ${protocol} has been received. Our medical team will contact you at ${phone} shortly.`);
         form.reset();
-        imagePreview.classList.add('hidden');
+        imagePreview?.classList.add('hidden');
       });
 
-      whatsappDirectBtn.addEventListener('click', () => {
+      whatsappDirectBtn?.addEventListener('click', () => {
         const name = document.getElementById('clientName').value || 'Client';
         const protocol = document.getElementById('clientProtocol').value;
         const text = `Hello Turkish Hair Nairobi, my name is ${name}. I am interested in ${protocol}. Please advise on booking a consultation.`;
