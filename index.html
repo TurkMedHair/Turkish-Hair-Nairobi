@@ -108,6 +108,9 @@
   ::-webkit-scrollbar-track { background: #050914; }
   ::-webkit-scrollbar-thumb { background: #111C38; border-radius: 4px; }
   ::-webkit-scrollbar-thumb:hover { background: #D4AF37; }
+  img { max-width: 100%; }
+  .fit-diagram { width: 100%; height: 100%; object-fit: contain; }
+  .fit-photo { width: 100%; height: 100%; object-fit: cover; }
 </style>
 </head>
 
@@ -331,7 +334,7 @@
     </div>
   </section>
 
-  <!-- SPECIALIZED AFRO-CURVED ROOT ANATOMY & EXTRACTION SCIENCE -->
+ <!-- SPECIALIZED AFRO-CURVED ROOT ANATOMY & EXTRACTION SCIENCE -->
   <section id="afro-hair" class="py-20 bg-navy-dark text-white relative overflow-hidden">
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -347,8 +350,8 @@
         <!-- Card 1: Sub-Dermal Helical Curvature -->
         <div class="bg-navy-surface p-8 rounded-3xl border border-gold/30 shadow-2xl flex flex-col justify-between">
           <div>
-            <div class="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-6 border border-white/10 bg-navy">
-              <img src="Sub-Dermal Helical Curvature.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x340/050914/D4AF37?text=Anatomical+Trajectory';" alt="Sub-Dermal Helical Curvature" class="w-full h-full object-cover">
+            <div class="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden mb-6 border border-white/10 bg-navy p-2 flex items-center justify-center">
+              <img src="Sub-Dermal Helical Curvature.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x340/050914/D4AF37?text=Anatomical+Trajectory';" alt="Sub-Dermal Helical Curvature" class="fit-diagram rounded-xl">
               <span class="absolute top-3 left-3 bg-navy/90 backdrop-blur-md px-3 py-1 rounded-full border border-gold/40 text-[10px] font-bold uppercase tracking-wider text-gold">
                 Anatomical Trajectory
               </span>
@@ -375,8 +378,8 @@
         <!-- Card 2: Flared Trumpet Envelopment -->
         <div class="bg-navy-surface p-8 rounded-3xl border border-gold/30 shadow-2xl flex flex-col justify-between">
           <div>
-            <div class="relative w-full aspect-[16/9] rounded-2xl overflow-hidden mb-6 border border-white/10 bg-navy">
-              <img src="Flared Trumpet Envelopment.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x340/050914/D4AF37?text=Flared+Trumpet+Punch';" alt="Flared Trumpet Envelopment" class="w-full h-full object-cover">
+            <div class="relative w-full h-64 sm:h-72 rounded-2xl overflow-hidden mb-6 border border-white/10 bg-navy p-2 flex items-center justify-center">
+              <img src="Flared Trumpet Envelopment.jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x340/050914/D4AF37?text=Flared+Trumpet+Punch';" alt="Flared Trumpet Envelopment" class="fit-diagram rounded-xl">
               <span class="absolute top-3 left-3 bg-navy/90 backdrop-blur-md px-3 py-1 rounded-full border border-gold/40 text-[10px] font-bold uppercase tracking-wider text-gold">
                 Flared Extraction Punch
               </span>
@@ -438,22 +441,23 @@
         
         <!-- Interactive Visual Display (Left) -->
         <div class="lg:col-span-6 bg-navy-dark p-6 rounded-2xl border border-gold/30 shadow-2xl text-white">
-          <div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-navy mb-6 border border-white/10 shadow-inner">
+          <div class="flex items-center justify-between gap-2 mb-3">
+            <span class="bg-navy px-3 py-1 rounded-full border border-gold/40 text-[10px] font-bold uppercase tracking-wider text-gold" id="norwoodBadge">
+              Stage 1 - Normal Baseline
+            </span>
+            <span id="norwoodStageLabel" class="text-xs font-bold text-white bg-navy px-3 py-1 rounded-lg border border-gold/30">Stage 1 of 7</span>
+          </div>
+          <div class="relative w-full h-80 sm:h-96 rounded-xl overflow-hidden bg-navy mb-6 border border-white/10 shadow-inner p-2 flex items-center justify-center">
             <img id="norwoodStageImage" 
                  src="Norwood Stage 1.jpeg" 
                  onerror="this.onerror=null; this.src='https://placehold.co/600x450/050914/D4AF37?text=Norwood+Stage+1';" 
                  alt="Norwood Stage Hair Loss Pattern" 
-                 class="w-full h-full object-cover transition-all duration-500 ease-in-out">
-            
-            <div class="absolute top-3 left-3 bg-navy/90 backdrop-blur-md px-3 py-1 rounded-full border border-gold/40 text-[10px] font-bold uppercase tracking-wider text-gold" id="norwoodBadge">
-              Stage 1 - Normal Baseline
-            </div>
+                 class="fit-diagram rounded-lg transition-all duration-500 ease-in-out">
           </div>
 
           <div class="space-y-4">
             <div class="flex justify-between items-center">
               <label class="text-xs font-bold uppercase tracking-wider text-gold">Select Norwood Stage:</label>
-              <span id="norwoodStageLabel" class="text-xs font-bold text-white bg-navy px-3 py-1 rounded-lg border border-gold/30">Stage 1 of 7</span>
             </div>
             
             <input type="range" id="norwoodStageSlider" min="1" max="7" value="1" class="w-full h-2 bg-navy rounded-lg appearance-none cursor-pointer accent-gold">
@@ -602,8 +606,8 @@
         
         <!-- Case 1 -->
         <div class="case-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition cursor-pointer group" data-tech="fue" data-case="101" data-title="Frontal & Crown Density" data-grafts="4,100 Grafts Relocated" data-img="b (1).jpeg">
-          <div class="relative aspect-[4/5] bg-navy overflow-hidden">
-            <img src="b (1).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+101';" alt="Case 101" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="relative h-72 w-full bg-navy overflow-hidden flex items-center justify-center p-1">
+            <img src="b (1).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+101';" alt="Case 101" class="fit-diagram rounded-xl group-hover:scale-105 transition duration-500">
             <span class="absolute bottom-3 right-3 bg-navy/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-gold border border-gold/30">View Case</span>
           </div>
           <div class="p-4">
@@ -618,8 +622,8 @@
 
         <!-- Case 2 -->
         <div class="case-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition cursor-pointer group" data-tech="dhi" data-case="102" data-title="Crown Vortex Restoration" data-grafts="3,200 Grafts Relocated" data-img="b (2).jpeg">
-          <div class="relative aspect-[4/5] bg-navy overflow-hidden">
-            <img src="b (2).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+102';" alt="Case 102" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="relative h-72 w-full bg-navy overflow-hidden flex items-center justify-center p-1">
+            <img src="b (2).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+102';" alt="Case 102" class="fit-diagram rounded-xl group-hover:scale-105 transition duration-500">
             <span class="absolute bottom-3 right-3 bg-navy/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-gold border border-gold/30">View Case</span>
           </div>
           <div class="p-4">
@@ -634,8 +638,8 @@
 
         <!-- Case 3 -->
         <div class="case-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition cursor-pointer group" data-tech="fue" data-case="103" data-title="Hairline & Beard Alignment" data-grafts="4,700 Grafts Relocated" data-img="b (3).jpeg">
-          <div class="relative aspect-[4/5] bg-navy overflow-hidden">
-            <img src="b (3).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+103';" alt="Case 103" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="relative h-72 w-full bg-navy overflow-hidden flex items-center justify-center p-1">
+            <img src="b (3).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+103';" alt="Case 103" class="fit-diagram rounded-xl group-hover:scale-105 transition duration-500">
             <span class="absolute bottom-3 right-3 bg-navy/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-gold border border-gold/30">View Case</span>
           </div>
           <div class="p-4">
@@ -650,8 +654,8 @@
 
         <!-- Case 4 -->
         <div class="case-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition cursor-pointer group" data-tech="dhi" data-case="104" data-title="Temporal Recession Closure" data-grafts="2,900 Grafts Relocated" data-img="b (4).jpeg">
-          <div class="relative aspect-[4/5] bg-navy overflow-hidden">
-            <img src="b (4).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+104';" alt="Case 104" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="relative h-72 w-full bg-navy overflow-hidden flex items-center justify-center p-1">
+            <img src="b (4).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+104';" alt="Case 104" class="fit-diagram rounded-xl group-hover:scale-105 transition duration-500">
             <span class="absolute bottom-3 right-3 bg-navy/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-gold border border-gold/30">View Case</span>
           </div>
           <div class="p-4">
@@ -666,8 +670,8 @@
 
         <!-- Case 5 -->
         <div class="case-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition cursor-pointer group" data-tech="fue" data-case="105" data-title="Full Scalp Reconstruction" data-grafts="2,500 Grafts Relocated" data-img="b (5).jpeg">
-          <div class="relative aspect-[4/5] bg-navy overflow-hidden">
-            <img src="b (5).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+105';" alt="Case 105" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="relative h-72 w-full bg-navy overflow-hidden flex items-center justify-center p-1">
+            <img src="b (5).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+105';" alt="Case 105" class="fit-diagram rounded-xl group-hover:scale-105 transition duration-500">
             <span class="absolute bottom-3 right-3 bg-navy/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-gold border border-gold/30">View Case</span>
           </div>
           <div class="p-4">
@@ -682,8 +686,8 @@
 
         <!-- Case 6 -->
         <div class="case-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition cursor-pointer group" data-tech="dhi" data-case="106" data-title="Mid-Scalp & Hairline Pack" data-grafts="3,000 Grafts Relocated" data-img="b (6).jpeg">
-          <div class="relative aspect-[4/5] bg-navy overflow-hidden">
-            <img src="b (6).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+106';" alt="Case 106" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="relative h-72 w-full bg-navy overflow-hidden flex items-center justify-center p-1">
+            <img src="b (6).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+106';" alt="Case 106" class="fit-diagram rounded-xl group-hover:scale-105 transition duration-500">
             <span class="absolute bottom-3 right-3 bg-navy/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-gold border border-gold/30">View Case</span>
           </div>
           <div class="p-4">
@@ -698,8 +702,8 @@
 
         <!-- Case 7 -->
         <div class="case-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition cursor-pointer group" data-tech="dhi" data-case="107" data-title="Frontal Margin Definition" data-grafts="3,100 Grafts Relocated" data-img="b (7).jpeg">
-          <div class="relative aspect-[4/5] bg-navy overflow-hidden">
-            <img src="b (7).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+107';" alt="Case 107" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="relative h-72 w-full bg-navy overflow-hidden flex items-center justify-center p-1">
+            <img src="b (7).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+107';" alt="Case 107" class="fit-diagram rounded-xl group-hover:scale-105 transition duration-500">
             <span class="absolute bottom-3 right-3 bg-navy/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-gold border border-gold/30">View Case</span>
           </div>
           <div class="p-4">
@@ -714,8 +718,8 @@
 
         <!-- Case 8 -->
         <div class="case-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition cursor-pointer group" data-tech="fue" data-case="108" data-title="Crown Density Enhancement" data-grafts="3,000 Grafts Relocated" data-img="b (8).jpeg">
-          <div class="relative aspect-[4/5] bg-navy overflow-hidden">
-            <img src="b (8).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+108';" alt="Case 108" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="relative h-72 w-full bg-navy overflow-hidden flex items-center justify-center p-1">
+            <img src="b (8).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+108';" alt="Case 108" class="fit-diagram rounded-xl group-hover:scale-105 transition duration-500">
             <span class="absolute bottom-3 right-3 bg-navy/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-gold border border-gold/30">View Case</span>
           </div>
           <div class="p-4">
@@ -730,8 +734,8 @@
 
         <!-- Case 9 -->
         <div class="case-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition cursor-pointer group" data-tech="fue" data-case="109" data-title="Hairline Lowering Protocol" data-grafts="2,500 Grafts Relocated" data-img="b (9).jpeg">
-          <div class="relative aspect-[4/5] bg-navy overflow-hidden">
-            <img src="b (9).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+109';" alt="Case 109" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="relative h-72 w-full bg-navy overflow-hidden flex items-center justify-center p-1">
+            <img src="b (9).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+109';" alt="Case 109" class="fit-diagram rounded-xl group-hover:scale-105 transition duration-500">
             <span class="absolute bottom-3 right-3 bg-navy/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-gold border border-gold/30">View Case</span>
           </div>
           <div class="p-4">
@@ -746,8 +750,8 @@
 
         <!-- Case 10 -->
         <div class="case-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition cursor-pointer group" data-tech="dhi" data-case="110" data-title="Vertex Core Reinforcement" data-grafts="4,100 Grafts Relocated" data-img="b (10).jpeg">
-          <div class="relative aspect-[4/5] bg-navy overflow-hidden">
-            <img src="b (10).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+110';" alt="Case 110" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="relative h-72 w-full bg-navy overflow-hidden flex items-center justify-center p-1">
+            <img src="b (10).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+110';" alt="Case 110" class="fit-diagram rounded-xl group-hover:scale-105 transition duration-500">
             <span class="absolute bottom-3 right-3 bg-navy/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-gold border border-gold/30">View Case</span>
           </div>
           <div class="p-4">
@@ -762,8 +766,8 @@
 
         <!-- Case 11 -->
         <div class="case-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition cursor-pointer group" data-tech="fue" data-case="111" data-title="Frontal Recession Closure" data-grafts="2,300 Grafts Relocated" data-img="b (11).jpeg">
-          <div class="relative aspect-[4/5] bg-navy overflow-hidden">
-            <img src="b (11).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+111';" alt="Case 111" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="relative h-72 w-full bg-navy overflow-hidden flex items-center justify-center p-1">
+            <img src="b (11).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+111';" alt="Case 111" class="fit-diagram rounded-xl group-hover:scale-105 transition duration-500">
             <span class="absolute bottom-3 right-3 bg-navy/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-gold border border-gold/30">View Case</span>
           </div>
           <div class="p-4">
@@ -778,8 +782,8 @@
 
         <!-- Case 12 -->
         <div class="case-card bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition cursor-pointer group" data-tech="fue" data-case="112" data-title="Natural Hairline Reconstruction" data-grafts="2,700 Grafts Relocated" data-img="b (12).jpeg">
-          <div class="relative aspect-[4/5] bg-navy overflow-hidden">
-            <img src="b (12).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+112';" alt="Case 112" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <div class="relative h-72 w-full bg-navy overflow-hidden flex items-center justify-center p-1">
+            <img src="b (12).jpeg" onerror="this.onerror=null; this.src='https://placehold.co/600x750/0B132B/D4AF37?text=Case+112';" alt="Case 112" class="fit-diagram rounded-xl group-hover:scale-105 transition duration-500">
             <span class="absolute bottom-3 right-3 bg-navy/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-[10px] font-bold text-gold border border-gold/30">View Case</span>
           </div>
           <div class="p-4">
@@ -803,8 +807,8 @@
       <button id="closeCaseModal" class="absolute top-4 right-4 text-slate-400 hover:text-navy text-2xl">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-navy mb-6">
-        <img id="modalImg" src="" alt="Case Details" class="w-full h-full object-cover">
+      <div class="h-72 sm:h-80 rounded-2xl overflow-hidden bg-navy mb-6 p-2 flex items-center justify-center">
+        <img id="modalImg" src="" alt="Case Details" class="fit-diagram rounded-xl">
       </div>
       <div class="space-y-2">
         <span id="modalTech" class="text-xs font-bold uppercase tracking-wider text-gold-dark bg-gold/10 px-3 py-1 rounded-full inline-block">Sapphire FUE</span>
